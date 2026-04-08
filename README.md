@@ -525,9 +525,9 @@ E:/cursorworkspace/c002_parlant_config_manager1/
 
 ### 环境准备
 
-1. **Python 环境**：使用 conda 的 py311 环境
+1. **Python 环境**：使用 conda 的 python3.11 环境
    ```bash
-   conda activate py311
+   conda activate python3.11
    ```
 
 2. **安装依赖**：

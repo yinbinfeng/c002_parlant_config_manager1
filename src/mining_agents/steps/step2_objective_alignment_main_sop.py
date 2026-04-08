@@ -343,7 +343,7 @@ async def _generate_main_sop_via_agent(
   ]
 }}
 
-请只输出JSON，不要输出其他内容。
+请只输出JSON，不要输出其他内容，node_name使用英文。
 '''
 
     try:

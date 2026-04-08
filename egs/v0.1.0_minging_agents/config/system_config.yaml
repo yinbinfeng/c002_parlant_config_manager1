@@ -53,16 +53,16 @@ openai:
   # 可选：兼容 OpenAI API 的网关地址（同样建议走环境变量）
   base_url_env: OPENAI_BASE_URL
   # 模型名称配置
-  model_name: "Qwen/Qwen3.5-27B"  # 主模型名称
+  model_name: Qwen/Qwen3.5-397B-A17B-FP8  # 主模型名称
   enable_thinking: false              # 模型思考模式（关闭）
   request_timeout_sec: 180            # 通用 Agent 大模型请求超时（秒）
   # Embedding 模型配置
-  embedding_model: Qwen/Qwen3-Embedding-0.6B  # Embedding 模型名称
+  embedding_model: Qwen/Qwen3-Embedding-8B  # Embedding 模型名称
 
 # Deep Research Tool Configuration
 deep_research:
   enabled: true                    # 是否启用 Deep Research 功能
-  model_name: "Qwen/Qwen3.5-27B"   # Deep Research 专用模型名称
+  model_name: Qwen/Qwen3.5-397B-A17B-FP8   # Deep Research 专用模型名称 Qwen/Qwen3.5-27B
   enable_thinking: false           # Deep Research 模型思考模式（关闭）
   pool_size: 1                     # Deep Research 实例池大小（>1 开启并发分发）
   step1_query_count: 1             # Step1 查询条数（默认 1；可按需增大到 2/3）
