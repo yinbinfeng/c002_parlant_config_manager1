@@ -31,6 +31,44 @@ def _collect_json_files(root: Path) -> List[Path]:
     return [p for p in root.rglob("*.json") if p.is_file()]
 
 
+def _norm_text(text: str) -> str:
+    """规范化文本用于重复检测。"""
+    t = (text or "").strip().lower()
+    t = " ".join(t.split())
+    return t
+
+
+def _detect_guideline_duplicates(guidelines: List[dict], file_path: Path) -> List[str]:
+    """检测 guideline 重复（按 ID 与 condition+action 签名）。"""
+    issues: List[str] = []
+    seen_ids: Dict[str, int] = {}
+    seen_signatures: Dict[str, str] = {}
+    for idx, g in enumerate(guidelines):
+        if not isinstance(g, dict):
+            continue
+        gid = str(g.get("guideline_id") or g.get("id") or "").strip()
+        if gid:
+            if gid in seen_ids:
+                issues.append(
+                    f"{file_path}: duplicate guideline_id `{gid}` (index {seen_ids[gid]} and {idx})"
+                )
+            else:
+                seen_ids[gid] = idx
+
+        cond = _norm_text(str(g.get("condition", "")))
+        action = _norm_text(str(g.get("action", "")))
+        if cond and action:
+            signature = f"{cond}||{action}"
+            marker = gid or f"index_{idx}"
+            if signature in seen_signatures:
+                issues.append(
+                    f"{file_path}: duplicate condition+action `{marker}` ~= `{seen_signatures[signature]}`"
+                )
+            else:
+                seen_signatures[signature] = marker
+    return issues
+
+
 def _detect_cycle_in_graph(edges: Dict[str, List[str]]) -> bool:
     """检测有向图是否存在环（Kahn 拓扑排序）。"""
     indegree: Dict[str, int] = defaultdict(int)
@@ -250,6 +288,10 @@ async def step8_validation_handler(context: Dict[str, Any], orchestrator) -> Dic
                 try:
                     data = repair_json(guidelines_file.read_text(encoding="utf-8"), return_objects=True)
                     jsonschema_validate(instance=data, schema=guidelines_schema)
+                    global_guidelines = data.get("agent_guidelines", []) or []
+                    conflict_issues.extend(
+                        _detect_guideline_duplicates(global_guidelines, guidelines_file)
+                    )
                 except Exception as e:
                     schema_errors.append(f"{guidelines_file}: {type(e).__name__}: {e}")
 
@@ -308,6 +350,9 @@ async def step8_validation_handler(context: Dict[str, Any], orchestrator) -> Dic
 
                             # exclusions/dependencies 环路与自依赖检查
                             guidelines = gdata.get("sop_scoped_guidelines", []) or []
+                            conflict_issues.extend(
+                                _detect_guideline_duplicates(guidelines, sop_guidelines_file)
+                            )
                             dep_edges: Dict[str, List[str]] = defaultdict(list)
                             ex_edges: Dict[str, List[str]] = defaultdict(list)
                             for g in guidelines:
