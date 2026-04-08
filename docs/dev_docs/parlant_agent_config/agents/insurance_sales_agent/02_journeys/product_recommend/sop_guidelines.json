@@ -1,0 +1,65 @@
+{
+  "sop_id": "product_recommend_001",
+  "sop_title": "保险产品推荐全流程 SOP",
+  "remark": "仅保险产品推荐 SOP 生效的专属规则，完整实现 Parlant 原生排除/依赖关系",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "recommend_cr_need_analysis_001",
+      "content": "为了给您推荐最合适的保险产品，我需要先了解您的基本情况：\n1. 您的年龄和职业\n2. 是否有社保\n3. 是否有既往病史或体检异常\n4. 大概的保费预算范围\n请问方便告诉我这些信息吗？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["recommend_need_analysis_001"]
+    },
+    {
+      "canned_response_id": "recommend_cr_product_list_001",
+      "content": "根据您的需求和预算，我为您精选了以下{insurance_type}产品：\n{product_list}\n每款产品都有其特色，我会详细为您讲解它们的优劣势，帮助您做出最佳选择。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["recommend_product_compare_001"]
+    },
+    {
+      "canned_response_id": "recommend_cr_coverage_suggest_001",
+      "content": "根据您的家庭情况（{family_status}），建议您的{insurance_type}保额为{suggested_coverage}万，这样可以更好地保障家人的生活质量。您觉得这个保额合适吗？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["recommend_coverage_suggest_001"]
+    },
+    {
+      "canned_response_id": "recommend_cr_success_001",
+      "content": "🎉 已为您完成保险方案配置！\n推荐产品：{product_name}\n基本保额：{coverage_amount}\n缴费年限：{payment_years}年\n年缴保费：{annual_premium}元\n保障期限：{coverage_period}\n接下来我可以协助您完成投保流程，有任何问题随时问我哦～",
+      "language": "zh-CN"
+    }
+  ],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "recommend_need_analysis_001",
+      "scope": "sop_only",
+      "condition": "用户进入本 SOP 后，未提供完整的个人信息、健康状况、预算范围",
+      "action": "使用需求分析模板话术引导用户提供完整信息，包括年龄、职业、健康状况、预算等关键要素",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["recommend_cr_need_analysis_001"],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "recommend_coverage_suggest_001",
+      "scope": "sop_only",
+      "condition": "已完成需求分析，需要根据家庭责任建议保额",
+      "action": "根据用户家庭状况（婚姻、子女、房贷车贷等），使用保额建议模板话术提供个性化保额建议",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["recommend_cr_coverage_suggest_001"],
+      "exclusions": ["recommend_need_analysis_001"],
+      "dependencies": ["recommend_obs_user_has_budget_001", "recommend_obs_user_family_status_001"]
+    },
+    {
+      "guideline_id": "recommend_product_compare_001",
+      "scope": "sop_only",
+      "condition": "已完成用户需求分析和保额建议，需要推荐具体产品",
+      "action": "使用产品对比模板话术，清晰列出 2-3 款产品的优劣势、价格差异、保障范围对比",
+      "priority": 6,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["recommend_cr_product_list_001"],
+      "exclusions": ["recommend_need_analysis_001", "recommend_coverage_suggest_001"],
+      "dependencies": ["recommend_obs_user_has_budget_001", "recommend_obs_user_has_target_001"]
+    }
+  ]
+}

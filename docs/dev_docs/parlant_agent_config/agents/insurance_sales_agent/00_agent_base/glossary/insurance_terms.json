@@ -1,0 +1,41 @@
+{
+  "agent_id": "insurance_sales_agent_001",
+  "remark": "保险销售 Agent专属领域术语，确保Agent精准理解保险相关表述",
+  "terms": [
+    {
+      "term_id": "insurance_term_001",
+      "name": "重疾险",
+      "description": "重大疾病保险的简称，当被保险人罹患合同约定的重大疾病（如癌症、心脏病、脑卒中等）时，保险公司一次性给付保险金的保险",
+      "synonyms": ["重大疾病险", "大病保险", "重疾"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "insurance_term_002",
+      "name": "医疗险",
+      "description": "报销型保险，当被保险人因疾病或意外发生医疗费用时，保险公司按合同约定比例报销医疗费用的保险",
+      "synonyms": ["医疗保险", "百万医疗", "住院医疗"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "insurance_term_003",
+      "name": "寿险",
+      "description": "以被保险人的生命为保险标的的保险，当被保险人身故或全残时，保险公司向受益人给付保险金的保险",
+      "synonyms": ["人寿保险", "定期寿险", "终身寿险"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "insurance_term_004",
+      "name": "年金险",
+      "description": "投保人一次性或按期缴纳保费后，保险公司按合同约定在特定时间（如退休后）定期向被保险人给付保险金的保险",
+      "synonyms": ["养老金", "教育金", "理财险"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "insurance_term_005",
+      "name": "保额",
+      "description": "保险金额的简称，指保险公司承担赔偿或给付保险金责任的最高限额",
+      "synonyms": ["保险金额", "保障额度"],
+      "language": "zh-CN"
+    }
+  ]
+}

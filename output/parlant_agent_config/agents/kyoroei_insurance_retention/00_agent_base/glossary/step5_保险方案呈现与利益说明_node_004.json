@@ -1,0 +1,226 @@
+{
+  "agent_id": "main_journey_agent_001",
+  "remark": "Step5 节点[保险方案呈现与利益说明]分支术语（Agent动态生成）",
+  "terms": [
+    {
+      "term_id": "main_journey_node_004_term_001",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积，常用于长期财富传承规划",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_002",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品，适合短期高杠杆需求",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_003",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品，侧重生存领取",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_004",
+      "name": "伤害保险",
+      "description": "因意外伤害导致身故、残疾或医疗支出时提供保障的保险产品，通常作为附加险",
+      "synonyms": [
+        "意外险",
+        "Accident Insurance",
+        "人身意外险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_005",
+      "name": "万能险",
+      "description": "兼具保障和投资功能，保费灵活可调，具有单独账户进行资金运作积累的寿险产品",
+      "synonyms": [
+        "万能寿险",
+        "Universal Life",
+        "灵活型保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_006",
+      "name": "现金价值",
+      "description": "具有储蓄性质的保险产品在退保时可获得的金额，反映保单的积累价值",
+      "synonyms": [
+        "退保金",
+        "保单价值",
+        "Cash Value"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_007",
+      "name": "生存给付",
+      "description": "被保险人在保险期间内生存至约定时间点时，保险公司按合同约定支付的保险金",
+      "synonyms": [
+        "生存金",
+        "Living Benefit",
+        "满期生存金"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_008",
+      "name": "身故保险金",
+      "description": "被保险人在保险期间内身故时，保险公司向受益人赔付的约定金额",
+      "synonyms": [
+        "死亡赔偿金",
+        "Death Benefit",
+        "身故赔款"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_009",
+      "name": "保费豁免",
+      "description": "当投保人发生特定风险事件时，免交后续保费但保障依然有效的条款权益",
+      "synonyms": [
+        "豁免权",
+        "Premium Waiver",
+        "免缴保费"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_010",
+      "name": "保单红利",
+      "description": "分红型保险中，保险公司将经营盈余以现金或保额形式分配给投保人的收益",
+      "synonyms": [
+        "分红",
+        "Policy Dividend",
+        "保险盈余"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_011",
+      "name": "满期金",
+      "description": "保险合同期满且被保险人生存时，保险公司一次性给付的本金或约定金额",
+      "synonyms": [
+        "到期金",
+        "Maturity Benefit",
+        "期满给付"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_012",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等，确保知情同意",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "风险告知义务"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_013",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求匹配度验证流程，确保产品符合客户状况",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_014",
+      "name": "冷静期",
+      "description": "保险法规定的契约解除权行使期间，通常为收到保单后一定天数内可无条件退保",
+      "synonyms": [
+        "犹豫期",
+        "冷却期",
+        "无理由退保期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_015",
+      "name": "录音管理",
+      "description": "外呼营销过程中对通话内容进行全程录音保存，以满足监管审计和纠纷举证要求",
+      "synonyms": [
+        "通话录音",
+        "Call Recording",
+        "录音存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_016",
+      "name": "不当劝诱",
+      "description": "违反合规要求的销售行为，包括夸大收益、隐瞒风险或诱导非理性购买",
+      "synonyms": [
+        "违规销售",
+        "Misleading Sales",
+        "误导宣传"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_017",
+      "name": "利益演示",
+      "description": "通过表格或图表形式，向客户直观展示不同年份下保单预期利益和现金价值的过程",
+      "synonyms": [
+        "收益演示",
+        "Benefit Illustration",
+        "计划书演示"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_018",
+      "name": "异议处理",
+      "description": "针对客户在方案呈现阶段提出的疑虑或反对意见，进行化解和引导的专业沟通技术",
+      "synonyms": [
+        "异议解答",
+        "Objection Handling",
+        "问题应对"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_019",
+      "name": "促成技巧",
+      "description": "在客户意向明确后，推动其完成投保签约动作的话术策略和方法",
+      "synonyms": [
+        "成交技巧",
+        "Closing Skills",
+        "缔结话术"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_004_term_020",
+      "name": "需求分析",
+      "description": "通过提问了解客户保障缺口和风险偏好的专业评估过程，为方案定制提供依据",
+      "synonyms": [
+        "需求评估",
+        "保障规划",
+        "Needs Analysis"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}

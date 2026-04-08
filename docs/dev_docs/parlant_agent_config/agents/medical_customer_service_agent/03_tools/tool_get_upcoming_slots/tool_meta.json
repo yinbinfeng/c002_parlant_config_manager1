@@ -1,0 +1,60 @@
+{
+  "tool_id": "medical_tool_get_upcoming_slots",
+  "tool_name": "get_upcoming_slots",
+  "tool_description": "查询指定科室未来 7 天可预约的医生、职称、可预约时段，支持按科室、医生姓名筛选",
+  "timeout": 3,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户进入预约挂号SOP，选择科室后",
+    "用户询问某科室的可预约医生",
+    "用户询问某医生的可预约时段"
+  ],
+  "input_params": [
+    {
+      "param_name": "department",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "科室名称，如\"内科\"\"外科\"\"儿科\""
+    },
+    {
+      "param_name": "doctor_name",
+      "param_type": "string",
+      "required": false,
+      "default": "",
+      "description": "医生姓名，用于精准筛选指定医生的可预约时段"
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "doctors",
+      "field_type": "array",
+      "description": "可预约医生数组"
+    },
+    {
+      "field_name": "doctors[].name",
+      "field_type": "string",
+      "description": "医生姓名"
+    },
+    {
+      "field_name": "doctors[].title",
+      "field_type": "string",
+      "description": "医生职称，如\"主任医师\"\"副主任医师\""
+    },
+    {
+      "field_name": "doctors[].available_slots",
+      "field_type": "array",
+      "description": "该医生的可预约时段数组"
+    },
+    {
+      "field_name": "doctors[].available_slots[].date",
+      "field_type": "string",
+      "description": "可预约日期，格式为 YYYY-MM-DD"
+    },
+    {
+      "field_name": "doctors[].available_slots[].time",
+      "field_type": "string",
+      "description": "可预约时间，格式为 HH:MM"
+    }
+  ]
+}

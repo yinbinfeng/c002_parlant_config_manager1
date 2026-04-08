@@ -1,0 +1,381 @@
+# prj/v0.1.0_minging_agents/config/mock/insurance_mock_data.yaml
+# 保险销售场景 Mock 数据配置
+# 数据来源: docs/dev_docs/parlant_agent_config/agents/insurance_sales_agent
+# 文件格式: YAML
+
+example_id: "insurance"
+title: "保险销售顾问"
+
+agent_metadata:
+  agent_id: "insurance_sales_agent_001"
+  agent_name: "保险销售顾问 Agent"
+  agent_description: "专业的保险销售代理，为用户提供风险评估、保险产品推荐、保费计算、投保指导等全流程服务"
+  default_language: "zh-CN"
+  default_priority: 5
+  conversation_timeout: 3600
+  playground_port: 8803
+  remark: "保险业务线专属 Agent，完全独立配置，与其他Agent 无任何共享"
+
+clarification:
+  generated_questions:
+    - id: "q1"
+      question: "目标客户群体是什么年龄段？（如：25-35岁职场白领、40-50岁家庭支柱等）"
+      answer: ""
+    - id: "q2"
+      question: "主要销售的保险产品类型有哪些？（如：重疾险、医疗险、寿险、年金险等）"
+      answer: ""
+    - id: "q3"
+      question: "是否需要支持保费计算和风险评估工具？"
+      answer: ""
+    - id: "q4"
+      question: "是否有特定的合规要求需要注意？（如：健康告知、犹豫期提醒等）"
+      answer: ""
+  user_added_questions: []
+  can_skip: true
+
+output:
+  config_package_path: "output/insurance_sales_agent"
+  journeys:
+    - id: "product_recommend_001"
+      name: "保险产品推荐全流程"
+      sop_type: "main"
+      description: "引导用户完成需求分析、健康状况评估、预算确认、产品对比、方案确定的全流程，严格遵循保险销售合规要求"
+      nodes:
+        - id: "state_000"
+          label: "初始 - 需求分析"
+          type: "start"
+          bind_guideline_ids: ["recommend_need_analysis_001"]
+        - id: "state_001"
+          label: "风险评估与保额计算"
+          type: "action"
+          bind_tool_id: "risk_assessment"
+          bind_guideline_ids: ["recommend_coverage_suggest_001"]
+        - id: "state_002"
+          label: "产品对比与推荐"
+          type: "action"
+          bind_guideline_ids: ["recommend_product_compare_001"]
+        - id: "state_003"
+          label: "保费试算"
+          type: "action"
+          bind_tool_id: "calculate_premium"
+        - id: "state_004"
+          label: "方案确认"
+          type: "action"
+        - id: "state_005"
+          label: "推荐完成"
+          type: "end"
+          bind_canned_response_ids: ["recommend_cr_success_001"]
+      edges:
+        - from: "state_000"
+          to: "state_001"
+        - from: "state_001"
+          to: "state_002"
+        - from: "state_002"
+          to: "state_003"
+        - from: "state_002"
+          to: "state_002"
+        - from: "state_003"
+          to: "state_004"
+        - from: "state_004"
+          to: "state_005"
+        - from: "state_004"
+          to: "state_002"
+    - id: "branch_health_question_001"
+      name: "健康问卷分支SOP"
+      sop_type: "branch"
+      parent_sop_id: "product_recommend_001"
+      parent_state_id: "state_000"
+      description: "当用户需要更详细的健康状况评估时，引导用户完成健康问卷"
+      nodes:
+        - id: "branch_state_000"
+          label: "健康问卷引导"
+          type: "start"
+        - id: "branch_state_001"
+          label: "既往病史收集"
+          type: "action"
+        - id: "branch_state_002"
+          label: "体检异常收集"
+          type: "action"
+        - id: "branch_state_003"
+          label: "分支结束"
+          type: "end"
+      edges:
+        - from: "branch_state_000"
+          to: "branch_state_001"
+        - from: "branch_state_000"
+          to: "branch_state_003"
+        - from: "branch_state_001"
+          to: "branch_state_002"
+        - from: "branch_state_002"
+          to: "branch_state_003"
+    - id: "edge_user_hesitate_001"
+      name: "用户犹豫场景SOP"
+      sop_type: "edge"
+      parent_sop_id: "product_recommend_001"
+      description: "处理用户在产品推荐过程中表示'我再考虑一下'等犹豫场景"
+      nodes:
+        - id: "edge_state_000"
+          label: "理解与挽留"
+          type: "start"
+        - id: "edge_state_001"
+          label: "顾虑解答"
+          type: "action"
+        - id: "edge_state_002"
+          label: "信息保留"
+          type: "action"
+        - id: "edge_state_003"
+          label: "友好结束"
+          type: "end"
+      edges:
+        - from: "edge_state_000"
+          to: "edge_state_001"
+        - from: "edge_state_000"
+          to: "edge_state_002"
+        - from: "edge_state_001"
+          to: "edge_state_003"
+        - from: "edge_state_001"
+          to: "edge_state_002"
+        - from: "edge_state_002"
+          to: "edge_state_003"
+
+  guidelines:
+    - id: "insurance_greet_001"
+      scope: "agent_global"
+      name: "问候规则"
+      trigger: "用户首次对话、向代理打招呼（如你好、哈喽、早上好）"
+      action: "用专业友好的语气回应用户，主动询问用户的保险需求，保持简洁不超过 2 句话"
+      priority: 3
+      composition: "FLUID"
+    - id: "insurance_budget_guide_001"
+      scope: "agent_global"
+      name: "保费预算引导规则"
+      trigger: "用户询问保费预算、觉得保费贵、要求便宜方案、对比价格"
+      action: "使用保费预算模板话术引导用户，强调保障优先于价格，根据用户收入推荐合理保额与缴费年限"
+      priority: 7
+      composition: "FLUID"
+    - id: "insurance_health_notice_001"
+      scope: "agent_global"
+      name: "健康告知提醒规则"
+      trigger: "用户有健康告知相关问题"
+      action: "使用健康告知模板话术提醒用户如实告知的重要性，引导用户提供详细健康信息"
+      priority: 9
+      composition: "STRICT"
+    - id: "insurance_transfer_human_001"
+      scope: "agent_global"
+      name: "转人工服务规则"
+      trigger: "用户有转人工需求"
+      action: "使用保险专属转人工模板话术告知用户人工客服的联系方式"
+      priority: 10
+      composition: "STRICT"
+    - id: "recommend_need_analysis_001"
+      scope: "sop_only"
+      name: "需求分析引导"
+      trigger: "用户进入本 SOP 后，未提供完整的个人信息、健康状况、预算范围"
+      action: "使用需求分析模板话术引导用户提供完整信息，包括年龄、职业、健康状况、预算等关键要素"
+      priority: 4
+      composition: "FLUID"
+    - id: "recommend_coverage_suggest_001"
+      scope: "sop_only"
+      name: "保额建议"
+      trigger: "已完成需求分析，需要根据家庭责任建议保额"
+      action: "根据用户家庭状况（婚姻、子女、房贷车贷等），使用保额建议模板话术提供个性化保额建议"
+      priority: 5
+      composition: "FLUID"
+    - id: "recommend_product_compare_001"
+      scope: "sop_only"
+      name: "产品对比推荐"
+      trigger: "已完成用户需求分析和保额建议，需要推荐具体产品"
+      action: "使用产品对比模板话术，清晰列出 2-3 款产品的优劣势、价格差异、保障范围对比"
+      priority: 6
+      composition: "FLUID"
+
+  agent_observations:
+    - observation_id: "insurance_obs_user_price_sensitive_001"
+      condition: "用户表达价格敏感、觉得保费贵、要求更便宜的方案、对比多家保险公司价格"
+      remark: "观测用户是否对价格敏感，用于后续推荐性价比方案的依赖"
+    - observation_id: "insurance_obs_user_has_family_burden_001"
+      condition: "用户表示有家庭负担、需要养家糊口、有房贷车贷、有小孩或老人需要照顾"
+      remark: "观测用户是否有家庭责任负担，用于后续高保额推荐的依赖"
+    - observation_id: "insurance_obs_user_health_concern_001"
+      condition: "用户询问健康告知、既往病史、体检异常、带病投保、理赔条件"
+      remark: "观测用户是否关注健康问题，用于后续核保指导的依赖"
+    - observation_id: "insurance_obs_user_requests_human_001"
+      condition: "用户要求转人工、找客服、对自动回复不满意、要求真人对接"
+      remark: "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+
+  sop_observations:
+    - observation_id: "recommend_obs_user_has_budget_001"
+      condition: "用户已明确表达保费预算范围或年收入水平"
+      remark: "观测用户是否已确定预算，用于后续产品推荐的依赖"
+    - observation_id: "recommend_obs_user_has_target_001"
+      condition: "用户已明确想要了解的保险类型，如重疾险、医疗险、寿险等"
+      remark: "观测用户是否已有目标险种，用于精准产品推荐的依赖"
+    - observation_id: "recommend_obs_user_family_status_001"
+      condition: "用户已透露家庭状况，包括婚姻状态、是否有子女、是否有房贷车贷等"
+      remark: "观测用户的家庭责任情况，用于保额计算的依赖"
+
+  glossary:
+    - term: "重疾险"
+      definition: "重大疾病保险的简称，当被保险人罹患合同约定的重大疾病（如癌症、心脏病、脑卒中等）时，保险公司一次性给付保险金的保险"
+      usage: "用于解释保险产品类型和保障范围"
+      synonyms: ["重大疾病险", "大病保险", "重疾"]
+    - term: "医疗险"
+      definition: "报销型保险，当被保险人因疾病或意外发生医疗费用时，保险公司按合同约定比例报销医疗费用的保险"
+      usage: "用于解释医疗保险产品"
+      synonyms: ["医疗保险", "百万医疗", "住院医疗"]
+    - term: "寿险"
+      definition: "以被保险人的生命为保险标的的保险，当被保险人身故或全残时，保险公司向受益人给付保险金的保险"
+      usage: "用于解释人寿保险产品"
+      synonyms: ["人寿保险", "定期寿险", "终身寿险"]
+    - term: "年金险"
+      definition: "投保人一次性或按期缴纳保费后，保险公司按合同约定在特定时间（如退休后）定期向被保险人给付保险金的保险"
+      usage: "用于解释年金类保险产品"
+      synonyms: ["养老金", "教育金", "理财险"]
+    - term: "保额"
+      definition: "保险金额的简称，指保险公司承担赔偿或给付保险金责任的最高限额"
+      usage: "用于解释保险保障额度概念"
+      synonyms: ["保险金额", "保障额度"]
+
+  tools:
+    - name: "calculate_premium"
+      description: "根据用户选择的保险产品、保额、缴费年限、保障期限等信息，计算详细的年缴保费与月缴保费"
+      usage: "用户进入产品推荐 SOP，选定具体产品后；用户询问某产品的价格；用户需要试算不同保额、缴费年限的保费对比"
+      input_params:
+        - name: "product_name"
+          type: "string"
+          required: true
+          description: "保险产品名称，如\"无忧重疾险\"\"百万医疗险\""
+        - name: "coverage_amount"
+          type: "number"
+          required: true
+          description: "保额，单位元，如 500000 表示 50 万保额"
+        - name: "payment_term"
+          type: "integer"
+          required: true
+          description: "缴费年限，单位年，如 20 表示 20 年缴费"
+        - name: "coverage_period"
+          type: "integer"
+          required: true
+          description: "保障期限，单位年，如 70 表示保障至 70 岁"
+        - name: "age"
+          type: "integer"
+          required: true
+          description: "被保险人年龄"
+        - name: "gender"
+          type: "string"
+          required: true
+          description: "被保险人性别，\"男\"或\"女\""
+      output_params:
+        - name: "annual_premium"
+          type: "number"
+          description: "年缴保费，单位元"
+        - name: "monthly_premium"
+          type: "number"
+          description: "月缴保费，单位元"
+        - name: "total_premium"
+          type: "number"
+          description: "总保费，单位元（年缴保费×缴费年限）"
+        - name: "calculation_note"
+          type: "string"
+          description: "保费计算说明"
+    - name: "risk_assessment"
+      description: "根据用户的年龄、职业、健康状况、家庭责任等信息，评估风险缺口并推荐合理的保额"
+      usage: "用户进入产品推荐 SOP，完成需求分析后；用户询问需要多少保额；用户需要风险评估与保障规划"
+      input_params:
+        - name: "age"
+          type: "integer"
+          required: true
+          description: "用户年龄"
+        - name: "occupation"
+          type: "string"
+          required: true
+          description: "用户职业，如\"程序员\"\"教师\"\"医生\""
+        - name: "annual_income"
+          type: "number"
+          required: false
+          description: "用户年收入，单位元"
+        - name: "has_social_insurance"
+          type: "boolean"
+          required: true
+          description: "是否有社保，true 为是，false 为否"
+        - name: "family_burden"
+          type: "string"
+          required: false
+          description: "家庭负担描述，如\"有房贷 100 万\"\"有一个小孩\"\"需要赡养老人\""
+      output_params:
+        - name: "risk_gap"
+          type: "number"
+          description: "风险缺口金额，单位元"
+        - name: "recommended_coverage"
+          type: "object"
+          description: "推荐保额配置"
+        - name: "recommendation_reason"
+          type: "string"
+          description: "推荐理由说明"
+
+  canned_responses:
+    - id: "insurance_cr_greet_001"
+      content: "您好～我是您的保险顾问，很高兴为您服务。请问您想了解哪方面的保险呢？我会根据您的实际情况为您推荐最合适的保障方案。"
+      related_rule: "insurance_greet_001"
+      usage: "用户首次对话或打招呼时使用"
+      variables: []
+    - id: "insurance_cr_budget_recommend_001"
+      content: "根据保险配置的科学原则，建议您的年度保费预算控制在年收入的8%-15%之间。这样既能获得充足保障，又不会造成经济压力。请问您的大致年收入是多少呢？我可以帮您测算合理的保费预算。"
+      related_rule: "insurance_budget_guide_001"
+      usage: "用户询问保费预算或觉得保费贵时使用"
+      variables: []
+    - id: "insurance_cr_health_notice_001"
+      content: "温馨提醒：投保前需要如实告知您的健康状况，包括既往病史、体检异常、住院记录等。如实告知是顺利理赔的重要前提，如有不确定的地方，我可以协助您进行健康告知评估。"
+      related_rule: "insurance_health_notice_001"
+      usage: "用户有健康告知相关问题时使用"
+      variables: []
+    - id: "insurance_cr_transfer_human_001"
+      content: "理解您的需求，您可以联系我们的专业保险顾问获取一对一服务。客服热线：400-888-6666，服务时间：周一至周日 9:00-21:00。"
+      related_rule: "insurance_transfer_human_001"
+      usage: "用户要求转人工时使用"
+      variables: []
+    - id: "recommend_cr_need_analysis_001"
+      content: |
+        为了给您推荐最合适的保险产品，我需要先了解您的基本情况：
+        1. 您的年龄和职业
+        2. 是否有社保
+        3. 是否有既往病史或体检异常
+        4. 大概的保费预算范围
+        请问方便告诉我这些信息吗？
+      related_rule: "recommend_need_analysis_001"
+      usage: "需求分析阶段收集用户信息时使用"
+      variables: []
+    - id: "recommend_cr_product_list_001"
+      content: "根据您的需求和预算，我为您精选了以下{insurance_type}产品：\n{product_list}\n每款产品都有其特色，我会详细为您讲解它们的优劣势，帮助您做出最佳选择。"
+      related_rule: "recommend_product_compare_001"
+      usage: "产品对比推荐时使用"
+      variables: ["insurance_type", "product_list"]
+    - id: "recommend_cr_coverage_suggest_001"
+      content: "根据您的家庭情况（{family_status}），建议您的{insurance_type}保额为{suggested_coverage}万，这样可以更好地保障家人的生活质量。您觉得这个保额合适吗？"
+      related_rule: "recommend_coverage_suggest_001"
+      usage: "保额建议时使用"
+      variables: ["family_status", "insurance_type", "suggested_coverage"]
+    - id: "recommend_cr_success_001"
+      content: |
+        🎉 已为您完成保险方案配置！
+        推荐产品：{product_name}
+        基本保额：{coverage_amount}
+        缴费年限：{payment_years}年
+        年缴保费：{annual_premium}元
+        保障期限：{coverage_period}
+        接下来我可以协助您完成投保流程，有任何问题随时问我哦～
+      related_rule: "recommend_product_compare_001"
+      usage: "方案确认完成时使用"
+      variables: ["product_name", "coverage_amount", "payment_years", "annual_premium", "coverage_period"]
+
+  agent_observability:
+    opentelemetry_enabled: true
+    trace_exporter: "otlp"
+    trace_endpoint: "http://localhost:4317"
+    log_level: "INFO"
+    track_config:
+      track_guideline_matches: true
+      track_journey_state_changes: true
+      track_tool_calls: true
+      track_user_intent_recognition: true
+    remark: "保险销售 Agent专属可观测性配置，独立于其他Agent"

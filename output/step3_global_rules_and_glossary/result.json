@@ -1,0 +1,233 @@
+{
+  "agent_guidelines": {
+    "agent_id": "{agent_name}_001",
+    "remark": "{业务} Agent 专属全局 Guideline 与 Observation，完整实现 Parlant 原生排除/依赖关系",
+    "agent_guidelines": [
+      {
+        "guideline_id": "{业务前缀}_privacy_001",
+        "scope": "agent_global",
+        "condition": "用户询问涉及个人隐私或敏感信息（如身份证号、银行卡号）",
+        "action": "明确告知用户无法收集个人信息，引导至官方渠道办理，触发隐私保护协议",
+        "priority": 1,
+        "composition_mode": "STRICT",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_privacy_001"
+        ],
+        "exclusions": [],
+        "dependencies": []
+      },
+      {
+        "guideline_id": "{业务前缀}_greet_001",
+        "scope": "agent_global",
+        "condition": "用户首次对话、向代理打招呼（如你好、哈喽、早上好）",
+        "action": "用友好的语气回应用户，主动询问用户的{业务}需求，保持简洁不超过 2 句话",
+        "priority": 3,
+        "composition_mode": "FLUID",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_greet_001"
+        ],
+        "exclusions": [],
+        "dependencies": []
+      },
+      {
+        "guideline_id": "{业务前缀}_soothe_001",
+        "scope": "agent_global",
+        "condition": "用户处于负面情绪状态",
+        "action": "先使用{业务}专属安抚模板话术安抚用户情绪，再询问用户的具体问题",
+        "priority": 8,
+        "composition_mode": "FLUID",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_soothe_001"
+        ],
+        "exclusions": [
+          "{业务前缀}_greet_001"
+        ],
+        "dependencies": [
+          "{业务前缀}_obs_user_angry_001"
+        ]
+      },
+      {
+        "guideline_id": "{业务前缀}_transfer_human_001",
+        "scope": "agent_global",
+        "condition": "用户有转人工需求",
+        "action": "使用{业务}专属转人工模板话术告知用户人工客服的联系方式",
+        "priority": 10,
+        "composition_mode": "STRICT",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_transfer_human_001"
+        ],
+        "exclusions": [
+          "{业务前缀}_greet_001",
+          "{业务前缀}_soothe_001"
+        ],
+        "dependencies": [
+          "{业务前缀}_obs_user_requests_human_001"
+        ]
+      },
+      {
+        "guideline_id": "{业务前缀}_intent_clarify_001",
+        "scope": "agent_global",
+        "condition": "用户意图不清晰或需求模糊",
+        "action": "通过封闭式提问引导用户明确需求，最多追问 2 次后提供默认选项",
+        "priority": 5,
+        "composition_mode": "FLUID",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_intent_001"
+        ],
+        "exclusions": [],
+        "dependencies": [
+          "{业务前缀}_obs_user_intent_unclear_001"
+        ]
+      },
+      {
+        "guideline_id": "{业务前缀}_refuse_handling_001",
+        "scope": "agent_global",
+        "condition": "用户表达拒绝意向",
+        "action": "记录拒绝原因并询问是否需要后续服务，若用户坚持则礼貌结束对话",
+        "priority": 7,
+        "composition_mode": "FLUID",
+        "bind_canned_response_ids": [
+          "{业务前缀}_cr_refuse_001"
+        ],
+        "exclusions": [
+          "{业务前缀}_greet_001"
+        ],
+        "dependencies": [
+          "{业务前缀}_obs_user_refuse_001"
+        ]
+      }
+    ],
+    "agent_observations": [
+      {
+        "observation_id": "{业务前缀}_obs_user_angry_001",
+        "condition": "用户表达不满、愤怒、抱怨，使用负面情绪词汇（如投诉、没用、生气），在{业务}场景中表现出不耐烦",
+        "remark": "观测用户是否处于负面情绪状态，用于后续安抚规则的依赖"
+      },
+      {
+        "observation_id": "{业务前缀}_obs_user_requests_human_001",
+        "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接，在{业务}场景中明确要求人工服务",
+        "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+      },
+      {
+        "observation_id": "{业务前缀}_obs_user_intent_unclear_001",
+        "condition": "用户意图不清晰、需求模糊、无法确定具体目标，在{业务}场景中表达不明确",
+        "remark": "观测用户意图是否清晰，用于后续澄清规则的依赖"
+      },
+      {
+        "observation_id": "{业务前缀}_obs_user_refuse_001",
+        "condition": "用户明确拒绝、表示不需要、要求停止，在{业务}场景中表达拒绝意向",
+        "remark": "观测用户是否有拒绝意向，用于后续挽留或结束规则的依赖"
+      }
+    ]
+  },
+  "agent_observations": {
+    "agent_id": "agent_001",
+    "remark": "Step3 fallback全局观测（保险场景），作为规则依赖的前置条件",
+    "fallback_source": "template_fill_mode",
+    "agent_observations": [
+      {
+        "observation_id": "global_obs_user_angry_001",
+        "condition": "用户表达不满、愤怒、抱怨，使用负面情绪词汇（如投诉、没用、生气），在保险场景中表现出不耐烦",
+        "remark": "观测用户是否处于负面情绪状态，用于后续安抚规则的依赖"
+      },
+      {
+        "observation_id": "global_obs_user_requests_human_001",
+        "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接，在保险场景中明确要求人工服务",
+        "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+      },
+      {
+        "observation_id": "global_obs_user_intent_unclear_001",
+        "condition": "用户意图不清晰、需求模糊、无法确定具体目标，在保险场景中表达不明确",
+        "remark": "观测用户意图是否清晰。用于后续澄清规则的依赖"
+      },
+      {
+        "observation_id": "global_obs_user_refuse_001",
+        "condition": "用户明确拒绝、表示不需要、要求停止，在保险场景中表达拒绝意向",
+        "remark": "观测用户是否有拒绝意向。用于后续挽留或结束规则的依赖"
+      }
+    ]
+  },
+  "glossary_master": {
+    "agent_id": "japan_insurance_outbound_retention_agent_001",
+    "remark": "本术语表支撑日本共荣保险外呼营销场景中合规挽留及保险产品销售转化的客服业务",
+    "terms": [
+      {
+        "term_id": "japan_ins_term_001",
+        "name": "合规挽留",
+        "description": "在客户表现出挂断或拒绝倾向时，依据日本保险营销法规进行的合规性挽留操作，需包含风险告知与需求匹配验证",
+        "synonyms": [
+          "成約促進",
+          "継続提案",
+          "保留対応"
+        ],
+        "language": "zh-CN"
+      },
+      {
+        "term_id": "japan_ins_term_002",
+        "name": "生命保険",
+        "description": "以被保险人生存或死亡为给付条件的保险产品，需区分終身保険与定期保険类型",
+        "synonyms": [
+          "人身保険",
+          "生保"
+        ],
+        "language": "zh-CN"
+      },
+      {
+        "term_id": "japan_ins_term_003",
+        "name": "適正販売指針",
+        "description": "日本金融厅规定的保险销售行为准则，要求充分披露产品信息与风险提示",
+        "synonyms": [
+          "金融庁販売基準",
+          "保険販売ガイドライン"
+        ],
+        "language": "zh-CN"
+      },
+      {
+        "term_id": "japan_ins_term_004",
+        "name": "顧客意向確認",
+        "description": "通过结构化问答核实客户需求与购买意愿的业务动作，需记录于CRM系统",
+        "synonyms": [
+          "ニーズ把握",
+          "意向度評価"
+        ],
+        "language": "zh-CN"
+      },
+      {
+        "term_id": "japan_ins_term_005",
+        "name": "説明義務履行",
+        "description": "向客户完整告知保险条款、免责事项及退保损失等法定义务的合规动作",
+        "synonyms": [
+          "開示義務",
+          "リスク告知"
+        ],
+        "language": "zh-CN"
+      },
+      {
+        "term_id": "japan_ins_term_006",
+        "name": "契約手続き",
+        "description": "完成投保申请、健康告知审核及保单签署的全流程业务操作",
+        "synonyms": [
+          "加入手続き",
+          "契約締結"
+        ],
+        "language": "zh-CN"
+      }
+    ]
+  },
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\agent_guidelines.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\step3_glossary_master.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\agent_observations.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\step3_global_guidelines_compliance_report.json"
+  ],
+  "metadata": {
+    "guidelines_count": 6,
+    "observations_count": 4,
+    "glossary_terms_count": 6,
+    "fallback_info": {
+      "guidelines_fallback_used": false,
+      "glossary_fallback_used": false,
+      "observations_fallback_used": true
+    }
+  }
+}

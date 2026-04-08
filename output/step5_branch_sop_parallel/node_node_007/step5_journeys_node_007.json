@@ -1,0 +1,11 @@
+{
+  "sop_id": "main_journey__branch_node_007_skipped",
+  "sop_type": "branch",
+  "parent_sop_id": "main_journey_sop_001",
+  "parent_state_id": "node_007",
+  "sop_title": "通话结束与信息归档 - 无需二级分支",
+  "sop_description": "模型判断该节点不需要二级分支: 该节点为通话流程的终点节点，主要功能是执行标准结束语与系统信息归档，不包含复杂的子流程、多步骤用户交互或明显的分支决策场景，符合简单节点特征，无需展开二级分支SOP。",
+  "sop_states": [],
+  "skipped_by_model": true,
+  "skip_reason": "该节点为通话流程的终点节点，主要功能是执行标准结束语与系统信息归档，不包含复杂的子流程、多步骤用户交互或明显的分支决策场景，符合简单节点特征，无需展开二级分支SOP。"
+}

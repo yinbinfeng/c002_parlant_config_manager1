@@ -1,0 +1,93 @@
+# prj/v0.1.0_minging_agents/config/system_config.yaml
+# Mining Agents v0.1.0 - Complete 8-Step Configuration
+
+# =============================================================================
+# System Configuration
+# =============================================================================
+
+# Concurrency Control
+max_parallel_agents: 1        # Maximum concurrent agents (1 = sequential)
+
+# Step Control
+start_step: 1                 # Starting step (1-5)
+end_step: 5                   # Ending step (1-5)
+force_rerun: false            # Force rerun completed steps
+continue_on_error: false      # Continue on error
+
+# Human-in-the-Loop Configuration
+human_in_loop:
+  clarification_timeout_minutes: 30   # Step 1 人工确认超时（分钟）
+
+# Output Configuration
+output_base_dir: "../../output"   # Output directory (relative to project root)
+enable_version_control: true      # Enable Git version management
+
+# Private Conversation Data (Optional)
+private_data:
+  enabled: false              # Disabled by default, enable when needed
+  excel_file_path: null       # Excel file path for private data
+  auto_skip_if_missing: true  # Auto-skip Step 6 if file doesn't exist
+
+# MCP Client Configuration
+mcp_clients:
+  tavily_search:
+    enabled: true
+    # 仅允许配置“环境变量名”，禁止在此处写明文 Key
+    api_key_env: TAVILY_API_KEY
+
+# OpenAI Configuration
+openai:
+  enabled: true  # Enable OpenAI API usage
+  # 仅允许配置"环境变量名"，禁止在此处写明文 Key
+  api_key_env: OPENAI_API_KEY
+  # 可选：兼容 OpenAI API 的网关地址（同样建议走环境变量）
+  base_url_env: OPENAI_BASE_URL
+  # 模型名称配置
+  model_name: "Qwen/Qwen3.5-27B"  # 主模型名称
+  # Embedding 模型配置
+  embedding_model: Qwen/Qwen3-Embedding-0.6B  # Embedding 模型名称
+
+# Deep Research Tool Configuration
+deep_research:
+  enabled: true                    # 是否启用 Deep Research 功能
+  model_name: "Qwen/Qwen3.5-27B"   # Deep Research 专用模型名称
+  max_depth: 3                     # 最大搜索深度（控制搜索的广度）
+  max_iters: 2                     # 最大迭代次数（控制搜索的深度）
+  temperature: 0.7                 # 模型生成温度
+
+# Prompts Configuration
+prompts:
+  templates_dir: "prompts"  # Directory for prompt templates (relative to config directory)
+
+# JSON Validation Configuration
+json_validation:
+  max_retries: 3              # Maximum retry attempts
+  auto_fix: true              # Enable auto-fix
+
+# Step5 质量门控（轻微差异直接修；明显差异触发返工）
+quality_gate:
+  rework_trigger_threshold: 75   # 低于该分数触发返工
+  severe_diff_threshold: 55       # 低于该分数视为严重差异
+  max_rework_rounds: 2            # 最大自动返工次数
+
+# Logging Configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: ../../logs/mining_agents.log
+
+# Version Information
+version:
+  name: "v0.1.0_minging_agents"
+  description: "Complete implementation of all 5 steps with configurable agents"
+  release_date: "2026-03-22"
+  features:
+    - "Step 1: 需求澄清与人工确认"
+    - "Step 2: 多维度分析与原子化拆解"
+    - "Step 3: 工作流并行开发"
+    - "Step 4: 全局规则检查与优化"
+    - "Step 5: 配置组装与最终检查"
+    - "Human-in-the-Loop 接口"
+    - "Multi-Agent Debate Framework"
+    - "Deep Research 工具封装"
+    - "Configurable agent prompts and tools"

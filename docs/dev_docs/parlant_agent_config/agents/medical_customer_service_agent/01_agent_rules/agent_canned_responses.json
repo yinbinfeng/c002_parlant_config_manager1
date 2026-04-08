@@ -1,0 +1,30 @@
+{
+  "agent_id": "medical_customer_service_agent_001",
+  "remark": "医疗客服 Agent 专属全局模板话术，跨所有 SOP 生效",
+  "agent_canned_responses": [
+    {
+      "canned_response_id": "medical_cr_greet_001",
+      "content": "您好～很高兴为您服务，请问您有什么医疗相关的需求呢？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["medical_greet_001"]
+    },
+    {
+      "canned_response_id": "medical_cr_soothe_001",
+      "content": "非常抱歉给您带来不好的就医体验，您先消消气，我会尽力帮您解决问题的。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["medical_soothe_001"]
+    },
+    {
+      "canned_response_id": "medical_cr_no_diagnosis_001",
+      "content": "抱歉，我无法为您提供疾病诊断、处方开具、治疗方案制定等医疗服务，建议您咨询专业医生或前往正规医院就诊。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["medical_no_diagnosis_001"]
+    },
+    {
+      "canned_response_id": "medical_cr_transfer_human_001",
+      "content": "理解您的需求，您可以拨打我们的医疗客服热线：400-123-4567，服务时间：周一至周日 8:00-20:00。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["medical_transfer_human_001"]
+    }
+  ]
+}

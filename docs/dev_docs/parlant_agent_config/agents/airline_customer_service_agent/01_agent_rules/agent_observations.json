@@ -1,0 +1,21 @@
+{
+  "agent_id": "airline_customer_service_agent_001",
+  "remark": "航空客服 Agent 专属全局观测，作为规则依赖的前置触发条件",
+  "agent_observations": [
+    {
+      "observation_id": "airline_obs_user_angry_001",
+      "condition": "用户表达不满、愤怒、抱怨，使用负面情绪词汇，如\"投诉\"\"延误\"\"取消\"\"生气\"",
+      "remark": "观测用户是否处于负面情绪状态，用于后续安抚规则的依赖"
+    },
+    {
+      "observation_id": "airline_obs_user_requests_human_001",
+      "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接",
+      "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+    },
+    {
+      "observation_id": "airline_obs_urgent_travel_001",
+      "condition": "用户表示时间紧急、需要尽快出行、有紧急事务",
+      "remark": "观测用户是否有紧急出行需求，用于优先推荐最近航班"
+    }
+  ]
+}

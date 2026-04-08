@@ -1,0 +1,139 @@
+{
+  "step": 7,
+  "step_statistics": {
+    "duration": 0.14,
+    "status": "completed",
+    "agent_calls": [],
+    "agent_call_count": 0
+  },
+  "agents_invoked_in_step": [],
+  "agent_metrics_for_step_agents": {},
+  "global_totals": {
+    "total_duration": 1347.4072151184082,
+    "total_agent_calls": 9,
+    "total_llm_calls": 31,
+    "total_tavily_calls": 5,
+    "total_agents": 13,
+    "total_steps": 7,
+    "generated_at": "2026-04-07T14:28:44.069539"
+  },
+  "full_agent_statistics": {
+    "Step1_RequirementClarification": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 0,
+      "tavily_call_count": 1
+    },
+    "RequirementAnalyst": {
+      "total_time": 51.98,
+      "avg_time": 51.98,
+      "min_time": 51.98,
+      "max_time": 51.98,
+      "call_count": 1,
+      "llm_call_count": 1,
+      "tavily_call_count": 0
+    },
+    "Step2_ObjectiveAlignment": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 0,
+      "tavily_call_count": 1
+    },
+    "CoordinatorAgent": {
+      "total_time": 32.08,
+      "avg_time": 32.08,
+      "min_time": 32.08,
+      "max_time": 32.08,
+      "call_count": 1,
+      "llm_call_count": 7,
+      "tavily_call_count": 2
+    },
+    "MainSOPGenerator": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 1,
+      "tavily_call_count": 0
+    },
+    "GlobalRulesAgent": {
+      "total_time": 33.58,
+      "avg_time": 33.58,
+      "min_time": 33.58,
+      "max_time": 33.58,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "GlossaryAgent": {
+      "total_time": 50.92,
+      "avg_time": 50.92,
+      "min_time": 50.92,
+      "max_time": 50.92,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "ComplianceCheckAgent": {
+      "total_time": 0.03,
+      "avg_time": 0.01,
+      "min_time": 0.0,
+      "max_time": 0.02,
+      "call_count": 4,
+      "llm_call_count": 0,
+      "tavily_call_count": 0
+    },
+    "Step4_UserProfiles": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 0,
+      "tavily_call_count": 1
+    },
+    "UserProfileAgent": {
+      "total_time": 35.74,
+      "avg_time": 35.74,
+      "min_time": 35.74,
+      "max_time": 35.74,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "BranchSOPGenerator": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 6,
+      "tavily_call_count": 0
+    },
+    "GlossaryGenerator": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 5,
+      "tavily_call_count": 0
+    },
+    "EdgeCaseGenerator": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 2,
+      "tavily_call_count": 0
+    }
+  }
+}

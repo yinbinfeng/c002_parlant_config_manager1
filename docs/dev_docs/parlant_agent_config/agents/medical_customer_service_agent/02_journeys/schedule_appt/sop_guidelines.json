@@ -1,0 +1,65 @@
+{
+  "sop_id": "schedule_appt_001",
+  "sop_title": "预约挂号全流程 SOP",
+  "remark": "仅预约挂号SOP 生效的专属规则，完整实现 Parlant 原生排除/依赖关系",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "schedule_appt_cr_dept_list_001",
+      "content": "我们医院目前开放预约的科室有：内科、外科、儿科、妇科、眼科、口腔科、皮肤科、耳鼻喉科，请问您想要预约哪个科室的号呢？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["schedule_appt_dept_guide_001"]
+    },
+    {
+      "canned_response_id": "schedule_appt_cr_doctor_recommend_001",
+      "content": "为您推荐{dept}科室的以下可预约医生：\n{doctor_list}\n请问您想要预约哪位医生的号呢？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["schedule_appt_doctor_recommend_001"]
+    },
+    {
+      "canned_response_id": "schedule_appt_cr_time_unavailable_001",
+      "content": "非常抱歉，您选择的{time}时段已约满/不可预约，为您推荐以下相近的可预约时段：\n{available_slots}\n请问您是否需要调整预约时间？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["schedule_appt_time_verify_001"]
+    },
+    {
+      "canned_response_id": "schedule_appt_cr_success_001",
+      "content": "🎉 您的预约已成功！\n预约号：{appt_id}\n就诊科室：{dept}\n就诊医生：{doctor_name}\n就诊时间：{appt_time}\n请您在就诊当天携带有效身份证件，提前 30 分钟到医院门诊大厅取号，祝您就诊顺利！",
+      "language": "zh-CN"
+    }
+  ],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "schedule_appt_dept_guide_001",
+      "scope": "sop_only",
+      "condition": "用户进入本 SOP 后，未明确选择科室、选择的科室不存在、科室名称表述模糊",
+      "action": "使用科室列表模板话术引导用户选择，若科室不存在，建议用户选择相近科室或拨打人工客服咨询",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["schedule_appt_cr_dept_list_001"],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "schedule_appt_doctor_recommend_001",
+      "scope": "sop_only",
+      "condition": "用户已选择科室，需要推荐可预约的医生",
+      "action": "使用医生推荐模板话术，优先推荐职称高、可预约时段多的医生",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["schedule_appt_cr_doctor_recommend_001"],
+      "exclusions": ["schedule_appt_dept_guide_001"],
+      "dependencies": ["schedule_appt_obs_user_has_dept_001"]
+    },
+    {
+      "guideline_id": "schedule_appt_time_verify_001",
+      "scope": "sop_only",
+      "condition": "用户选择的预约时段不可用",
+      "action": "友好告知用户该时段无法预约，使用时段不可用模板话术推荐其他可预约时段",
+      "priority": 6,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["schedule_appt_cr_time_unavailable_001"],
+      "exclusions": ["schedule_appt_doctor_recommend_001"],
+      "dependencies": ["schedule_appt_obs_time_unavailable_001", "schedule_appt_obs_user_has_doctor_001"]
+    }
+  ]
+}

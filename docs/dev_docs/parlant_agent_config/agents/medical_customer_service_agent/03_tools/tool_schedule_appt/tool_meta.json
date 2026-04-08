@@ -1,0 +1,65 @@
+{
+  "tool_id": "medical_tool_schedule_appt",
+  "tool_name": "schedule_appt",
+  "tool_description": "提交预约挂号订单，返回预约结果与预约号",
+  "timeout": 5,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户确认预约信息无误，提交挂号申请",
+    "预约挂号SOP的最终提交环节"
+  ],
+  "input_params": [
+    {
+      "param_name": "department",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "就诊科室名称"
+    },
+    {
+      "param_name": "doctor_name",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "就诊医生姓名"
+    },
+    {
+      "param_name": "appt_time",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "预约就诊时间，格式为 YYYY-MM-DD HH:MM"
+    },
+    {
+      "param_name": "patient_name",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "就诊人姓名"
+    },
+    {
+      "param_name": "patient_id_card",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "就诊人身份证号"
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "appt_id",
+      "field_type": "string",
+      "description": "预约成功后的唯一预约号"
+    },
+    {
+      "field_name": "status",
+      "field_type": "string",
+      "description": "预约结果状态，success/fail"
+    },
+    {
+      "field_name": "message",
+      "field_type": "string",
+      "description": "预约结果描述"
+    }
+  ]
+}

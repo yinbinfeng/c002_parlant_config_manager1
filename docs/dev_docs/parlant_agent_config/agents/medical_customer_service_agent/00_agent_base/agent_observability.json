@@ -1,0 +1,14 @@
+{
+  "agent_id": "medical_customer_service_agent_001",
+  "opentelemetry_enabled": true,
+  "trace_exporter": "otlp",
+  "trace_endpoint": "http://localhost:4317",
+  "log_level": "INFO",
+  "track_config": {
+    "track_guideline_matches": true,
+    "track_journey_state_changes": true,
+    "track_tool_calls": true,
+    "track_user_intent_recognition": true
+  },
+  "remark": "医疗客服 Agent 专属可观测性配置，独立于其他 Agent"
+}

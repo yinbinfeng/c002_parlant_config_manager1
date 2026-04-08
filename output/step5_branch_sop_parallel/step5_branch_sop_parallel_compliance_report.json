@@ -1,0 +1,27 @@
+{
+  "stage": "step5_branch_sop_parallel",
+  "passed": true,
+  "checked_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_journeys_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_guidelines_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_glossary_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_tools_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_journeys_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_guidelines_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_glossary_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_tools_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_journeys_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_guidelines_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_glossary_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_tools_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_journeys_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_guidelines_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_glossary_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_tools_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_journeys_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_guidelines_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_glossary_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_tools_node_006.json"
+  ],
+  "issues": []
+}

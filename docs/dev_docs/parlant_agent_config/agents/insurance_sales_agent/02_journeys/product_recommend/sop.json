@@ -1,0 +1,105 @@
+{
+  "sop_id": "product_recommend_001",
+  "sop_type": "main",
+  "sop_title": "保险产品推荐全流程 SOP",
+  "sop_description": "引导用户完成需求分析、健康状况评估、预算确认、产品对比、方案确定的全流程，严格遵循保险销售合规要求",
+  "trigger_conditions": [
+    "用户想要了解保险产品",
+    "用户询问保险推荐",
+    "用户需要买保险",
+    "用户咨询什么保险好",
+    "用户想配置保险"
+  ],
+  "timeout": 1800,
+  "sop_guideline_mapping": {
+    "sop_guideline_file": "./sop_guidelines.json",
+    "sop_global_bind_guideline_ids": [
+      "recommend_need_analysis_001",
+      "recommend_coverage_suggest_001",
+      "recommend_product_compare_001"
+    ]
+  },
+  "sop_states": [
+    {
+      "state_id": "state_000",
+      "state_name": "初始 - 需求分析",
+      "state_type": "chat",
+      "instruction": "友好问候用户，使用需求分析模板话术收集用户的基本信息，包括年龄、职业、健康状况、预算等",
+      "bind_guideline_ids": ["recommend_need_analysis_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_001",
+          "condition": "用户已提供年龄、职业、健康状况、预算等关键信息"
+        }
+      ]
+    },
+    {
+      "state_id": "state_001",
+      "state_name": "风险评估与保额计算",
+      "state_type": "tool",
+      "bind_tool_id": "insurance_tool_risk_assessment",
+      "bind_guideline_ids": ["recommend_coverage_suggest_001"],
+      "instruction": "调用风险评估工具，根据用户提供的信息评估风险缺口，计算合理的保额需求",
+      "transitions": [
+        {
+          "target_state_id": "state_002",
+          "condition": "工具返回风险评估结果与推荐保额后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_002",
+      "state_name": "产品对比与推荐",
+      "state_type": "chat",
+      "instruction": "清晰列出 2-3 款适合用户的保险产品，包含产品名称、保障范围、保费价格、优劣势对比",
+      "bind_guideline_ids": ["recommend_product_compare_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_003",
+          "condition": "用户对某款产品表现出兴趣或明确选择意向"
+        },
+        {
+          "target_state_id": "state_002",
+          "condition": "用户需要了解更多产品、对比其他产品、有疑问需要解答"
+        }
+      ]
+    },
+    {
+      "state_id": "state_003",
+      "state_name": "保费试算",
+      "state_type": "tool",
+      "bind_tool_id": "insurance_tool_calculate_premium",
+      "instruction": "调用保费计算工具，根据用户选择的保额、缴费年限、保障期限计算具体保费",
+      "transitions": [
+        {
+          "target_state_id": "state_004",
+          "condition": "工具返回详细保费计划后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_004",
+      "state_name": "方案确认",
+      "state_type": "chat",
+      "instruction": "与用户确认最终保险方案，包括产品名称、保额、缴费年限、年缴保费、保障期限",
+      "transitions": [
+        {
+          "target_state_id": "state_005",
+          "condition": "用户确认方案无误，准备投保"
+        },
+        {
+          "target_state_id": "state_002",
+          "condition": "用户需要调整方案、更换产品、修改保额或缴费年限"
+        }
+      ]
+    },
+    {
+      "state_id": "state_005",
+      "state_name": "推荐完成",
+      "state_type": "chat",
+      "instruction": "告知用户推荐结果，发送完整的保险方案信息，提醒投保注意事项与健康告知要求",
+      "bind_canned_response_ids": ["recommend_cr_success_001"],
+      "is_end_state": true
+    }
+  ]
+}

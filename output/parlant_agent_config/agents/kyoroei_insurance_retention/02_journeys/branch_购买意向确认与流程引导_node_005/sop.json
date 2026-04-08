@@ -1,0 +1,129 @@
+{
+  "sop_id": "main_journey__branch_node_005_id_sop_001",
+  "sop_type": "branch",
+  "parent_sop_id": "main_sop_backbone_v2",
+  "parent_state_id": "node_005",
+  "sop_title": "购买意向确认与合规流程引导分支",
+  "sop_description": "挂载于主干节点[购买意向确认与流程引导]的二级分支流程（Step5 Agent动态生成）",
+  "trigger_conditions": [
+    {
+      "trigger": "用户在[购买意向确认与流程引导]节点提出特定需求或问题，需要分支处理",
+      "trigger_examples": [
+        "用户表达特殊需求",
+        "用户提出问题",
+        "用户需要额外帮助"
+      ]
+    }
+  ],
+  "timeout": 900,
+  "sop_states": [
+    {
+      "state_name": "branch_state_001_意向明确化",
+      "instruction": "明确询问用户是否希望继续了解投保详情或直接进入投保流程，观察用户反馈的坚定程度。",
+      "condition": "用户表达继续意愿或提出具体产品疑问",
+      "condition_examples": [
+        "用户说：可以，我听听看",
+        "用户说：这个保险多少钱",
+        "用户说：怎么买"
+      ],
+      "state_id": "branch_state_000",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_001",
+          "condition": "用户表达继续意愿或提出具体产品疑问"
+        }
+      ]
+    },
+    {
+      "state_name": "branch_state_002_合规义务告知",
+      "instruction": "严格执行日本保险法规定，告知合同解除权（犹豫期）及主要免责条款，确保用户知情权。",
+      "condition": "用户表示理解或无异议",
+      "condition_examples": [
+        "用户说：明白了",
+        "用户说：没问题",
+        "用户沉默点头"
+      ],
+      "state_id": "branch_state_001",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_002",
+          "condition": "用户表示理解或无异议"
+        }
+      ]
+    },
+    {
+      "state_name": "branch_state_003_办理路径引导",
+      "instruction": "根据用户偏好介绍投保渠道（线上链接/线下代理），并简述所需时间与材料。",
+      "condition": "用户接受建议的渠道或提出替代方案",
+      "condition_examples": [
+        "用户说：发链接给我吧",
+        "用户说：还是见面谈比较好",
+        "用户说：我需要准备什么"
+      ],
+      "state_id": "branch_state_002",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_003",
+          "condition": "用户接受建议的渠道或提出替代方案"
+        }
+      ]
+    },
+    {
+      "state_name": "branch_state_004_潜在异议化解",
+      "instruction": "针对用户在决策前的最后顾虑（价格、信任度、必要性）进行针对性解释与安抚。",
+      "condition": "用户顾虑消除或明确表示不再考虑",
+      "condition_examples": [
+        "用户说：那我再想想",
+        "用户说：好的我知道了",
+        "用户说：太贵了，算了"
+      ],
+      "state_id": "branch_state_003",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_004",
+          "condition": "用户顾虑消除或明确表示不再考虑"
+        }
+      ]
+    },
+    {
+      "state_name": "branch_state_005_操作授权确认",
+      "instruction": "获得用户对发送资料、预约回访或开始投保流程的最终口头授权，避免违规骚扰。",
+      "condition": "用户给予明确授权许可",
+      "condition_examples": [
+        "用户说：可以的",
+        "用户说：那你发过来吧",
+        "用户说：约明天下午"
+      ],
+      "state_id": "branch_state_004",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_005",
+          "condition": "用户给予明确授权许可"
+        }
+      ]
+    },
+    {
+      "state_name": "branch_state_006_流程结束与回归",
+      "instruction": "根据授权执行相应动作（发送短信/记录意向），总结本次通话要点，并标记节点状态回归主流程。",
+      "condition_examples": [],
+      "state_id": "branch_state_005",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "is_end_state": true,
+      "return_to_parent": true,
+      "transitions": []
+    }
+  ],
+  "fallback_source": null,
+  "parent_node_id": "node_005"
+}

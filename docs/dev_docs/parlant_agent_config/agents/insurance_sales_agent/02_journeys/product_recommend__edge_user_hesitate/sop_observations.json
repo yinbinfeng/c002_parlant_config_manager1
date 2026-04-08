@@ -1,0 +1,27 @@
+{
+  "sop_id": "edge_user_hesitate_001",
+  "sop_title": "用户犹豫场景SOP",
+  "remark": "用户犹豫场景专属观测，作为场景内规则的依赖前置条件",
+  "sop_observations": [
+    {
+      "observation_id": "edge_obs_user_has_concern_001",
+      "condition": "用户表达了具体的顾虑点，如价格、对比、保障范围等",
+      "remark": "观测用户是否有具体顾虑，用于针对性解答的依赖"
+    },
+    {
+      "observation_id": "edge_obs_user_price_concern_001",
+      "condition": "用户的顾虑与价格相关",
+      "remark": "观测用户是否对价格有顾虑，用于价格解答的依赖"
+    },
+    {
+      "observation_id": "edge_obs_user_compare_concern_001",
+      "condition": "用户的顾虑与产品对比相关",
+      "remark": "观测用户是否需要产品对比，用于对比解答的依赖"
+    },
+    {
+      "observation_id": "edge_obs_user_want_keep_info_001",
+      "condition": "用户愿意保留产品信息以便后续参考",
+      "remark": "观测用户是否愿意保留信息，用于信息保留流程的依赖"
+    }
+  ]
+}

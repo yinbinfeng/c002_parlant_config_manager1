@@ -1,0 +1,1156 @@
+{
+  "agent_id": "japan_insurance_outbound_retention_agent_001",
+  "remark": "本术语表支撑日本共荣保险外呼营销场景中合规挽留及保险产品销售转化的客服业务",
+  "terms": [
+    {
+      "term_id": "kyoei_term_001",
+      "name": "合规挽留",
+      "description": "在客户表现出挂断或拒绝倾向时，依据日本保险营销法规进行的合规性挽留操作，需包含风险告知与需求匹配验证",
+      "synonyms": [
+        "成約促進",
+        "継続提案",
+        "保留対応"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_002",
+      "name": "生命保険",
+      "description": "以被保险人生存或死亡为给付条件的保险产品，需区分終身保険与定期保険类型",
+      "synonyms": [
+        "人身保険",
+        "生保"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_003",
+      "name": "適正販売指針",
+      "description": "日本金融厅规定的保险销售行为准则，要求充分披露产品信息与风险提示",
+      "synonyms": [
+        "金融庁販売基準",
+        "保険販売ガイドライン"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_004",
+      "name": "顧客意向確認",
+      "description": "通过结构化问答核实客户需求与购买意愿的业务动作，需记录于CRM系统",
+      "synonyms": [
+        "ニーズ把握",
+        "意向度評価"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_005",
+      "name": "説明義務履行",
+      "description": "向客户完整告知保险条款、免责事项及退保损失等法定义务的合规动作",
+      "synonyms": [
+        "開示義務",
+        "リスク告知"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_006",
+      "name": "契約手続き",
+      "description": "完成投保申请、健康告知审核及保单签署的全流程业务操作",
+      "synonyms": [
+        "加入手続き",
+        "契約締結"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_007",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积功能",
+      "synonyms": [
+        "终身保险",
+        "Whole Life",
+        "终身保障计划"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_008",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "消费型寿险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_009",
+      "name": "医疗保险",
+      "description": "报销因疾病或意外产生的医疗费用的补偿型保险产品",
+      "synonyms": [
+        "医疗险",
+        "Medical Insurance",
+        "健康险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_010",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_011",
+      "name": "重大疾病险",
+      "description": "确诊约定重大疾病后一次性给付保险金的保障产品",
+      "synonyms": [
+        "重疾险",
+        "Critical Illness",
+        "疾病保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_012",
+      "name": "风险评估",
+      "description": "对客户财务状况、风险承受能力及保障需求进行专业量化的过程",
+      "synonyms": [
+        "风险测评",
+        "Risk Assessment",
+        "风险画像"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_013",
+      "name": "需求分析",
+      "description": "通过提问了解客户保障缺口和风险偏好的专业评估过程",
+      "synonyms": [
+        "需求评估",
+        "Needs Analysis",
+        "保障规划"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_014",
+      "name": "核保标准",
+      "description": "保险公司用于决定是否接受投保及确定费率的健康与财务审核规则",
+      "synonyms": [
+        "承保条件",
+        "Underwriting Guidelines",
+        "核保政策"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_015",
+      "name": "等待期",
+      "description": "保险合同生效后，特定疾病或事故需经过的免赔期间",
+      "synonyms": [
+        "免责期",
+        "观察期",
+        "Waiting Period"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_016",
+      "name": "现金价值",
+      "description": "具有储蓄性质的保险产品在退保时可获得的金额",
+      "synonyms": [
+        "退保金",
+        "Cash Value",
+        "保单价值"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_017",
+      "name": "保额设定",
+      "description": "根据客户收入与负债情况确定的保险最高赔付金额额度",
+      "synonyms": [
+        "保险金额",
+        "Sum Assured",
+        "Coverage Amount"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_018",
+      "name": "适当性确认",
+      "description": "根据金融商品交易法要求的投保人需求匹配度验证流程",
+      "synonyms": [
+        "需求匹配",
+        "Suitability Assessment",
+        "适配性验证"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_019",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "风险告知义务"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_020",
+      "name": "冷静期",
+      "description": "保险法规定的契约解除权行使期间（通常 8-15 日），客户可无条件退保",
+      "synonyms": [
+        "犹豫期",
+        "冷却期",
+        "无理由退保期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_021",
+      "name": "明示同意",
+      "description": "电子渠道营销所需的客户明确授权机制，含录音保存与内容确认",
+      "synonyms": [
+        "书面同意",
+        "Explicit Consent",
+        "录音授权"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_022",
+      "name": "销售录音",
+      "description": "外呼营销过程中全程录制的音频文件，用于合规审查与纠纷举证",
+      "synonyms": [
+        "通话记录",
+        "Call Recording",
+        "录音档案"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_023",
+      "name": "意向等级",
+      "description": "根据客户沟通反应划分的购买意愿高低分类，用于后续跟进策略",
+      "synonyms": [
+        "客户分层",
+        "Interest Level",
+        "购买意向"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_024",
+      "name": "挽留话术",
+      "description": "针对用户挂断或拒绝倾向时采用的标准化合规沟通策略",
+      "synonyms": [
+        "继续提案话术",
+        "Retention Script",
+        "异议处理话术"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_025",
+      "name": "异议处理",
+      "description": "针对客户提出的价格、需求或信任疑虑进行的专业回应流程",
+      "synonyms": [
+        "抗拒点处理",
+        "Objection Handling",
+        "疑难解答"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_026",
+      "name": "流失预警",
+      "description": "监测到客户有挂断电话或表达拒绝倾向时的系统提示信号",
+      "synonyms": [
+        "挂断倾向",
+        "Churn Warning",
+        "拒接信号"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_027",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积功能",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_028",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_029",
+      "name": "重大疾病险",
+      "description": "确诊约定重大疾病后一次性给付保险金的保障产品",
+      "synonyms": [
+        "重疾险",
+        "Critical Illness",
+        "疾病保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_030",
+      "name": "医疗保险",
+      "description": "报销因疾病或意外产生的医疗费用的补偿型保险产品",
+      "synonyms": [
+        "医疗险",
+        "健康险",
+        "Medical Insurance"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_031",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_032",
+      "name": "等待期",
+      "description": "保险合同生效后，特定疾病或事故需经过的免赔期间，通常不赔付",
+      "synonyms": [
+        "免责期",
+        "观察期",
+        "Waiting Period"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_033",
+      "name": "免责条款",
+      "description": "保险合同中约定保险公司不承担赔付责任的情形条款",
+      "synonyms": [
+        "除外责任",
+        "免赔条款",
+        "Exclusions"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_034",
+      "name": "现金价值",
+      "description": "具有储蓄性质的保险产品在退保时可获得的金额，即保单积累价值",
+      "synonyms": [
+        "退保金",
+        "保单价值",
+        "Cash Value"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_035",
+      "name": "保额",
+      "description": "保险合同约定的最高赔付金额，即保险保障额度上限",
+      "synonyms": [
+        "保险金额",
+        "Coverage Amount",
+        "Sum Assured"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_036",
+      "name": "保费",
+      "description": "投保人为获得保险保障需定期支付的保险费用成本",
+      "synonyms": [
+        "保险费",
+        "Premium",
+        "保险成本"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_037",
+      "name": "犹豫期",
+      "description": "保险法规定的契约解除权行使期间，客户可无条件全额退保",
+      "synonyms": [
+        "冷静期",
+        "冷却期",
+        "无理由退保期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_038",
+      "name": "受益人",
+      "description": "由投保人或被保险人指定，享有保险金请求权的个人或机构",
+      "synonyms": [
+        "受保人",
+        "Claimant",
+        "Beneficiary"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_039",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "风险告知义务"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_040",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求匹配度验证流程",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_041",
+      "name": "冷静期",
+      "description": "部分金融产品规定的一段时间内，客户可撤销购买决定的保护期",
+      "synonyms": [
+        "后悔期",
+        "撤销权期间",
+        "Cooling-off Period"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_042",
+      "name": "明示同意",
+      "description": "电子渠道营销所需的客户明确授权机制，含录音保存与内容确认",
+      "synonyms": [
+        "书面同意",
+        "录音授权",
+        "Explicit Consent"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_043",
+      "name": "适当性管理",
+      "description": "金融机构识别客户风险承受能力并推荐匹配产品的合规管理机制",
+      "synonyms": [
+        "投资者适当性",
+        "风险匹配",
+        "Appropriateness Management"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_044",
+      "name": "需求分析",
+      "description": "通过提问了解客户保障缺口和风险偏好的专业评估过程",
+      "synonyms": [
+        "需求评估",
+        "保障规划",
+        "Needs Analysis"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_045",
+      "name": "挽留话术",
+      "description": "针对用户挂断拒绝倾向时采用的标准化合规沟通策略",
+      "synonyms": [
+        "继续提案话术",
+        "异议处理话术",
+        "Retention Script"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_046",
+      "name": "方案定制",
+      "description": "根据客户需求和预算量身设计保险组合方案的服务",
+      "synonyms": [
+        "个性化方案",
+        "定制保障",
+        "Tailored Solution"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_047",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积，常用于长期财富传承规划",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_048",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品，适合短期高杠杆需求",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_049",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品，侧重生存领取",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_050",
+      "name": "伤害保险",
+      "description": "因意外伤害导致身故、残疾或医疗支出时提供保障的保险产品，通常作为附加险",
+      "synonyms": [
+        "意外险",
+        "Accident Insurance",
+        "人身意外险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_051",
+      "name": "万能险",
+      "description": "兼具保障和投资功能，保费灵活可调，具有单独账户进行资金运作积累的寿险产品",
+      "synonyms": [
+        "万能寿险",
+        "Universal Life",
+        "灵活型保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_052",
+      "name": "现金价值",
+      "description": "具有储蓄性质的保险产品在退保时可获得的金额，反映保单的积累价值",
+      "synonyms": [
+        "退保金",
+        "保单价值",
+        "Cash Value"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_053",
+      "name": "生存给付",
+      "description": "被保险人在保险期间内生存至约定时间点时，保险公司按合同约定支付的保险金",
+      "synonyms": [
+        "生存金",
+        "Living Benefit",
+        "满期生存金"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_054",
+      "name": "身故保险金",
+      "description": "被保险人在保险期间内身故时，保险公司向受益人赔付的约定金额",
+      "synonyms": [
+        "死亡赔偿金",
+        "Death Benefit",
+        "身故赔款"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_055",
+      "name": "保费豁免",
+      "description": "当投保人发生特定风险事件时，免交后续保费但保障依然有效的条款权益",
+      "synonyms": [
+        "豁免权",
+        "Premium Waiver",
+        "免缴保费"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_056",
+      "name": "保单红利",
+      "description": "分红型保险中，保险公司将经营盈余以现金或保额形式分配给投保人的收益",
+      "synonyms": [
+        "分红",
+        "Policy Dividend",
+        "保险盈余"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_057",
+      "name": "满期金",
+      "description": "保险合同期满且被保险人生存时，保险公司一次性给付的本金或约定金额",
+      "synonyms": [
+        "到期金",
+        "Maturity Benefit",
+        "期满给付"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_058",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等，确保知情同意",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "风险告知义务"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_059",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求匹配度验证流程，确保产品符合客户状况",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_060",
+      "name": "冷静期",
+      "description": "保险法规定的契约解除权行使期间，通常为收到保单后一定天数内可无条件退保",
+      "synonyms": [
+        "犹豫期",
+        "冷却期",
+        "无理由退保期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_061",
+      "name": "录音管理",
+      "description": "外呼营销过程中对通话内容进行全程录音保存，以满足监管审计和纠纷举证要求",
+      "synonyms": [
+        "通话录音",
+        "Call Recording",
+        "录音存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_062",
+      "name": "不当劝诱",
+      "description": "违反合规要求的销售行为，包括夸大收益、隐瞒风险或诱导非理性购买",
+      "synonyms": [
+        "违规销售",
+        "Misleading Sales",
+        "误导宣传"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_063",
+      "name": "利益演示",
+      "description": "通过表格或图表形式，向客户直观展示不同年份下保单预期利益和现金价值的过程",
+      "synonyms": [
+        "收益演示",
+        "Benefit Illustration",
+        "计划书演示"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_064",
+      "name": "异议处理",
+      "description": "针对客户在方案呈现阶段提出的疑虑或反对意见，进行化解和引导的专业沟通技术",
+      "synonyms": [
+        "异议解答",
+        "Objection Handling",
+        "问题应对"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_065",
+      "name": "促成技巧",
+      "description": "在客户意向明确后，推动其完成投保签约动作的话术策略和方法",
+      "synonyms": [
+        "成交技巧",
+        "Closing Skills",
+        "缔结话术"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_066",
+      "name": "需求分析",
+      "description": "通过提问了解客户保障缺口和风险偏好的专业评估过程，为方案定制提供依据",
+      "synonyms": [
+        "需求评估",
+        "保障规划",
+        "Needs Analysis"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_067",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，提供身故保障并累积现金价值",
+      "synonyms": [
+        "终身保险",
+        "Whole Life",
+        "终身保障计划"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_068",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_069",
+      "name": "重大疾病险",
+      "description": "确诊约定重大疾病后一次性给付保险金的保障产品",
+      "synonyms": [
+        "重疾险",
+        "Critical Illness",
+        "疾病保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_070",
+      "name": "医疗费用险",
+      "description": "报销因疾病或意外产生的医疗费用的补偿型保险产品",
+      "synonyms": [
+        "医疗险",
+        "Medical Insurance",
+        "健康险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_071",
+      "name": "养老年金险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_072",
+      "name": "投保申请书",
+      "description": "客户向保险公司提出订立保险合同意愿的正式书面文件",
+      "synonyms": [
+        "投保单",
+        "投保申请表",
+        "Application Form"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_073",
+      "name": "核保评估",
+      "description": "保险公司对投保人的风险状况进行审核以决定是否承保的过程",
+      "synonyms": [
+        "核保审查",
+        "风险评估",
+        "Underwriting"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_074",
+      "name": "契约成立",
+      "description": "保险公司同意承保且客户完成必要手续，保险合同正式生效的状态",
+      "synonyms": [
+        "合同生效",
+        "保单成立",
+        "Contract Formation"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_075",
+      "name": "保费缴纳",
+      "description": "投保人按照合同约定向保险公司支付保险费用的行为",
+      "synonyms": [
+        "交保费",
+        "Premium Payment",
+        "缴费"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_076",
+      "name": "保单生效",
+      "description": "保险合同开始履行保障责任的时间点",
+      "synonyms": [
+        "保障开始日",
+        "Effective Date",
+        "生效日"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_077",
+      "name": "续保流程",
+      "description": "保险期限届满后继续投保或自动延续保障的操作步骤",
+      "synonyms": [
+        "续期手续",
+        "Renewal Process",
+        "续保"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_078",
+      "name": "适当性确认",
+      "description": "根据金融商品交易法要求验证产品是否匹配客户需求的流程",
+      "synonyms": [
+        "适合性评估",
+        "Suitability Check",
+        "需求匹配"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_079",
+      "name": "风险告知书",
+      "description": "向客户明确揭示保险产品风险及费用结构的法定文件",
+      "synonyms": [
+        "风险提示书",
+        "Risk Disclosure",
+        "风险说明"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_080",
+      "name": "犹豫期解除",
+      "description": "客户在冷静期内无条件解除合同并退还保费的权利",
+      "synonyms": [
+        "退保权",
+        "Cooling-off Period",
+        "冷静期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_081",
+      "name": "销售录音",
+      "description": "外呼营销过程中必须保存的通话录音，用于合规核查",
+      "synonyms": [
+        "通话留痕",
+        "Call Recording",
+        "录音存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_082",
+      "name": "禁止误导",
+      "description": "销售过程中不得对客户进行虚假宣传或隐瞒重要信息的合规红线",
+      "synonyms": [
+        "反误导规定",
+        "No Misleading",
+        "合规底线"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_083",
+      "name": "意向度分级",
+      "description": "根据客户反馈将其购买意愿划分为不同等级的评估方法",
+      "synonyms": [
+        "意向等级",
+        "Interest Level",
+        "购买倾向"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_084",
+      "name": "挽留话术",
+      "description": "针对用户挂断或拒绝倾向时采用的标准化合规沟通策略",
+      "synonyms": [
+        "继续提案话术",
+        "Retention Script",
+        "异议处理"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_085",
+      "name": "流程引导",
+      "description": "指导客户完成从意向确认到投保签约的一系列操作步骤",
+      "synonyms": [
+        "操作指引",
+        "Process Guidance",
+        "流程推进"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_086",
+      "name": "转化跟进",
+      "description": "针对未立即成交客户制定后续联系计划以促进最终签约的服务",
+      "synonyms": [
+        "后续追踪",
+        "Follow-up",
+        "二次开发"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_087",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_088",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_089",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_090",
+      "name": "简易生命保险",
+      "description": "日本特有的小额保险产品，通常无需体检，审批流程相对简化",
+      "synonyms": [
+        "简易险",
+        "Small Amount Life",
+        "简易平准保费保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_091",
+      "name": "医疗给付险",
+      "description": "确诊疾病或住院时按约定定额给付保险金的补偿型产品",
+      "synonyms": [
+        "医疗险",
+        "健康险",
+        "Medical Benefit"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_092",
+      "name": "契约缔结",
+      "description": "客户确认投保意向并完成签署流程，正式建立保险合同关系的环节",
+      "synonyms": [
+        "签约",
+        "投保完成",
+        "Contract Conclusion"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_093",
+      "name": "预约登记",
+      "description": "在系统内记录客户有意向投保的时间点和后续跟进安排的业务动作",
+      "synonyms": [
+        "意向登记",
+        "预约建档",
+        "Appointment Registration"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_094",
+      "name": "客户资料录入",
+      "description": "将客户的身份信息、联系方式及投保意向准确输入到核心业务系统的过程",
+      "synonyms": [
+        "信息登记",
+        "数据录入",
+        "Data Entry"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_095",
+      "name": "通话录音保存",
+      "description": "依据法规要求对外呼营销过程进行全程录音并存档备查的合规动作",
+      "synonyms": [
+        "录音留存",
+        "Call Recording",
+        "录音归档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_096",
+      "name": "销售档案归档",
+      "description": "将销售过程中的所有文件、录音及签字材料整理并存入档案库的流程",
+      "synonyms": [
+        "文件归档",
+        "Sales Archiving",
+        "资料存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_097",
+      "name": "冷静期通知",
+      "description": "向客户告知其拥有无条件解除合同权利的期限及行使方式的信息传达",
+      "synonyms": [
+        "犹豫期告知",
+        "冷却期通知",
+        "Cooling-off Notice"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_098",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求与产品匹配度验证流程",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_099",
+      "name": "明示同意",
+      "description": "电子渠道营销所需的客户明确授权机制，含录音保存与内容确认",
+      "synonyms": [
+        "书面同意",
+        "录音授权",
+        "Explicit Consent"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_100",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "Duty of Disclosure"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_101",
+      "name": "适当性原则",
+      "description": "金融机构向客户推荐产品时需确保产品与客户风险承受能力相匹配的原则",
+      "synonyms": [
+        "适合性原则",
+        "Appropriateness",
+        "KYC/KYP"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_102",
+      "name": "反洗钱筛查",
+      "description": "在业务办理过程中识别和防范洗钱活动的合规要求与身份核验流程",
+      "synonyms": [
+        "AML 检查",
+        "洗钱防范",
+        "Anti-Money Laundering"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_103",
+      "name": "合规话术",
+      "description": "针对用户挂断拒绝倾向时采用的标准化合规沟通策略，避免违规承诺",
+      "synonyms": [
+        "继续提案话术",
+        "异议处理话术",
+        "Retention Script"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_104",
+      "name": "风险充分揭示",
+      "description": "向客户清晰说明保险产品可能存在的损失风险及不保证收益的内容",
+      "synonyms": [
+        "风险提示",
+        "Risk Disclosure",
+        "风险告知"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "kyoei_term_105",
+      "name": "异议终结确认",
+      "description": "在解决客户疑虑后，再次确认客户是否接受方案并结束当前沟通环节的确认",
+      "synonyms": [
+        "最终确认",
+        "异议闭环",
+        "Objection Closure"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "tool_id": "insurance_tool_calculate_premium",
+  "tool_name": "calculate_premium",
+  "tool_description": "根据用户选择的保险产品、保额、缴费年限、保障期限等信息，计算详细的年缴保费与月缴保费",
+  "timeout": 3,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户进入产品推荐 SOP，选定具体产品后",
+    "用户询问某产品的价格",
+    "用户需要试算不同保额、缴费年限的保费对比"
+  ],
+  "input_params": [
+    {
+      "param_name": "product_name",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "保险产品名称，如\"无忧重疾险\"\"百万医疗险\""
+    },
+    {
+      "param_name": "coverage_amount",
+      "param_type": "number",
+      "required": true,
+      "default": "0",
+      "description": "保额，单位元，如 500000 表示 50 万保额"
+    },
+    {
+      "param_name": "payment_term",
+      "param_type": "integer",
+      "required": true,
+      "default": "20",
+      "description": "缴费年限，单位年，如 20 表示 20 年缴费"
+    },
+    {
+      "param_name": "coverage_period",
+      "param_type": "integer",
+      "required": true,
+      "default": "70",
+      "description": "保障期限，单位年，如 70 表示保障至 70 岁"
+    },
+    {
+      "param_name": "age",
+      "param_type": "integer",
+      "required": true,
+      "default": "",
+      "description": "被保险人年龄"
+    },
+    {
+      "param_name": "gender",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "被保险人性别，\"男\"或\"女\""
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "annual_premium",
+      "field_type": "number",
+      "description": "年缴保费，单位元"
+    },
+    {
+      "field_name": "monthly_premium",
+      "field_type": "number",
+      "description": "月缴保费，单位元"
+    },
+    {
+      "field_name": "total_premium",
+      "field_type": "number",
+      "description": "总保费，单位元（年缴保费×缴费年限）"
+    },
+    {
+      "field_name": "premium_breakdown",
+      "field_type": "object",
+      "description": "保费明细"
+    },
+    {
+      "field_name": "premium_breakdown.base_premium",
+      "field_type": "number",
+      "description": "基础保费，单位元"
+    },
+    {
+      "field_name": "premium_breakdown.age_factor",
+      "field_type": "number",
+      "description": "年龄系数"
+    },
+    {
+      "field_name": "premium_breakdown.gender_factor",
+      "field_type": "number",
+      "description": "性别系数"
+    },
+    {
+      "field_name": "calculation_note",
+      "field_type": "string",
+      "description": "保费计算说明"
+    }
+  ]
+}

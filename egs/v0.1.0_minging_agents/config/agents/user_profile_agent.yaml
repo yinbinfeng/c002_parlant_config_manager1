@@ -1,0 +1,116 @@
+# User Profile Agent Configuration
+# 负责生成用户画像（分群+典型persona）
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: UserProfileAgent
+base_class: UserProfileAgent
+description: "用户画像 Agent - 基于宏观目标生成用户分群与典型画像"
+
+model:
+  type: OpenAIChatModel
+  react_max_rounds: 5
+  use_react: true
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.7
+  enable_thinking: false
+
+tools:
+  - name: deep_research
+    description: "深度搜索工具，用于查找行业用户分群/画像最佳实践"
+  - name: json_validator
+    description: "JSON 校验与修复工具"
+
+system_prompt_template: |
+  你是一名专业的用户画像设计师，负责为 Parlant Agent 生成可落地的用户分群与典型画像配置。
+  你必须严格基于用户提供的【业务描述】与【核心目标】进行输出，禁止引入无关行业内容。
+
+task_prompts:
+  deep_research_brief_template: |
+    你是用户画像研究员。请围绕当前业务场景输出调研报告，覆盖：
+    1) 用户分群维度与可判定标签；
+    2) 行为模式与异议/痛点；
+    3) persona 设计建议；
+    4) 合规与沟通边界（若适用）。
+    任务={task}
+    业务描述={business_desc}
+    核心目标={core_goal}
+    行业={industry}
+    全局目标={global_objective}
+
+  generate_user_profiles: |
+    【重要提示 - 业务导向原则】
+    本系统的核心原则：**所有输出必须严格基于用户传入的【业务描述】**。
+    - 下文中的所有示例、模板、占位符仅用于展示字段结构和格式要求
+    - 实际内容必须根据【业务描述】中的具体业务场景、行业特点、产品类型、流程规范自行撰写
+    - **禁止照抄示例中的具体业务内容**，必须根据用户的实际业务需求生成配置
+    - 若【业务描述】与示例不一致，以【业务描述】为准
+
+    【核心目标 - 必须遵守】
+    {core_goal}
+
+    【全局目标文件（防偏离）】
+    {global_objective}
+
+    【任务】
+    你需要为该 Agent 生成“用户分群（user_segments）+ 典型画像（personas）”配置，用于后续分支 SOP 适配。
+
+    【强制要求 - 执行前必读】
+    1) **第一步必须使用 Deep Research**（调试提速：1 次核心搜索）：
+       - 根据业务描述中的行业和场景，生成完整的描述性查询
+       - 查询格式：请研究{行业}{场景}场景的用户画像分群维度和典型persona设计最佳实践
+       - 例如：如果业务是保险外呼营销，查询应为"请研究保险行业外呼营销场景的用户画像分群维度、典型persona设计和个性化服务策略最佳实践"
+       - 不要使用简单的关键词，要使用完整的描述性查询
+    2) **数量控制**：
+       - user_segments 建议 3-6 个
+       - personas 建议 2-4 个
+       - 每个分群的 special_guidelines 控制在 0-3 条（可为空）
+    3) **维度约束（必须遵守）**：
+       - 用户画像仅用于“分支适配”，禁止用于拆分主 SOP 主干
+       - 分群定义必须可落地：tags/metadata_rules 必须可执行（不要写“用户很有钱”这种不可判定条件）
+
+    【输入：业务描述】
+    {business_desc}
+
+    【输出格式 - 必须严格遵守】
+    你必须只输出一个 JSON 对象（不要输出 Markdown/解释/代码块），结构如下：
+    {{
+      "agent_id": "<agent_id>",
+      "remark": "<备注>",
+      "user_segments": [
+        {{
+          "segment_id": "segment_xxx",
+          "segment_name": "xxx",
+          "description": "xxx",
+          "definition": {{
+            "tags": ["tag1", "tag2"],
+            "metadata_rules": {{
+              "some_field": ">=xxx"
+            }}
+          }},
+          "behavior_patterns": ["..."],
+          "preferred_journeys": ["..."],
+          "special_guidelines": [],
+          "custom_variables": {{}}
+        }}
+      ],
+      "personas": [
+        {{
+          "persona_id": "persona_xxx",
+          "persona_name": "xxx",
+          "segment_id": "segment_xxx",
+          "demographics": "xxx",
+          "goals": "xxx",
+          "pain_points": "xxx",
+          "behavior_patterns": ["..."],
+          "typical_dialogues": ["..."],
+          "parlant_mapping": {{
+            "tags": ["..."],
+            "variables": ["..."],
+            "journeys": ["..."],
+            "guidelines": ["..."]
+          }}
+        }}
+      ]
+    }}
+

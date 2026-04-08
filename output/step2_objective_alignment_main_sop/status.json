@@ -1,0 +1,19 @@
+{
+  "step_num": 2,
+  "status": "completed",
+  "started_at": "2026-04-07T14:07:12.046808",
+  "completed_at": "2026-04-07T14:08:49.818316",
+  "output_files": [
+    "business_objectives.md",
+    "global_objective.md",
+    "main_sop_backbone.json",
+    "debate_history.json",
+    "debate_transcript.md",
+    "canned_responses.json"
+  ],
+  "metadata": {
+    "step": 2,
+    "frozen": true,
+    "main_node_count": 6
+  }
+}

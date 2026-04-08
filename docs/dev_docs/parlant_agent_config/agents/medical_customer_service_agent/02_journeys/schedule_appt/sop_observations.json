@@ -1,0 +1,22 @@
+{
+  "sop_id": "schedule_appt_001",
+  "sop_title": "预约挂号全流程 SOP",
+  "remark": "仅预约挂号SOP 生效的专属观测，作为 SOP 内规则的依赖前置条件",
+  "sop_observations": [
+    {
+      "observation_id": "schedule_appt_obs_user_has_dept_001",
+      "condition": "用户已明确选择具体就诊科室，科室名称在医院开放预约的科室列表内",
+      "remark": "观测用户是否已选定科室，用于后续医生推荐规则的依赖"
+    },
+    {
+      "observation_id": "schedule_appt_obs_user_has_doctor_001",
+      "condition": "用户已明确选择具体就诊医生，医生在对应科室的出诊列表内",
+      "remark": "观测用户是否已选定医生，用于后续时段选择规则的依赖"
+    },
+    {
+      "observation_id": "schedule_appt_obs_time_unavailable_001",
+      "condition": "用户选择的预约时段已约满、不在出诊时间内、医院停诊",
+      "remark": "观测用户选择的时段是否不可用，用于后续时段校验规则的依赖"
+    }
+  ]
+}

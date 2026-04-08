@@ -1,0 +1,130 @@
+{
+  "step": 3,
+  "step_statistics": {
+    "duration": 88.12,
+    "status": "completed",
+    "agent_calls": [
+      "GlobalRulesAgent",
+      "GlossaryAgent",
+      "ComplianceCheckAgent"
+    ],
+    "agent_call_count": 3
+  },
+  "agents_invoked_in_step": [
+    "GlobalRulesAgent",
+    "GlossaryAgent",
+    "ComplianceCheckAgent"
+  ],
+  "agent_metrics_for_step_agents": {
+    "GlobalRulesAgent": {
+      "total_time": 33.58,
+      "avg_time": 33.58,
+      "min_time": 33.58,
+      "max_time": 33.58,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "GlossaryAgent": {
+      "total_time": 50.92,
+      "avg_time": 50.92,
+      "min_time": 50.92,
+      "max_time": 50.92,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "ComplianceCheckAgent": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 1,
+      "llm_call_count": 0,
+      "tavily_call_count": 0
+    }
+  },
+  "global_totals": {
+    "total_duration": 241.28078269958496,
+    "total_agent_calls": 5,
+    "total_llm_calls": 15,
+    "total_tavily_calls": 4,
+    "total_agents": 8,
+    "total_steps": 3,
+    "generated_at": "2026-04-07T14:10:17.943106"
+  },
+  "full_agent_statistics": {
+    "Step1_RequirementClarification": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 0,
+      "tavily_call_count": 1
+    },
+    "RequirementAnalyst": {
+      "total_time": 51.98,
+      "avg_time": 51.98,
+      "min_time": 51.98,
+      "max_time": 51.98,
+      "call_count": 1,
+      "llm_call_count": 1,
+      "tavily_call_count": 0
+    },
+    "Step2_ObjectiveAlignment": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 0,
+      "tavily_call_count": 1
+    },
+    "CoordinatorAgent": {
+      "total_time": 32.08,
+      "avg_time": 32.08,
+      "min_time": 32.08,
+      "max_time": 32.08,
+      "call_count": 1,
+      "llm_call_count": 7,
+      "tavily_call_count": 2
+    },
+    "MainSOPGenerator": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 0,
+      "llm_call_count": 1,
+      "tavily_call_count": 0
+    },
+    "GlobalRulesAgent": {
+      "total_time": 33.58,
+      "avg_time": 33.58,
+      "min_time": 33.58,
+      "max_time": 33.58,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "GlossaryAgent": {
+      "total_time": 50.92,
+      "avg_time": 50.92,
+      "min_time": 50.92,
+      "max_time": 50.92,
+      "call_count": 1,
+      "llm_call_count": 3,
+      "tavily_call_count": 0
+    },
+    "ComplianceCheckAgent": {
+      "total_time": 0.0,
+      "avg_time": 0.0,
+      "min_time": 0.0,
+      "max_time": 0.0,
+      "call_count": 1,
+      "llm_call_count": 0,
+      "tavily_call_count": 0
+    }
+  }
+}

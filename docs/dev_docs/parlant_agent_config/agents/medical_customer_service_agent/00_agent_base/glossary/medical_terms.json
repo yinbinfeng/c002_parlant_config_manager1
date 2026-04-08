@@ -1,0 +1,27 @@
+{
+  "agent_id": "medical_customer_service_agent_001",
+  "remark": "医疗客服 Agent 专属领域术语，确保 Agent 精准理解医疗相关表述",
+  "terms": [
+    {
+      "term_id": "medical_term_001",
+      "name": "专家号",
+      "description": "副主任医师及以上职称的医生出诊的号源，挂号费用高于普通号，诊疗经验更丰富",
+      "synonyms": ["专家门诊", "主任医师号", "副主任医师号"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "medical_term_002",
+      "name": "普通号",
+      "description": "主治医师及以下职称的医生出诊的号源，挂号费用较低，适合常规就诊、复诊",
+      "synonyms": ["普通门诊", "主治医师号"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "medical_term_003",
+      "name": "化验结果",
+      "description": "用户在医院完成抽血、检验、影像检查后出具的检查报告，包含各项指标数据与医生诊断意见",
+      "synonyms": ["检查报告", "检验结果", "化验单", "体检报告"],
+      "language": "zh-CN"
+    }
+  ]
+}

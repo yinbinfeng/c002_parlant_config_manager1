@@ -1,0 +1,427 @@
+# Requirement Analyst Agent Configuration
+# 负责需求澄清和问题生成
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: RequirementAnalystAgent
+base_class: RequirementAnalystAgent
+description: "需求分析 Agent - 负责需求澄清和问题生成"
+
+model:
+  type: OpenAIChatModel
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.7
+    max_tokens: 4096
+
+tools:
+  - name: deep_research
+    description: "深度搜索工具，用于查找行业最佳实践和需求分析信息"
+  - name: json_validator
+    description: "JSON 验证工具，用于验证和保存 JSON 格式数据"
+
+system_prompt_template: |
+  你是一名专业的需求分析师，负责分析用户的业务描述并生成待澄清问题。
+  
+  主要职责：
+  - 分析用户业务描述，识别模糊点和缺失信息
+  - 使用 Deep Research 搜索行业最佳实践
+  - 生成 3-5 个待澄清问题
+  - 支持人工确认环节（Human-in-the-Loop）
+  
+  工作流程：
+  1. 接收用户业务描述和 Data Agent 分析结果
+  2. 对比业务描述与 Data Agent 分析结果的一致性
+  3. 头脑风暴分析模糊点和潜在差异
+  4. Deep Research 搜索行业需求和最佳实践
+  5. 生成 3-5 个待澄清问题，按优先级排序
+  6. 输出问题清单并等待用户确认
+  
+  人工确认环节：
+  1. 生成问题后，输出"[WAITING_FOR_USER_CONFIRMATION]"标记
+  2. 等待用户回复，超时时间由系统配置决定（默认 30 分钟）
+  3. 用户可以：
+     - 直接确认问题列表
+     - 修改某个问题的表述
+     - 补充新的问题
+     - 删除不必要的问题
+  4. 收到用户反馈后，更新问题列表并记录修改原因
+  
+  输出格式：
+  - 问题列表，每个问题包含：id、question、category、priority、rationale
+  - 问题应覆盖目标受众、核心流程、术语表、系统集成、合规要求等方面
+  - 优先级分为 high、medium、low 三个级别
+  
+  Deep Research 使用指南：
+  1. **使用时机**：
+     - 需要了解行业最佳实践时
+     - 需要验证类似业务场景的常见做法时
+     - 需要补充用户需求中未明确的重要维度时
+  
+  2. **搜索策略**：
+     - 优先使用精确关键词（如"电商客服 SOP 设计最佳实践"）
+     - 设置 max_depth=3（最大搜索深度）
+     - 单次搜索超时 5 分钟，超时后使用已获得的部分结果
+  
+  3. **结果整合**：
+     - 引用搜索结果时需注明来源
+     - 将搜索结果与业务需求进行对比分析
+     - 识别行业通用做法与客户特殊需求的差异
+  
+  【Parlant 配置元素映射说明】
+  
+  需求分析阶段的问题需要映射到以下 Parlant 配置元素：
+  
+  ### 1. Journey（用户旅程）相关问题
+  - 目标：识别核心业务流程
+  - 问题示例：
+    - "客服 Agent 需要处理哪些核心业务流程？"
+    - "每个流程的触发条件是什么？"
+    - "流程中有哪些关键决策点？"
+  - 映射关系：问题答案 → Journey 的 trigger_conditions 和 sop_states
+  
+  ### 2. Guideline（指导原则）相关问题
+  - 目标：识别业务约束和合规要求
+  - 问题示例：
+    - "有哪些特定的合规要求或话术规范需要遵循？"
+    - "如何处理用户投诉或负面情绪？"
+    - "什么情况下需要转人工？"
+  - 映射关系：问题答案 → Guideline 的 condition 和 action
+  
+  ### 3. Tool（工具）相关问题
+  - 目标：识别外部系统集成需求
+  - 问题示例：
+    - "是否需要与其他系统集成？"
+    - "需要查询哪些外部数据？"
+    - "需要执行哪些外部操作？"
+  - 映射关系：问题答案 → Tool 的定义和接口
+  
+  ### 4. Glossary（术语表）相关问题
+  - 目标：识别业务专业术语
+  - 问题示例：
+    - "是否有现有的术语表或专有词汇需要提供？"
+    - "有哪些行业特定的缩写或术语？"
+  - 映射关系：问题答案 → Glossary 的 terms 列表
+  
+  ### 5. Observation（观测）相关问题
+  - 目标：识别需要观测的用户状态
+  - 问题示例：
+    - "如何判断用户是否处于负面情绪？"
+    - "什么行为表明用户需要人工服务？"
+  - 映射关系：问题答案 → Observation 的 condition
+  
+  ### 6. Profile（用户画像）相关问题
+  - 目标：识别用户分群维度
+  - 问题示例：
+    - "主要服务于哪些客户群体？"
+    - "不同客户群体是否有差异化服务需求？"
+  - 映射关系：问题答案 → Profile 的 segment 定义
+  
+  Parlant 规范符合性检查：
+  - 结构化需求必须映射到 Parlant 配置元素（Journey、Guideline、Tool、Glossary、Observation、Profile）
+  - 所有模糊表述必须被澄清为精确的条件判定
+  - 用户反馈必须被完整记录并追踪
+
+# 任务提示词模板
+task_prompts:
+  # Mock 模式问题生成提示词
+  mock_questions: |
+    请基于以下业务描述，生成需求澄清问题（Mock 模式）。
+    
+    ## 业务描述
+    {business_desc}
+    
+    ## 生成要求
+    生成 5-8 个待澄清问题，包含：
+    1. 高优先级问题（必须回答）
+    2. 中优先级问题（建议回答）
+    3. 低优先级问题（可选回答）
+    
+    【问题分类与 Parlant 映射】
+    
+    | 问题类别 | 对应 Parlant 元素 | 问题示例 |
+    |----------|-------------------|----------|
+    | 目标受众 | Profile | "主要服务于哪些客户群体？" |
+    | 核心流程 | Journey | "需要处理哪些核心业务流程？" |
+    | 业务约束 | Guideline | "有哪些合规要求需要遵循？" |
+    | 系统集成 | Tool | "是否需要与其他系统集成？" |
+    | 专业术语 | Glossary | "是否有专有词汇需要提供？" |
+    | 用户状态 | Observation | "如何判断用户需要人工服务？" |
+    
+    ## 输出格式
+    每个问题应包含：
+    - id: 问题唯一标识
+    - question: 问题内容
+    - category: 问题类别
+    - priority: 优先级（high/medium/low）
+    - rationale: 为什么问这个问题
+    - parlant_mapping: 映射到的 Parlant 配置元素
+    
+    请以 JSON 数组格式返回。
+
+  # LLM 模式问题生成提示词（带搜索结果 +Data Agent 结果）
+  llm_questions_with_research: |
+    ## 业务描述（人工提供）
+    {business_desc}
+    
+    ## Data Agent 分析结果（外部离线生成）
+    {data_agent_results}
+    
+    ## 行业研究结果
+    {research_results}
+    
+    请基于以上信息，生成 5-8 个待澄清问题，包含：
+    1. 高优先级问题（必须回答）
+    2. 中优先级问题（建议回答）
+    3. 低优先级问题（可选回答）
+    
+    【问题分类与 Parlant 映射】
+    
+    | 问题类别 | 对应 Parlant 元素 | 问题示例 |
+    |----------|-------------------|----------|
+    | 目标受众 | Profile | "主要服务于哪些客户群体？" |
+    | 核心流程 | Journey | "需要处理哪些核心业务流程？" |
+    | 业务约束 | Guideline | "有哪些合规要求需要遵循？" |
+    | 系统集成 | Tool | "是否需要与其他系统集成？" |
+    | 专业术语 | Glossary | "是否有专有词汇需要提供？" |
+    | 用户状态 | Observation | "如何判断用户需要人工服务？" |
+    
+    ## 生成要求
+    1. **对比分析**：
+       - 对比业务描述文档与 Data Agent 分析结果的一致性
+       - 识别需要用户确认的差异点
+       - 补充业务描述中未提及但重要的细节
+    
+    2. **问题分类**：
+       - 目标受众：服务的客户群体特征 → Profile
+       - 核心流程：主要业务流程和状态转换 → Journey
+       - 业务约束：合规要求和行为规范 → Guideline
+       - 系统集成：与外部系统的接口需求 → Tool
+       - 专业术语：行业术语和同义词 → Glossary
+       - 用户状态：需要观测的用户行为 → Observation
+    
+    3. **优先级判定**：
+       - high: 影响核心功能实现，必须澄清
+       - medium: 影响用户体验或流程完整性，建议澄清
+       - low: 锦上添花，可在后续迭代中完善
+    
+    每个问题应包含：
+    - id: 问题唯一标识（格式：Q{数字}，如 Q1、Q2）
+    - question: 问题内容（清晰明确，避免歧义）
+    - category: 问题类别（从上述分类中选择）
+    - priority: 优先级（high/medium/low）
+    - rationale: 为什么问这个问题（说明必要性）
+    - parlant_mapping: 映射到的 Parlant 配置元素
+    
+    请以 JSON 数组格式返回，结构如下：
+    [
+        {
+            "id": "Q1",
+            "question": "...",
+            "category": "...",
+            "priority": "...",
+            "rationale": "...",
+            "parlant_mapping": "Journey/Guideline/Tool/Glossary/Observation/Profile"
+        }
+    ]
+
+  # ReAct 模式问题生成提示词（使用 Deep Research 工具）
+  react_questions_with_deep_research: |
+    你是一个专业的需求分析师。请分析以下业务描述，并生成待澄清问题清单。
+
+    ## 业务描述
+    {business_desc}
+
+    ## Data Agent 分析结果（外部离线生成）
+    {data_agent_results}
+
+    你的任务：
+    1. 分析业务描述，识别模糊点和缺失信息
+    2. 如果需要，使用 deep_research 工具搜索行业最佳实践
+    3. 基于分析和搜索结果，生成 5-8 个待澄清问题
+    4. 问题应该覆盖：目标用户、核心流程、术语表、集成需求、合规要求
+    5. 每个问题需要标注映射到的 Parlant 配置元素
+
+    【Parlant 配置元素映射】
+    - 目标用户问题 → Profile
+    - 核心流程问题 → Journey
+    - 业务约束问题 → Guideline
+    - 系统集成问题 → Tool
+    - 专业术语问题 → Glossary
+    - 用户状态问题 → Observation
+
+    请以 JSON 格式返回问题列表，每个问题包含：id, question, category, priority, rationale, parlant_mapping
+
+# Mock Questions Configuration (用于测试和降级)
+mock_questions:
+  # 基础问题模板
+  base_questions:
+    - id: "Q1"
+      question: "您的客服 Agent 主要服务于哪些客户群体？（如：个人消费者、企业客户、混合）"
+      category: "target_audience"
+      priority: "high"
+      rationale: "明确目标用户群体有助于设计合适的对话流程和话术风格"
+      parlant_mapping: "Profile"
+    
+    - id: "Q2"
+      question: "客服 Agent 需要处理哪些核心业务流程？（请列出优先级最高的 3-5 个流程）"
+      category: "core_processes"
+      priority: "high"
+      rationale: "核心业务流程决定了 Journey 的设计和状态机的复杂度"
+      parlant_mapping: "Journey"
+    
+    - id: "Q3"
+      question: "是否有现有的术语表或专有词汇需要提供？（如：产品名称、内部术语、行业缩写）"
+      category: "glossary"
+      priority: "medium"
+      rationale: "术语表帮助 Agent 准确理解用户意图和使用正确的表达"
+      parlant_mapping: "Glossary"
+    
+    - id: "Q4"
+      question: "是否需要与其他系统集成？（如：CRM、ERP、订单管理系统、知识库）"
+      category: "integrations"
+      priority: "medium"
+      rationale: "集成需求影响 Tool 的设计和实现复杂度"
+      parlant_mapping: "Tool"
+    
+    - id: "Q5"
+      question: "有哪些特定的合规要求或话术规范需要遵循？（如：金融行业合规、医疗隐私保护）"
+      category: "compliance"
+      priority: "high"
+      rationale: "合规要求直接影响 Guideline 的设计和约束条件"
+      parlant_mapping: "Guideline"
+  
+  # 详细描述时的附加问题（当业务描述长度 > 200 字符时添加）
+  additional_questions_for_detailed_desc:
+    - id: "Q6"
+      question: "根据您的详细描述，有哪些特殊情况或边缘场景需要特别处理？"
+      category: "edge_cases"
+      priority: "low"
+      rationale: "边缘情况处理体现服务质量"
+      parlant_mapping: "Journey"
+  
+  # 触发附加问题的描述长度阈值
+  detailed_desc_threshold: 200
+
+# Output Formatting Configuration
+output_formatting:
+  # Markdown 输出模板
+  markdown_template: |
+    # Step 1: 需求澄清问题清单
+    
+    感谢您使用 Mining Agents 系统！请回答以下问题以帮助我们更准确地生成 Parlant Agent 配置。
+    
+    **说明**：
+    - 🔴 高优先级问题必须回答
+    - 🟡 中优先级问题建议回答
+    - ⚪ 低优先级问题可选回答
+    
+    ---
+    
+    {questions_content}
+    
+    ## 下一步操作
+    
+    填写完成后，您可以：
+    
+    1. **直接继续**（如果已准备好）:
+       ```bash
+       python -m mining_agents.main --business-desc "您的业务描述" --start-step 2
+       ```
+    
+    2. **修改补充问题**（如有需要）:
+       编辑本文件，添加或修改问题
+    
+    3. **查看示例回答**:
+       参考 `docs/examples/step1_example.md`
+  
+  # 单个问题的 Markdown 格式
+  question_item_template: |
+    ### {priority_icon} {id}: {question}
+    
+    **类别**: `{category}`
+    
+    **映射到 Parlant 元素**: `{parlant_mapping}`
+    
+    {rationale_section}
+    **您的回答**:
+    
+    ```
+    （请填写您的回答）
+    ```
+    
+    ---
+  
+  # 优先级图标映射
+  priority_icons:
+    high: "🔴"
+    medium: "🟡"
+    low: "⚪"
+
+# Fallback Templates (用于降级)
+fallback_templates:
+  # 默认 ReAct prompt 模板
+  default_react_prompt: |
+    你是一个专业的需求分析师。请分析以下业务描述，并生成待澄清问题清单。
+
+    ## 业务描述
+    {business_desc}
+
+    ## Data Agent 分析结果（外部离线生成）
+    {data_agent_results}
+
+    你的任务：
+    1. 分析业务描述，识别模糊点和缺失信息
+    2. 如果需要，使用 deep_research 工具搜索行业最佳实践
+    3. 基于分析和搜索结果，生成 5-8 个待澄清问题
+    4. 问题应该覆盖：目标用户、核心流程、术语表、集成需求、合规要求
+    5. 每个问题需要标注映射到的 Parlant 配置元素
+
+    请以 JSON 格式返回问题列表，每个问题包含：id, question, category, priority, rationale, parlant_mapping
+  
+  # 默认基础问题列表
+  default_base_questions:
+    - id: "Q1"
+      question: "您的客服 Agent 主要服务于哪些客户群体？（如：个人消费者、企业客户、混合）"
+      category: "target_audience"
+      priority: "high"
+      rationale: "明确目标用户群体有助于设计合适的对话流程和话术风格"
+      parlant_mapping: "Profile"
+    
+    - id: "Q2"
+      question: "客服 Agent 需要处理哪些核心业务流程？（请列出优先级最高的 3-5 个流程）"
+      category: "core_processes"
+      priority: "high"
+      rationale: "核心业务流程决定了 Journey 的设计和状态机的复杂度"
+      parlant_mapping: "Journey"
+    
+    - id: "Q3"
+      question: "是否有现有的术语表或专有词汇需要提供？（如：产品名称、内部术语、行业缩写）"
+      category: "glossary"
+      priority: "medium"
+      rationale: "术语表帮助 Agent 准确理解用户意图和使用正确的表达"
+      parlant_mapping: "Glossary"
+    
+    - id: "Q4"
+      question: "是否需要与其他系统集成？（如：CRM、ERP、订单管理系统、知识库）"
+      category: "integrations"
+      priority: "medium"
+      rationale: "集成需求影响 Tool 的设计和实现复杂度"
+      parlant_mapping: "Tool"
+    
+    - id: "Q5"
+      question: "有哪些特定的合规要求或话术规范需要遵循？（如：金融行业合规、医疗隐私保护）"
+      category: "compliance"
+      priority: "high"
+      rationale: "合规要求直接影响 Guideline 的设计和约束条件"
+      parlant_mapping: "Guideline"
+  
+  # 默认附加问题列表
+  default_additional_questions:
+    - id: "Q6"
+      question: "根据您的详细描述，有哪些特殊情况或边缘场景需要特别处理？"
+      category: "edge_cases"
+      priority: "low"
+      rationale: "边缘情况处理体现服务质量"
+      parlant_mapping: "Journey"
+
+output_schema: null

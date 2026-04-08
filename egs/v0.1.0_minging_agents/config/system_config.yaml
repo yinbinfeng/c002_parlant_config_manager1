@@ -1,0 +1,144 @@
+# prj/v0.1.0_minging_agents/config/system_config.yaml
+# Mining Agents v0.1.0 - Complete 8-Step Configuration
+
+# =============================================================================
+# System Configuration
+# =============================================================================
+
+# Concurrency Control
+max_parallel_agents: 1        # Maximum concurrent agents (1 = sequential)
+
+# 并发策略（仅在需要并发的步骤开启；默认关闭，避免迁移期旧步骤并发引入不确定性）
+concurrency:
+  enable_step3_step4_parallel: false
+  # Step3 内部并行：GlobalRulesAgent ‖ GlossaryAgent（默认关闭）
+  enable_step3_globalrules_glossary_parallel: false
+
+# v2 并发参数
+max_parallel_step5_nodes: 1      # 节点任务组最大并发数（调试提速：串行避免429）
+max_parallel_edge_cases: 1       # Step6 边缘场景并发上限（调试提速：串行）
+
+# Step Control
+start_step: 1                 # Starting step (1-8)
+end_step: 8                   # Ending step (1-8)
+force_rerun: false            # Force rerun completed steps
+continue_on_error: false      # Continue on error
+
+# Human-in-the-Loop Configuration
+human_in_loop:
+  clarification_timeout_minutes: 30   # Step 1 人工确认超时（分钟）
+
+# Output Configuration
+output_base_dir: "../../output"   # Output directory (relative to project root)
+enable_version_control: true      # Enable Git version management
+
+# Private Conversation Data (Optional)
+private_data:
+  enabled: false              # Disabled by default, enable when needed
+  excel_file_path: null       # Excel file path for private data
+  auto_skip_if_missing: true  # Auto-skip Step 6 if file doesn't exist
+
+# MCP Client Configuration
+mcp_clients:
+  tavily_search:
+    enabled: true
+    # 仅允许配置“环境变量名”，禁止在此处写明文 Key
+    api_key_env: TAVILY_API_KEY
+
+# OpenAI Configuration
+openai:
+  enabled: true  # Enable OpenAI API usage
+  # 仅允许配置"环境变量名"，禁止在此处写明文 Key
+  api_key_env: OPENAI_API_KEY
+  # 可选：兼容 OpenAI API 的网关地址（同样建议走环境变量）
+  base_url_env: OPENAI_BASE_URL
+  # 模型名称配置
+  model_name: "Qwen/Qwen3.5-27B"  # 主模型名称
+  enable_thinking: false              # 模型思考模式（关闭）
+  request_timeout_sec: 180            # 通用 Agent 大模型请求超时（秒）
+  # Embedding 模型配置
+  embedding_model: Qwen/Qwen3-Embedding-0.6B  # Embedding 模型名称
+
+# Deep Research Tool Configuration
+deep_research:
+  enabled: true                    # 是否启用 Deep Research 功能
+  model_name: "Qwen/Qwen3.5-27B"   # Deep Research 专用模型名称
+  enable_thinking: false           # Deep Research 模型思考模式（关闭）
+  pool_size: 1                     # Deep Research 实例池大小（>1 开启并发分发）
+  step1_query_count: 1             # Step1 查询条数（默认 1；可按需增大到 2/3）
+  max_depth: 1                     # 最大搜索深度（调试提速：低深度）
+  max_iters: 1                     # 最大迭代次数（调试提速：单轮）
+  timeout_sec: 120                 # 单次 Deep Research 超时（秒）
+  client_timeout_sec: 120          # 底层 LLM 客户端请求超时（秒）
+  timeout_retry_count: 2           # 超时重试次数（仅 timeout 场景；免费版 Tavily 建议增大到 2-3）
+  progress_log_interval_sec: 15    # 长查询心跳日志间隔（秒）
+  step1_max_parallel_queries: 1    # Step1 Deep Research 并发数（建议 1，避免状态冲突）
+  step2_max_parallel_queries: 1    # Step2 Deep Research 并发数（免费版 Tavily：1；付费版：3）
+  max_failures_before_fallback: 3  # Deep Research 最大失败次数，超过后自动降级到模型自身知识（Real 模式）
+  allow_fallback_on_failure: true  # 允许失败后降级到模型自身知识（非 mock 伪数据）
+  temperature: 0.7                 # 模型生成温度
+  # Tavily 免费版 RPM 限制对策：
+  # - 免费版权限：通常 1-2 请求/分钟
+  # - 超过限制会返回 "I noticed that you have interrupted me" 中断消息
+  # - 通过重试机制 + 串行请求规避限流
+  tavily_retry_on_rate_limit: true  # 检测到限流时自动重试（默认开启）
+  tavily_retry_delay_sec: 30        # 重试前等待秒数（避免触发 RPM 限制，默认 30 秒）
+  tavily_max_retries: 3             # 最大重试次数（免费版建议 3 次）
+  tavily_retry_backoff_multiplier: 2.0  # 重试等待时间倍增系数（默认 2.0，第二次重试等待 30*2=60 秒）
+
+# Multi-Agent Debate Configuration
+debate:
+  max_rounds: 1                    # 辩论最大轮数（默认1轮，可根据需要调整）
+  max_iters_per_agent: 3           # 每个Agent每轮最大迭代次数
+
+# Prompts Configuration
+prompts:
+  templates_dir: "prompts"  # Directory for prompt templates (relative to config directory)
+
+# JSON Validation Configuration
+json_validation:
+  max_retries: 3              # Maximum retry attempts
+  auto_fix: true              # Enable auto-fix
+
+# Step5 质量门控（轻微差异直接修；明显差异触发返工）
+quality_gate:
+  rework_trigger_threshold: 0    # 调试提速：关闭自动返工触发
+  severe_diff_threshold: 0        # 调试提速：关闭严重差异阈值
+  max_rework_rounds: 2            # 最大自动返工次数
+  disable_rework_in_mock: true    # mock dry-run 默认禁用 Step5 自动返工，避免长回路
+
+# Step8 质量门控（可选：默认关闭）
+step8_quality_gate:
+  enabled: false                  # 是否启用 Step8 的返工触发（默认关闭）
+  rework_trigger_threshold: 80    # 质量分低于阈值触发返工
+  rework_restart_step: 5          # 返工从哪一步重跑（建议 5 或 3，按团队口径选择）
+  max_rework_rounds: 1            # Step8 返工最多轮数（避免无限回路）
+
+# Step8 自动修复（可选：默认关闭）
+step8_auto_fix_json:
+  enabled: false                  # 是否把 json_repair 修复结果回写到原 JSON 文件
+
+# Logging Configuration
+logging:
+  level: INFO
+  llm_message_preview_chars: 1200    # 大模型交互日志预览长度
+  react_print_hint_msg: true         # 打印 ReAct 每轮过程提示（思考/行动轨迹）
+  react_progress_log_interval_sec: 10  # ReAct 运行中进度日志间隔（秒）
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: ./output/logs/mining_agents.log
+
+# Version Information
+version:
+  name: "v0.1.0_minging_agents"
+  description: "Complete implementation of all 5 steps with configurable agents"
+  release_date: "2026-03-22"
+  features:
+    - "Step 1: 需求澄清与人工确认"
+    - "Step 2: 多维度分析与原子化拆解"
+    - "Step 3: 工作流并行开发"
+    - "Step 4: 全局规则检查与优化"
+    - "Step 5: 配置组装与最终检查"
+    - "Human-in-the-Loop 接口"
+    - "Multi-Agent Debate Framework"
+    - "Deep Research 工具封装"
+    - "Configurable agent prompts and tools"

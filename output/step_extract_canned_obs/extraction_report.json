@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-04-07T14:28:44.053075",
+  "step": "6.5",
+  "description": "Canned Response 和 Observation 提取",
+  "global": {
+    "canned_responses_count": 6,
+    "observations_count": 4
+  },
+  "local": {
+    "canned_responses_count": 25,
+    "observations_count": 20,
+    "nodes_processed": 5
+  },
+  "total": {
+    "canned_responses_count": 31,
+    "observations_count": 24
+  },
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\global_canned_responses.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\global_observations.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\agent_guidelines.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_canned_responses\\sop_canned_responses_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_guidelines_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_canned_responses\\sop_canned_responses_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_guidelines_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_canned_responses\\sop_canned_responses_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_guidelines_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_canned_responses\\sop_canned_responses_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_guidelines_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_canned_responses\\sop_canned_responses_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_guidelines_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_observations\\sop_observations_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_observations\\sop_observations_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_observations\\sop_observations_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_observations\\sop_observations_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step_extract_canned_obs\\local_observations\\sop_observations_node_006.json"
+  ]
+}

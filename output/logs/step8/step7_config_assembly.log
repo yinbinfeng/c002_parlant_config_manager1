@@ -1,0 +1,138 @@
+[2026-04-06T19:22:09.561143] Step7 started
+[2026-04-06T19:22:09.579242] Loaded global observations from step3
+[2026-04-06T19:22:09.612294] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T19:22:09.620779] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T19:22:09.651689] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop.json
+[2026-04-06T19:22:09.653220] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop_guidelines.json
+[2026-04-06T19:22:09.658690] Step7 completed
+[2026-04-06T19:55:19.383347] Step7 started
+[2026-04-06T19:55:19.413503] Loaded global observations from step3
+[2026-04-06T19:55:19.472131] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T19:55:19.486154] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T19:55:19.536762] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T19:55:19.539599] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T19:55:19.548893] Step7 completed
+[2026-04-06T20:03:55.056219] Step7 started
+[2026-04-06T20:03:55.084518] Loaded global observations from step3
+[2026-04-06T20:03:55.147501] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:03:55.158490] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:03:55.208551] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:03:55.212050] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:03:55.220898] Step7 completed
+[2026-04-06T20:05:39.406523] Step7 started
+[2026-04-06T20:05:39.427316] Loaded global observations from step3
+[2026-04-06T20:05:39.477530] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:05:39.492510] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:05:39.534964] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:05:39.537933] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:05:39.545942] Step7 completed
+[2026-04-06T20:09:21.071631] Step7 started
+[2026-04-06T20:09:21.096566] Loaded global observations from step3
+[2026-04-06T20:09:21.152975] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:09:21.168495] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:09:21.223158] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:09:21.227099] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:09:21.238262] Step7 completed
+[2026-04-06T20:11:03.694715] Step7 started
+[2026-04-06T20:11:03.729927] Loaded global observations from step3
+[2026-04-06T20:11:03.813317] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:11:03.828814] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:11:03.902238] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:11:03.905739] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:11:03.921825] Step7 completed
+[2026-04-06T20:20:46.918143] Step7 started
+[2026-04-06T20:20:46.942460] Loaded global observations from step3
+[2026-04-06T20:20:46.969738] Skipping glossary file step5_glossary_node_001: marked as skipped
+[2026-04-06T20:20:46.980532] Skipping tools file step5_tools_node_001: marked as skipped
+[2026-04-06T20:20:46.987043] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:20:46.998761] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:20:47.039414] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:20:47.042406] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:20:47.051169] Step7 completed
+[2026-04-06T20:20:57.658402] Step7 started
+[2026-04-06T20:21:20.373538] Loaded global observations from step3
+[2026-04-06T20:21:20.398960] Skipping glossary file step5_glossary_node_001: marked as skipped
+[2026-04-06T20:21:20.408066] Skipping tools file step5_tools_node_001: marked as skipped
+[2026-04-06T20:21:20.412435] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:21:20.421941] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:21:20.465424] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:21:20.467419] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:21:20.479482] Step7 completed
+[2026-04-06T20:22:38.189950] Step7 started
+[2026-04-06T20:22:38.211237] Loaded global observations from step3
+[2026-04-06T20:22:38.237221] Skipping glossary file step5_glossary_node_001: marked as skipped
+[2026-04-06T20:22:38.244084] Skipping tools file step5_tools_node_001: marked as skipped
+[2026-04-06T20:22:38.248636] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_observations.json
+[2026-04-06T20:22:38.258582] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\branch_node_unknown\sop_canned_responses.json (5 items)
+[2026-04-06T20:22:38.297862] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop.json
+[2026-04-06T20:22:38.299923] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance\02_journeys\kyoroei_insurance_main\sop_guidelines.json
+[2026-04-06T20:22:38.308629] Step7 completed
+[2026-04-06T23:23:50.172962] Step7 started
+[2026-04-06T23:23:50.204423] Loaded global canned responses from extraction step: 7 items
+[2026-04-06T23:23:50.209919] Loaded global observations from extraction step
+[2026-04-06T23:23:50.219405] Loaded 6 terms from Step3 glossary
+[2026-04-06T23:23:50.226854] Loaded 20 terms from step5_glossary_node_001.json
+[2026-04-06T23:23:50.232143] Loaded 20 terms from step5_glossary_node_002.json
+[2026-04-06T23:23:50.237163] Loaded 20 terms from step5_glossary_node_003.json
+[2026-04-06T23:23:50.240715] Loaded 19 terms from step5_glossary_node_004.json
+[2026-04-06T23:23:50.243674] Loaded 19 terms from step5_glossary_node_005.json
+[2026-04-06T23:23:50.248097] Loaded 19 terms from step5_glossary_node_006.json
+[2026-04-06T23:23:50.252638] Loaded 19 terms from step5_glossary_node_007.json
+[2026-04-06T23:23:50.262836] Merged glossary written with 142 total terms
+[2026-04-06T23:23:50.327790] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_身份核验与合规开场_node_001\sop_observations.json
+[2026-04-06T23:23:50.343851] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_身份核验与合规开场_node_001\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.362829] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_用户意图与状态评估_node_002\sop_observations.json
+[2026-04-06T23:23:50.377656] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_用户意图与状态评估_node_002\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.395223] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_沟通意愿维护与过渡_node_003\sop_observations.json
+[2026-04-06T23:23:50.410838] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_沟通意愿维护与过渡_node_003\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.438221] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求深度诊断_node_004\sop_observations.json
+[2026-04-06T23:23:50.463531] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求深度诊断_node_004\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.486705] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_产品方案与权益呈现_node_005\sop_observations.json
+[2026-04-06T23:23:50.505051] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_产品方案与权益呈现_node_005\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.527644] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_关键风险与条款揭示_node_006\sop_observations.json
+[2026-04-06T23:23:50.553638] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_关键风险与条款揭示_node_006\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.578688] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_意向确认与转化引导_node_007\sop_observations.json
+[2026-04-06T23:23:50.618521] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_意向确认与转化引导_node_007\sop_canned_responses.json (5 items)
+[2026-04-06T23:23:50.639446] Skipping observations file for node_008: marked as skipped by model
+[2026-04-06T23:23:50.643074] Skipping glossary file step5_glossary_node_008: marked as skipped
+[2026-04-06T23:23:50.646936] Skipping guidelines file for node_008: marked as skipped by model
+[2026-04-06T23:23:50.653188] Skipping branch directory for node_008: 该主节点定义为'通话结束与记录归档'，属于业务流程的终端收敛点。其主要动作为执行既定的挂机礼仪、系统状态更新及合规性留档，逻辑流向是线性的，不包含需要多路径决策的复杂子流程，也不存在因用户不同反馈而产生的显著分支场景（如同意/拒绝等）。根据判断标准，该节点逻辑相对简单直接，不符合生成二级复杂分支SOP的必要条件，故判定不需要生成二级分支。
+[2026-04-06T23:23:50.656740] Skipping tools file step5_tools_node_008: marked as skipped
+[2026-04-06T23:23:50.940157] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop.json
+[2026-04-06T23:23:50.960911] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop_guidelines.json
+[2026-04-06T23:23:50.972879] Generated agent canned responses: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_canned_responses.json (7 items)
+[2026-04-06T23:23:50.979860] Step7 completed
+[2026-04-07T14:28:44.091102] Step7 started
+[2026-04-07T14:28:44.109373] Loaded global canned responses from extraction step: 6 items
+[2026-04-07T14:28:44.113370] Loaded global observations from extraction step
+[2026-04-07T14:28:44.118371] Loaded 6 terms from Step3 glossary
+[2026-04-07T14:28:44.123365] Loaded 20 terms from step5_glossary_node_002.json
+[2026-04-07T14:28:44.125378] Loaded 20 terms from step5_glossary_node_003.json
+[2026-04-07T14:28:44.127544] Loaded 20 terms from step5_glossary_node_004.json
+[2026-04-07T14:28:44.129525] Loaded 20 terms from step5_glossary_node_005.json
+[2026-04-07T14:28:44.132522] Loaded 19 terms from step5_glossary_node_006.json
+[2026-04-07T14:28:44.144028] Merged glossary written with 105 total terms
+[2026-04-07T14:28:44.164028] Skipping observations file for node_001: marked as skipped by model
+[2026-04-07T14:28:44.166027] Skipping glossary file step5_glossary_node_001: marked as skipped
+[2026-04-07T14:28:44.168405] Skipping guidelines file for node_001: marked as skipped by model
+[2026-04-07T14:28:44.170422] Skipping branch directory for node_001: 该主节点（开场联络与合规身份确认）主要为标准化的信息告知流程，通常以线性脚本执行。虽然涉及日本保险严格的合规披露要求，但这属于单向播报任务，用户交互较少。复杂的用户反应处理（如拒绝、挂断倾向、异议）更适合作为独立的下游节点（如风险监测或挽留处理）进行展开，在此处生成二级分支会导致开场流程碎片化，降低沟通效率且无必要。
+[2026-04-07T14:28:44.171428] Skipping tools file step5_tools_node_001: marked as skipped
+[2026-04-07T14:28:44.182421] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop_observations.json
+[2026-04-07T14:28:44.197895] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop_canned_responses.json (5 items)
+[2026-04-07T14:28:44.218900] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop_observations.json
+[2026-04-07T14:28:44.230907] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop_canned_responses.json (5 items)
+[2026-04-07T14:28:44.250146] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop_observations.json
+[2026-04-07T14:28:44.264148] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop_canned_responses.json (5 items)
+[2026-04-07T14:28:44.278173] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop_observations.json
+[2026-04-07T14:28:44.291695] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop_canned_responses.json (5 items)
+[2026-04-07T14:28:44.306378] Loaded sop_observations from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop_observations.json
+[2026-04-07T14:28:44.319118] Loaded sop_canned_responses from extraction step: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop_canned_responses.json (5 items)
+[2026-04-07T14:28:44.331191] Skipping observations file for node_007: marked as skipped by model
+[2026-04-07T14:28:44.333236] Skipping glossary file step5_glossary_node_007: marked as skipped
+[2026-04-07T14:28:44.334888] Skipping guidelines file for node_007: marked as skipped by model
+[2026-04-07T14:28:44.336902] Skipping branch directory for node_007: 该节点为通话流程的终点节点，主要功能是执行标准结束语与系统信息归档，不包含复杂的子流程、多步骤用户交互或明显的分支决策场景，符合简单节点特征，无需展开二级分支SOP。
+[2026-04-07T14:28:44.339901] Skipping tools file step5_tools_node_007: marked as skipped
+[2026-04-07T14:28:44.383091] Generated main journey sop: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop.json
+[2026-04-07T14:28:44.387099] Generated main journey guidelines: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop_guidelines.json
+[2026-04-07T14:28:44.395262] Generated agent canned responses: E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_canned_responses.json (6 items)
+[2026-04-07T14:28:44.403223] Step7 completed

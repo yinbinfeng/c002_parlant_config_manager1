@@ -1,0 +1,12 @@
+{
+  "agent_id": "kyoroei_insurance_retention_001",
+  "observability": {
+    "enabled": true,
+    "track_metrics": [
+      "response_time",
+      "resolution_rate",
+      "fallback_rate"
+    ],
+    "log_level": "INFO"
+  }
+}

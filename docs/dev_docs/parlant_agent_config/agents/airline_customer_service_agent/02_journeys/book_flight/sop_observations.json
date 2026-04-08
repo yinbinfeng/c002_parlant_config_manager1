@@ -1,0 +1,22 @@
+{
+  "sop_id": "book_flight_001",
+  "sop_title": "预订机票全流程 SOP",
+  "remark": "仅预订机票 SOP 生效的专属观测，作为 SOP 内规则的依赖前置条件",
+  "sop_observations": [
+    {
+      "observation_id": "book_flight_obs_user_has_route_001",
+      "condition": "用户已明确选择出发地和目的地城市",
+      "remark": "观测用户是否已选定航线，用于后续航班搜索规则的依赖"
+    },
+    {
+      "observation_id": "book_flight_obs_user_has_date_001",
+      "condition": "用户已明确选择出行日期",
+      "remark": "观测用户是否已选定出行时间，用于后续航班推荐规则的依赖"
+    },
+    {
+      "observation_id": "book_flight_obs_seat_unavailable_001",
+      "condition": "用户选择的舱位等级已售罄、航班取消、无对应舱位",
+      "remark": "观测用户选择的舱位是否不可用，用于后续舱位推荐规则的依赖"
+    }
+  ]
+}

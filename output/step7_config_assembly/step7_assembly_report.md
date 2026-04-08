@@ -1,0 +1,72 @@
+# Step 7: 配置组装报告
+
+- 时间: 2026-04-07T14:28:44.395262
+- 输出目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config`
+- Agent: `kyoroei_insurance_retention`
+- 主Journey: `kyoroei_insurance_retention_main`
+- 整合文件数: 47
+- 问题数: 0
+
+## 整合来源
+
+- Step2目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\step2_objective_alignment_main_sop`
+- Step3目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\step3_global_rules_and_glossary`
+- Step4目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\step4_user_profile`
+- Step5目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\step5_branch_sop_parallel`
+- Step6目录: `E:\cursorworkspace\c002_parlant_config_manager1\output\step6_edge_cases`
+
+## Journey链接关系
+
+- 主Journey: `kyoroei_insurance_retention_main`
+- 分支Journey数: 5
+- 边缘Journey数: 7
+
+## 整合产物
+
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\agent_user_profiles.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\glossary_master.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\step5_客户意愿度与风险状态评估_node_002.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_客户意愿度与风险状态评估_node_002\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\03_tools\step5_客户意愿度与风险状态评估_node_002\tool_meta.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\step5_保障需求分析与产品引导_node_003.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保障需求分析与产品引导_node_003\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\03_tools\step5_保障需求分析与产品引导_node_003\tool_meta.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\step5_保险方案呈现与利益说明_node_004.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_保险方案呈现与利益说明_node_004\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\03_tools\step5_保险方案呈现与利益说明_node_004\tool_meta.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\step5_购买意向确认与流程引导_node_005.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_购买意向确认与流程引导_node_005\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\03_tools\step5_购买意向确认与流程引导_node_005\tool_meta.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop_observations.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\glossary\step5_合规收尾与信息登记_node_006.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop_canned_responses.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\branch_合规收尾与信息登记_node_006\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\03_tools\step5_合规收尾与信息登记_node_006\tool_meta.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_001_user_identity_doubt_001\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_001_user_privacy_concern_002\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_001_user_rejection_intent_003\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_001_compliance_sensitivity_004\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_002_high_risk_refusal_001\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_002_ambiguous_intent_002\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\edge_node_002_compliance_inquiry_003\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\02_journeys\kyoroei_insurance_retention_main\sop_guidelines.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\agent_metadata.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\00_agent_base\agent_observability.json`
+- `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_canned_responses.json`

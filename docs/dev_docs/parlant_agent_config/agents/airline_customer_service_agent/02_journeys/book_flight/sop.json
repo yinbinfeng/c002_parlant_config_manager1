@@ -1,0 +1,111 @@
+{
+  "sop_id": "book_flight_001",
+  "sop_title": "预订机票全流程 SOP",
+  "sop_description": "引导用户完成航线选择、日期选择、航班选择、舱位确认、乘客信息填写、订单提交的全流程，严格遵循航空公司订票业务规范",
+  "trigger_conditions": [
+    "用户想要预订机票",
+    "用户询问航班信息",
+    "用户需要买飞机票",
+    "用户查询从某地到某地的航班"
+  ],
+  "timeout": 1800,
+  "sop_guideline_mapping": {
+    "sop_guideline_file": "./sop_guidelines.json",
+    "sop_global_bind_guideline_ids": [
+      "book_flight_route_guide_001",
+      "book_flight_flight_recommend_001",
+      "book_flight_seat_verify_001"
+    ]
+  },
+  "sop_states": [
+    {
+      "state_id": "state_000",
+      "state_name": "初始 - 航线选择",
+      "state_type": "chat",
+      "instruction": "友好问候用户，询问用户想要从哪个城市出发，前往哪个目的地",
+      "bind_guideline_ids": ["book_flight_route_guide_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_001",
+          "condition": "用户已明确选择出发地和目的地城市"
+        }
+      ]
+    },
+    {
+      "state_id": "state_001",
+      "state_name": "出行日期选择",
+      "state_type": "chat",
+      "instruction": "询问用户的出行日期，是单程还是往返，若是往返需询问返程日期",
+      "transitions": [
+        {
+          "target_state_id": "state_002",
+          "condition": "用户已明确选择出行日期"
+        }
+      ]
+    },
+    {
+      "state_id": "state_002",
+      "state_name": "加载可订航班",
+      "state_type": "tool",
+      "bind_tool_id": "airline_tool_load_flight_deals",
+      "instruction": "调用航班查询工具，获取用户选定航线下指定日期的所有可订航班、舱位等级、价格",
+      "transitions": [
+        {
+          "target_state_id": "state_003",
+          "condition": "工具返回可订航班与价格信息后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_003",
+      "state_name": "航班与舱位选择",
+      "state_type": "chat",
+      "instruction": "清晰列出可订的 3-5 个航班选项，包含航班号、起降时间、舱位等级、价格",
+      "bind_guideline_ids": ["book_flight_flight_recommend_001", "book_flight_seat_verify_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_004",
+          "condition": "用户已明确选择具体航班和舱位等级"
+        }
+      ]
+    },
+    {
+      "state_id": "state_004",
+      "state_name": "乘客信息确认",
+      "state_type": "chat",
+      "instruction": "与用户确认乘机人姓名、身份证号/护照号、联系方式信息",
+      "transitions": [
+        {
+          "target_state_id": "state_005",
+          "condition": "用户确认所有乘机信息无误",
+          "bind_tool_id": "airline_tool_book_flight"
+        },
+        {
+          "target_state_id": "state_003",
+          "condition": "用户需要修改航班或舱位选择"
+        }
+      ]
+    },
+    {
+      "state_id": "state_005",
+      "state_name": "提交订单",
+      "state_type": "tool",
+      "bind_tool_id": "airline_tool_book_flight",
+      "instruction": "调用机票预订提交工具，传入用户确认的乘机信息，完成出票",
+      "transitions": [
+        {
+          "target_state_id": "state_006",
+          "condition": "工具返回出票成功结果后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_006",
+      "state_name": "预订完成",
+      "state_type": "chat",
+      "instruction": "告知用户订票结果，发送订单号、航班信息，提醒值机时间与注意事项",
+      "bind_canned_response_ids": ["book_flight_cr_success_001"],
+      "is_end_state": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "tool_id": "airline_tool_load_flight_deals",
+  "tool_name": "load_flight_deals",
+  "tool_description": "查询指定航线、日期的所有可订航班、舱位等级、价格，支持按直飞/转机筛选",
+  "timeout": 3,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户进入预订机票 SOP，选择日期后",
+    "用户询问某航线的可订航班",
+    "用户查询某航班的价格信息"
+  ],
+  "input_params": [
+    {
+      "param_name": "departure",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "出发城市名称，如\"北京\"\"上海\""
+    },
+    {
+      "param_name": "arrival",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "目的地城市名称，如\"广州\"\"深圳\""
+    },
+    {
+      "param_name": "travel_date",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "出行日期，格式为 YYYY-MM-DD"
+    },
+    {
+      "param_name": "direct_only",
+      "param_type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "是否仅查询直飞航班，true 为是，false 为否"
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "flights",
+      "field_type": "array",
+      "description": "可订航班数组"
+    },
+    {
+      "field_name": "flights[].flight_no",
+      "field_type": "string",
+      "description": "航班号"
+    },
+    {
+      "field_name": "flights[].airline",
+      "field_type": "string",
+      "description": "航空公司"
+    },
+    {
+      "field_name": "flights[].depart_time",
+      "field_type": "string",
+      "description": "起飞时间，格式为 HH:MM"
+    },
+    {
+      "field_name": "flights[].arrive_time",
+      "field_type": "string",
+      "description": "到达时间，格式为 HH:MM"
+    },
+    {
+      "field_name": "flights[].seats",
+      "field_type": "array",
+      "description": "可选舱位数组"
+    },
+    {
+      "field_name": "flights[].seats[].class",
+      "field_type": "string",
+      "description": "舱位等级，如\"经济舱\"\"商务舱\""
+    },
+    {
+      "field_name": "flights[].seats[].price",
+      "field_type": "number",
+      "description": "舱位价格，单位元"
+    }
+  ]
+}

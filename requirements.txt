@@ -1,0 +1,38 @@
+# Mining Agents 核心依赖
+
+# AgentScope 框架
+agentscope==1.0.17
+
+# LLM 提供商（OpenAI API）
+openai==2.8.0
+
+# MCP 客户端
+mcp==1.21.1
+
+# 搜索服务
+tavily-python==0.3.0
+
+# 配置解析
+pyyaml==6.0.3
+
+# JSON 校验
+json-repair==0.58.6
+jsonschema==4.25.1
+
+# 数据处理
+pandas==2.3.3
+openpyxl==3.1.0  # Excel 支持
+
+# 工具库
+python-dotenv==1.2.1
+aiohttp==3.13.3
+
+# UI
+streamlit==1.55.0
+
+# Logging
+loguru==0.7.3
+structlog==23.3.0
+
+# 中文节点名 slug 化（用于 journey 目录命名对齐）
+pypinyin==0.55.0

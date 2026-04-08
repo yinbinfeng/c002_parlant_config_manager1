@@ -1,0 +1,215 @@
+# Quality Agent Configuration
+# 负责质量检查
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: QualityAgent
+base_class: ReActAgent
+description: 质量检查Agent，负责对所有设计内容进行质量检查
+
+model:
+  type: OpenAIChatModel
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.7
+
+tools:
+  - name: deep_research
+    description: 深度搜索工具
+  - name: json_validator
+    description: JSON 校验与修复工具
+
+system_prompt_template: |
+  你是一名专业的质量检查员，负责对 Parlant Agent 配置进行质量检查。
+  
+  【核心职责】
+  - 设计明确的质量检查指标
+  - 对所有设计内容进行逻辑合理性验证
+  - 识别规则冲突、状态机死循环、工具调用不匹配等问题
+  - 提供优化建议和修正方案
+  
+  【输出格式】
+  输出必须直接是 JSON 数据。
+
+output_schema: ParlantQualitySchema
+
+task_prompts:
+  quality_check: |
+    【核心目标 - 必须遵守】
+    {core_goal}
+    
+    【任务】
+    请根据以下业务描述，对 Parlant Agent 配置进行质量检查。
+    
+    【强制要求 - 执行前必读】
+    1. **必须使用 Deep Research**：
+       调用 deep_research 工具搜索与业务相关的质量标准：
+       - "{industry} 法规合规检查清单"
+       - "{industry} 业务流程质量检查标准"
+    
+    2. **主题约束检查清单**：
+       - 所有检查必须围绕业务场景
+       - 必须检查业务逻辑合理性
+       - 禁止仅检查通用技术问题
+    
+    ## 业务描述
+    {business_desc}
+    
+    ## 原子化任务列表
+    {step2_atomic_tasks}
+    
+    ## 结构化需求规格说明
+    {step1_structured_requirements}
+    
+    【Parlant 质量检查维度 - 必须全部覆盖】
+    
+    ### 1. Guideline 检查（高优先级）
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | scope 有效性 | 全局规则必须为 `agent_global`，Journey 规则必须为 `journey` | error |
+    | composition_mode 有效性 | 值必须为 `FLUID` 或 `STRICT` | error |
+    | exclusions 循环检查 | 不能形成循环排除（A 排除 B，B 排除 A） | error |
+    | dependencies 有效性 | 引用的 observation_id 必须在 agent_observations.json 中存在 | error |
+    | priority 范围检查 | 值必须在 1-15 范围内 | error |
+    | condition 可判定性 | condition 描述必须清晰明确，可判定 | warning |
+    | action 可执行性 | action 必须是具体可执行的动作 | warning |
+    
+    ### 2. Journey 检查（高优先级）
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | DAG 检查 | 状态转换必须形成有向无环图，不能有死循环 | error |
+    | 结束状态检查 | 必须至少有一个 `is_end_state: true` 的状态 | error |
+    | trigger_conditions 完整性 | 必须有明确的触发条件 | error |
+    | state_id 唯一性 | 同一 Journey 内 state_id 不能重复 | error |
+    | transitions 完整性 | 每个非结束状态必须有至少一个 transition | error |
+    | bind_tool_id 有效性 | state_type 为 tool 时，bind_tool_id 必须存在 | error |
+    | bind_guideline_ids 有效性 | 引用的 guideline_id 必须存在 | warning |
+    | 异常处理分支 | 是否包含异常处理分支 | warning |
+    
+    ### 3. Tool 检查
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | input_params 完整性 | 必须包含完整的输入参数定义 | error |
+    | output_params 完整性 | 必须包含完整的输出参数定义 | error |
+    | timeout 合理性 | 超时时间是否合理（建议 3-30 秒） | warning |
+    | param_type 有效性 | 参数类型必须为 string、integer、boolean、array、object 之一 | error |
+    | required 字段检查 | 必填参数必须有 required: true | error |
+    
+    ### 4. Glossary 检查
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | term_id 唯一性 | 同一 Agent 内 term_id 不能重复 | error |
+    | language 一致性 | 所有术语使用统一语言 | warning |
+    | description 完整性 | 每个术语必须有清晰的定义 | warning |
+    | synonyms 有效性 | 同义词不应与术语名称相同 | warning |
+    
+    ### 5. Profile 检查
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | segment_id 唯一性 | 同一 Agent 内 segment_id 不能重复 | error |
+    | definition 完整性 | 必须包含 tags 或 metadata_rules | error |
+    | preferred_journeys 有效性 | 引用的 journey 必须存在 | warning |
+    | special_guidelines 有效性 | 引用的 guideline_id 必须存在 | warning |
+    
+    ### 6. Observation 检查
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | observation_id 唯一性 | 同一 Agent 内 observation_id 不能重复 | error |
+    | condition 可判定性 | condition 描述必须清晰明确，可判定 | error |
+    | 被引用检查 | 被 guideline.dependencies 引用的 observation 必须存在 | error |
+    
+    ### 7. 跨文件一致性检查
+    
+    | 检查项 | 检查内容 | 错误级别 |
+    |--------|----------|----------|
+    | ID 引用一致性 | 所有 ID 引用必须在目标文件中存在 | error |
+    | 命名规范一致性 | 所有 ID 命名风格必须一致 | warning |
+    | 业务前缀一致性 | 同一 Agent 内所有 ID 使用统一的业务前缀 | warning |
+    
+    【评分标准】
+    - excellent (90-100): 完全符合 Parlant 规范，业务逻辑完整，无 error 级别问题
+    - good (75-89): 存在少量 warning 级别问题，无 error 级别问题
+    - fair (60-74): 存在 1-3 个 error 级别问题
+    - poor (<60): 存在 3 个以上 error 级别问题，需要重新设计
+    
+    【输出格式 - 必须严格遵守】
+    请返回 JSON 对象：
+    ```json
+    {
+      "overall_score": 85,
+      "quality_level": "good",
+      "summary": "配置整体符合 Parlant 规范，存在少量需要优化的问题",
+      "issues_by_category": {
+        "guideline": {
+          "error_count": 0,
+          "warning_count": 2,
+          "issues": [
+            {
+              "id": "GL_W001",
+              "severity": "warning",
+              "guideline_id": "airline_greet_001",
+              "check_item": "condition 可判定性",
+              "description": "condition 描述可以更加精确",
+              "recommendation": "建议将'用户首次对话'改为'用户首次进入对话且无历史会话记录'"
+            }
+          ]
+        },
+        "journey": {
+          "error_count": 0,
+          "warning_count": 1,
+          "issues": []
+        },
+        "tool": {
+          "error_count": 0,
+          "warning_count": 0,
+          "issues": []
+        },
+        "glossary": {
+          "error_count": 0,
+          "warning_count": 0,
+          "issues": []
+        },
+        "profile": {
+          "error_count": 0,
+          "warning_count": 0,
+          "issues": []
+        },
+        "observation": {
+          "error_count": 0,
+          "warning_count": 0,
+          "issues": []
+        },
+        "cross_file": {
+          "error_count": 0,
+          "warning_count": 0,
+          "issues": []
+        }
+      },
+      "metrics": {
+        "guideline_completeness": 95,
+        "journey_dag_valid": true,
+        "journey_has_end_state": true,
+        "tool_schema_completeness": 100,
+        "glossary_coverage": 80,
+        "profile_actionability": 90,
+        "cross_file_consistency": 100
+      },
+      "recommendations": [
+        "建议优化 guideline condition 描述，使其更加精确可判定",
+        "建议增加更多业务术语到 Glossary 中"
+      ]
+    }
+    ```
+    
+    【自检清单】
+    - [ ] 是否检查了所有 7 个检查维度？
+    - [ ] 是否检查了业务逻辑合理性？
+    - [ ] 是否使用了 Deep Research？
+    - [ ] 是否正确区分了 error 和 warning 级别？
+    - [ ] 是否提供了具体的优化建议？
+    - [ ] 评分是否反映了实际质量？

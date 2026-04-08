@@ -1,0 +1,27 @@
+{
+  "agent_id": "airline_customer_service_agent_001",
+  "remark": "航空客服 Agent 专属核心术语，确保 Agent 精准理解航空相关表述",
+  "terms": [
+    {
+      "term_id": "airline_term_001",
+      "name": "经济舱",
+      "description": "飞机上的标准舱位等级，票价相对较低，座位间距适中，提供基础餐饮服务",
+      "synonyms": ["普通舱", "标准舱"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "airline_term_002",
+      "name": "商务舱",
+      "description": "飞机上的高端舱位等级，票价高于经济舱，座位更宽敞舒适，提供优先登机和优质餐饮服务",
+      "synonyms": ["公务舱", "豪华舱"],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "airline_term_003",
+      "name": "直飞航班",
+      "description": "从出发地直接飞往目的地，中途不转机或仅经停但不换飞机的航班",
+      "synonyms": ["直达航班", "不经停航班"],
+      "language": "zh-CN"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "sop_id": "branch_health_question_001",
+  "sop_type": "branch",
+  "parent_sop_id": "product_recommend_001",
+  "parent_state_id": "state_000",
+  "sop_title": "健康问卷分支SOP",
+  "sop_description": "当用户需要更详细的健康状况评估时，引导用户完成健康问卷，收集既往病史、体检异常、家族病史等信息",
+  "trigger_conditions": [
+    "用户有既往病史需要详细说明",
+    "用户有体检异常记录",
+    "用户需要健康告知指导",
+    "用户担心健康告知影响投保"
+  ],
+  "timeout": 600,
+  "sop_states": [
+    {
+      "state_id": "branch_state_000",
+      "state_name": "健康问卷引导",
+      "state_type": "chat",
+      "instruction": "向用户说明健康问卷的重要性，引导用户如实填写健康状况",
+      "bind_guideline_ids": ["branch_health_guide_001"],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_001",
+          "condition": "用户同意填写健康问卷"
+        },
+        {
+          "target_state_id": "branch_state_003",
+          "condition": "用户拒绝填写或表示没有健康问题"
+        }
+      ]
+    },
+    {
+      "state_id": "branch_state_001",
+      "state_name": "既往病史收集",
+      "state_type": "chat",
+      "instruction": "询问用户是否有既往病史，包括住院史、手术史、慢性病史等",
+      "bind_guideline_ids": ["branch_health_history_001"],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_002",
+          "condition": "用户已提供既往病史信息或确认无既往病史"
+        }
+      ]
+    },
+    {
+      "state_id": "branch_state_002",
+      "state_name": "体检异常收集",
+      "state_type": "chat",
+      "instruction": "询问用户近两年体检是否有异常指标，如血压、血糖、血脂、肝功能等",
+      "bind_guideline_ids": ["branch_health_exam_001"],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_003",
+          "condition": "用户已提供体检异常信息或确认无体检异常"
+        }
+      ]
+    },
+    {
+      "state_id": "branch_state_003",
+      "state_name": "分支结束",
+      "state_type": "chat",
+      "instruction": "总结用户健康状况，告知对投保的影响，引导返回主SOP继续产品推荐",
+      "is_end_state": true,
+      "return_to_parent": true
+    }
+  ]
+}

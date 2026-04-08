@@ -1,0 +1,124 @@
+{
+  "sop_id": "main_journey__branch_node_003_id_sop_001",
+  "sop_type": "branch",
+  "parent_sop_id": "main_sop_backbone_v2",
+  "parent_state_id": "node_003",
+  "sop_title": "保障需求分析与产品引导分支SOP",
+  "sop_description": "挂载于主干节点[保障需求分析与产品引导]的二级分支流程（Step5 Agent动态生成）",
+  "trigger_conditions": [
+    {
+      "trigger": "用户在[保障需求分析与产品引导]节点提出特定需求或问题，需要分支处理",
+      "trigger_examples": [
+        "用户表达特殊需求",
+        "用户提出问题",
+        "用户需要额外帮助"
+      ]
+    }
+  ],
+  "timeout": 900,
+  "sop_states": [
+    {
+      "state_name": "基本信息与现状采集",
+      "instruction": "询问用户年龄、职业、现有保险情况及家庭结构等基础信息",
+      "condition": "用户已提供足够的基础背景信息",
+      "condition_examples": [
+        "用户说明了现有保单情况",
+        "用户回答了家庭成员构成"
+      ],
+      "state_id": "branch_state_000",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_001",
+          "condition": "用户已提供足够的基础背景信息"
+        }
+      ]
+    },
+    {
+      "state_name": "风险缺口初步诊断",
+      "instruction": "基于收集信息分析用户潜在风险缺口并简要反馈",
+      "condition": "用户对风险缺口表示认同或进一步询问",
+      "condition_examples": [
+        "用户说：确实没考虑到这点",
+        "用户询问具体风险是什么"
+      ],
+      "state_id": "branch_state_001",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_002",
+          "condition": "用户对风险缺口表示认同或进一步询问"
+        }
+      ]
+    },
+    {
+      "state_name": "产品方案匹配推荐",
+      "instruction": "根据缺口推荐匹配的保险产品方案及保额建议",
+      "condition": "用户表现出对方案的兴趣或提出价格疑问",
+      "condition_examples": [
+        "用户说：这个能介绍一下吗",
+        "用户问：保费多少"
+      ],
+      "state_id": "branch_state_002",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_003",
+          "condition": "用户表现出对方案的兴趣或提出价格疑问"
+        }
+      ]
+    },
+    {
+      "state_name": "核心条款与免责告知",
+      "instruction": "明确说明保险责任范围、等待期及免责条款以确保合规",
+      "condition": "用户确认理解或无相关条款疑问",
+      "condition_examples": [
+        "用户说：明白了",
+        "用户说：没有别的问题了"
+      ],
+      "state_id": "branch_state_003",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_004",
+          "condition": "用户确认理解或无相关条款疑问"
+        }
+      ]
+    },
+    {
+      "state_name": "异议处理与疑问解答",
+      "instruction": "针对用户提出的顾虑、对比竞品或犹豫点进行针对性解答",
+      "condition": "用户异议消除或明确表示需要时间考虑",
+      "condition_examples": [
+        "用户说：那我再想想",
+        "用户说：这个解释清楚了"
+      ],
+      "state_id": "branch_state_004",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_005",
+          "condition": "用户异议消除或明确表示需要时间考虑"
+        }
+      ]
+    },
+    {
+      "state_name": "意向确认与后续安排",
+      "instruction": "确认用户购买意向并约定后续投保流程或资料提交方式",
+      "condition_examples": [],
+      "state_id": "branch_state_005",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "is_end_state": true,
+      "return_to_parent": true,
+      "transitions": []
+    }
+  ],
+  "fallback_source": null,
+  "parent_node_id": "node_003"
+}

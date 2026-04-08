@@ -1,0 +1,1 @@
+python "egs/v0.1.0_minging_agents/main.py" --mode real --max-parallel 1 --skip-clarification --force-rerun --debug True --start-step 1 --end-step 8 --business-desc "我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保险产品并推进后续转化，同时严格遵守日本保险营销合规要求，避免投诉与误导。"

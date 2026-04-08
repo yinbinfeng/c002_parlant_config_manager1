@@ -1,0 +1,96 @@
+{
+  "sop_id": "main_journey__branch_node_004_id_sop_001",
+  "sop_type": "branch",
+  "parent_sop_id": "main_journey_sop_001",
+  "parent_state_id": "node_004",
+  "sop_title": "保险方案呈现与利益说明执行分支 SOP",
+  "sop_description": "挂载于主干节点[保险方案呈现与利益说明]的二级分支流程（Step5 Agent动态生成）",
+  "trigger_conditions": [
+    {
+      "trigger": "用户在[保险方案呈现与利益说明]节点提出特定需求或问题，需要分支处理",
+      "trigger_examples": [
+        "用户表达特殊需求",
+        "用户提出问题",
+        "用户需要额外帮助"
+      ]
+    }
+  ],
+  "timeout": 900,
+  "sop_states": [
+    {
+      "state_name": "方案引入与注意力确认",
+      "instruction": "开启方案介绍前，简短说明即将分享的内容框架，确认用户当前处于可接收状态，建立倾听预期。",
+      "condition": "用户表示愿意聆听或未打断发言",
+      "condition_examples": [
+        "好的",
+        "请说",
+        "嗯"
+      ],
+      "state_id": "branch_state_000",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "核心保障权益阐述",
+      "instruction": "清晰讲解保险的主要保障责任（如疾病、意外覆盖范围），突出对用户的核心价值，避免使用模糊词汇。",
+      "condition": "用户无异议或提出关于保障的具体疑问",
+      "condition_examples": [
+        "明白了",
+        "保哪些病",
+        "具体怎么赔"
+      ],
+      "state_id": "branch_state_001",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "关键条款与免责说明",
+      "instruction": "依据合规要求，明确告知等待期、免责条款及理赔限制，确保信息透明无误导，降低后续投诉风险。",
+      "condition": "用户表示知晓或追问条款细节",
+      "condition_examples": [
+        "知道了",
+        "有哪些不赔",
+        "条款太长了"
+      ],
+      "state_id": "branch_state_002",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "保费与缴费方式解释",
+      "instruction": "详细说明年缴金额、缴费年限及总成本，预判并处理可能的价格敏感问题，提供性价比分析。",
+      "condition": "用户对价格表示接受或提出预算顾虑",
+      "condition_examples": [
+        "多少钱",
+        "有点贵",
+        "可以分期吗"
+      ],
+      "state_id": "branch_state_003",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "异议捕捉与针对性答疑",
+      "instruction": "观察用户反应，针对刚才说明中产生的疑虑进行即时解答，消除成交障碍，确保信息被正确理解。",
+      "condition": "用户疑虑消除或仍保留意见",
+      "condition_examples": [
+        "这样啊",
+        "我还是担心",
+        "好吧"
+      ],
+      "state_id": "branch_state_004",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "理解确认与流程推进",
+      "instruction": "总结方案要点，再次确认用户理解无误，并根据意向决定进入签约流程或转入后续培育环节。",
+      "state_id": "branch_state_005",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "is_end_state": true,
+      "return_to_parent": true
+    }
+  ],
+  "fallback_source": null
+}

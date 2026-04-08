@@ -1,0 +1,27 @@
+{
+  "sop_id": "branch_health_question_001",
+  "sop_title": "健康问卷分支SOP",
+  "remark": "健康问卷分支专属观测，作为分支内规则的依赖前置条件",
+  "sop_observations": [
+    {
+      "observation_id": "branch_obs_user_agree_questionnaire_001",
+      "condition": "用户同意填写健康问卷，愿意提供健康状况信息",
+      "remark": "观测用户是否同意填写问卷，用于后续病史收集的依赖"
+    },
+    {
+      "observation_id": "branch_obs_user_has_history_info_001",
+      "condition": "用户已提供既往病史信息或确认无既往病史",
+      "remark": "观测用户是否已完成既往病史收集，用于体检异常收集的依赖"
+    },
+    {
+      "observation_id": "branch_obs_user_has_exam_info_001",
+      "condition": "用户已提供体检异常信息或确认无体检异常",
+      "remark": "观测用户是否已完成体检异常收集，用于返回主SOP的依赖"
+    },
+    {
+      "observation_id": "branch_obs_user_refuse_questionnaire_001",
+      "condition": "用户拒绝填写健康问卷或表示没有健康问题",
+      "remark": "观测用户是否拒绝填写，用于直接返回主SOP的依赖"
+    }
+  ]
+}

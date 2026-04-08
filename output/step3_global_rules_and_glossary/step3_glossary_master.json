@@ -1,0 +1,67 @@
+{
+  "agent_id": "japan_insurance_outbound_retention_agent_001",
+  "remark": "本术语表支撑日本共荣保险外呼营销场景中合规挽留及保险产品销售转化的客服业务",
+  "terms": [
+    {
+      "term_id": "japan_ins_term_001",
+      "name": "合规挽留",
+      "description": "在客户表现出挂断或拒绝倾向时，依据日本保险营销法规进行的合规性挽留操作，需包含风险告知与需求匹配验证",
+      "synonyms": [
+        "成約促進",
+        "継続提案",
+        "保留対応"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "japan_ins_term_002",
+      "name": "生命保険",
+      "description": "以被保险人生存或死亡为给付条件的保险产品，需区分終身保険与定期保険类型",
+      "synonyms": [
+        "人身保険",
+        "生保"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "japan_ins_term_003",
+      "name": "適正販売指針",
+      "description": "日本金融厅规定的保险销售行为准则，要求充分披露产品信息与风险提示",
+      "synonyms": [
+        "金融庁販売基準",
+        "保険販売ガイドライン"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "japan_ins_term_004",
+      "name": "顧客意向確認",
+      "description": "通过结构化问答核实客户需求与购买意愿的业务动作，需记录于CRM系统",
+      "synonyms": [
+        "ニーズ把握",
+        "意向度評価"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "japan_ins_term_005",
+      "name": "説明義務履行",
+      "description": "向客户完整告知保险条款、免责事项及退保损失等法定义务的合规动作",
+      "synonyms": [
+        "開示義務",
+        "リスク告知"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "japan_ins_term_006",
+      "name": "契約手続き",
+      "description": "完成投保申请、健康告知审核及保单签署的全流程业务操作",
+      "synonyms": [
+        "加入手続き",
+        "契約締結"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}

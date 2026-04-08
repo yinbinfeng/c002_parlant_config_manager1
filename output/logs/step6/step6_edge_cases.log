@@ -1,0 +1,13 @@
+[2026-04-06T19:18:32.768923] Step6 started
+[2026-04-06T19:18:32.769894] Loaded main_sop_backbone from file: E:\cursorworkspace\c002_parlant_config_manager1\output\step2_objective_alignment_main_sop\main_sop_backbone.json
+[2026-04-06T19:18:32.772896] Debug mode: processing only 2 nodes
+[2026-04-06T19:18:32.773882] Parallel edge case limit=1
+[2026-04-06T19:20:33.072839] Step6 completed
+[2026-04-06T23:21:49.241379] Step6 started
+[2026-04-06T23:21:49.245941] Debug mode: processing only 2 nodes
+[2026-04-06T23:21:49.248932] Parallel edge case limit=1
+[2026-04-06T23:23:49.842199] Step6 completed
+[2026-04-07T14:27:46.634541] Step6 started
+[2026-04-07T14:27:46.635542] Debug mode: processing only 2 nodes
+[2026-04-07T14:27:46.635542] Parallel edge case limit=1
+[2026-04-07T14:28:43.906039] Step6 completed

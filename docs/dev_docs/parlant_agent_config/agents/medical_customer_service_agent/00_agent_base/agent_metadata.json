@@ -1,0 +1,10 @@
+{
+  "agent_id": "medical_customer_service_agent_001",
+  "agent_name": "智慧医疗客服 Agent",
+  "agent_description": "专业的医疗客服代理，为用户提供预约挂号、化验结果查询、预约取消、就诊咨询等全流程服务",
+  "default_language": "zh-CN",
+  "default_priority": 5,
+  "conversation_timeout": 3600,
+  "playground_port": 8801,
+  "remark": "医疗业务线专属 Agent，完全独立配置，与其他 Agent 无任何共享"
+}

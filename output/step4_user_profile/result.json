@@ -1,0 +1,185 @@
+{
+  "user_profiles": {
+    "agent_id": "kyoei_insurance_outbound_01",
+    "remark": "日本共荣保险外呼营销场景用户分群与画像配置",
+    "user_segments": [
+      {
+        "segment_id": "seg_high_resistance",
+        "segment_name": "高抗性拒保群体",
+        "description": "对话中出现强烈拒绝信号（如明确说'不需要''别再打来'），且通话时长<60秒",
+        "definition": {
+          "tags": [
+            "explicit_reject",
+            "short_call"
+          ],
+          "metadata_rules": {
+            "call_duration_seconds": "<=60",
+            "reject_count": ">=1"
+          }
+        },
+        "behavior_patterns": [
+          "直接挂断前使用否定句式",
+          "提及已投保其他公司",
+          "要求停止联系"
+        ],
+        "preferred_journeys": [
+          "compliance_exit",
+          "record_rejection_reason"
+        ],
+        "special_guidelines": [
+          "禁止重复推销，需执行DNC登记",
+          "必须录音保存拒绝证据",
+          "结束前确认客户意愿"
+        ],
+        "custom_variables": {}
+      },
+      {
+        "segment_id": "seg_hesitant_interested",
+        "segment_name": "犹豫型潜在客户",
+        "description": "表现出部分兴趣但存在顾虑，通话时长>90秒且有追问行为",
+        "definition": {
+          "tags": [
+            "question_asked",
+            "longer_engagement"
+          ],
+          "metadata_rules": {
+            "call_duration_seconds": ">90",
+            "product_inquiry_count": ">=2"
+          }
+        },
+        "behavior_patterns": [
+          "询问保费计算方式",
+          "对比竞品条款",
+          "表示需要与家人商量"
+        ],
+        "preferred_journeys": [
+          "risk_explanation",
+          "family_consultation_path"
+        ],
+        "special_guidelines": [
+          "提供书面资料前先确认邮箱",
+          "禁止承诺未核保的保障内容",
+          "每5分钟需重新确认通话意愿"
+        ],
+        "custom_variables": {}
+      },
+      {
+        "segment_id": "seg_repeat_contact",
+        "segment_name": "多次触达客户",
+        "description": "过去30天内被联系≥3次但未转化的存量客户",
+        "definition": {
+          "tags": [
+            "repeat_contact"
+          ],
+          "metadata_rules": {
+            "contact_frequency_30d": ">=3",
+            "conversion_status": "not_converted"
+          }
+        },
+        "behavior_patterns": [
+          "询问为何再次联系",
+          "表现出耐心下降",
+          "提出新需求"
+        ],
+        "preferred_journeys": [
+          "value_repositioning",
+          "discount_check"
+        ],
+        "special_guidelines": [
+          "首次问候需说明本次差异点",
+          "禁止使用相同话术模板",
+          "超过3次联系需升级审批"
+        ],
+        "custom_variables": {}
+      }
+    ],
+    "personas": [
+      {
+        "persona_id": "persa_family_planner",
+        "persona_name": "家庭保障规划者",
+        "segment_id": "seg_hesitant_interested",
+        "demographics": "35-50岁已婚人士，有子女，年收入800万日元以上",
+        "goals": "为家庭成员建立全面保障体系",
+        "pain_points": "担心现有保障不足/保费过高",
+        "behavior_patterns": [
+          "详细询问免责条款",
+          "要求电子保单预览",
+          "关注理赔时效"
+        ],
+        "typical_dialogues": [
+          "这个方案能覆盖孩子留学期间的意外吗？",
+          "如果中途退保损失多少？",
+          "能否发PDF版本给我家人看？"
+        ],
+        "parlant_mapping": {
+          "tags": [
+            "family_oriented",
+            "document_request"
+          ],
+          "variables": [
+            "children_count",
+            "current_policies"
+          ],
+          "journeys": [
+            "coverage_comparison",
+            "digital_delivery"
+          ],
+          "guidelines": [
+            "必须标注等待期天数",
+            "禁止比较未核实竞品信息",
+            "每次变更方案需重新确认"
+          ]
+        }
+      },
+      {
+        "persona_id": "persa_cost_sensitive",
+        "persona_name": "价格敏感型客户",
+        "segment_id": "seg_high_resistance",
+        "demographics": "25-35岁单身/新婚，年收入500万日元左右",
+        "goals": "寻找最低成本基础保障",
+        "pain_points": "对保费支出敏感，怀疑销售动机",
+        "behavior_patterns": [
+          "反复询问最便宜选项",
+          "质疑必要性",
+          "主动提出终止对话"
+        ],
+        "typical_dialogues": [
+          "比AIA便宜多少？",
+          "现在不买以后会涨价吗？",
+          "直接告诉我最低价"
+        ],
+        "parlant_mapping": {
+          "tags": [
+            "price_focused",
+            "high_skepticism"
+          ],
+          "variables": [
+            "budget_range",
+            "competitor_mentioned"
+          ],
+          "journeys": [
+            "cost_transparency",
+            "exit_protocol"
+          ],
+          "guidelines": [
+            "必须展示政府监管备案号",
+            "禁止使用'限时优惠'表述",
+            "报价需含三年费用明细"
+          ]
+        }
+      }
+    ]
+  },
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step4_user_profile\\agent_user_profiles.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step4_user_profile\\step4_user_profiles_compliance_report.json"
+  ],
+  "metadata": {
+    "segments_count": 3,
+    "personas_count": 2,
+    "fallback_info": {
+      "fallback_used": false,
+      "fallback_source": null
+    }
+  }
+}

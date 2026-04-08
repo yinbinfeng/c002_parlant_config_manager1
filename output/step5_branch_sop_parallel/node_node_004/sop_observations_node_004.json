@@ -1,0 +1,7 @@
+{
+  "sop_id": "main_journey__branch_node_004",
+  "sop_title": "保险方案呈现与利益说明 二级分支 Journey",
+  "remark": "Step5 生成：[保险方案呈现与利益说明]分支专属observation，用于建立规则依赖关系",
+  "sop_observations": [],
+  "extraction_note": "observations已提取到独立文件"
+}

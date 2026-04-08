@@ -1,0 +1,99 @@
+{
+  "sop_id": "schedule_appt_001",
+  "sop_title": "预约挂号全流程 SOP",
+  "sop_description": "引导用户完成科室选择、医生选择、时段选择、信息确认、预约提交的全流程，严格遵循医院预约挂号业务规范",
+  "trigger_conditions": [
+    "用户想要预约挂号",
+    "用户询问门诊可预约时间",
+    "用户想要找医生就诊",
+    "用户需要挂某个科室的号"
+  ],
+  "timeout": 1800,
+  "sop_guideline_mapping": {
+    "sop_guideline_file": "./sop_guidelines.json",
+    "sop_global_bind_guideline_ids": [
+      "schedule_appt_dept_guide_001",
+      "schedule_appt_doctor_recommend_001",
+      "schedule_appt_time_verify_001"
+    ]
+  },
+  "sop_states": [
+    {
+      "state_id": "state_000",
+      "state_name": "初始 - 科室选择",
+      "state_type": "chat",
+      "instruction": "友好问候用户，询问用户想要预约哪个科室的号",
+      "bind_guideline_ids": ["schedule_appt_dept_guide_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_001",
+          "condition": "用户已明确选择具体科室，科室在医院开放列表内"
+        }
+      ]
+    },
+    {
+      "state_id": "state_001",
+      "state_name": "加载可预约医生",
+      "state_type": "tool",
+      "bind_tool_id": "medical_tool_get_upcoming_slots",
+      "instruction": "调用门诊可预约时间查询工具，获取用户选定科室未来 7 天可预约的医生、职称、可预约时段",
+      "transitions": [
+        {
+          "target_state_id": "state_002",
+          "condition": "工具返回可预约医生与时段信息后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_002",
+      "state_name": "医生与时段选择",
+      "state_type": "chat",
+      "instruction": "清晰列出该科室可预约的 3-5 个医生选项，包含医生姓名、职称、可预约日期与时段",
+      "bind_guideline_ids": ["schedule_appt_doctor_recommend_001", "schedule_appt_time_verify_001"],
+      "transitions": [
+        {
+          "target_state_id": "state_003",
+          "condition": "用户已明确选择具体医生和预约时段"
+        }
+      ]
+    },
+    {
+      "state_id": "state_003",
+      "state_name": "预约信息确认",
+      "state_type": "chat",
+      "instruction": "与用户二次确认就诊科室、医生姓名、预约时段、就诊人姓名、就诊人身份证号信息",
+      "transitions": [
+        {
+          "target_state_id": "state_004",
+          "condition": "用户确认所有预约信息无误",
+          "bind_tool_id": "medical_tool_schedule_appt"
+        },
+        {
+          "target_state_id": "state_002",
+          "condition": "用户需要修改预约信息、更换医生或时段"
+        }
+      ]
+    },
+    {
+      "state_id": "state_004",
+      "state_name": "提交预约",
+      "state_type": "tool",
+      "bind_tool_id": "medical_tool_schedule_appt",
+      "instruction": "调用预约挂号提交工具，传入用户确认的预约信息，完成挂号",
+      "transitions": [
+        {
+          "target_state_id": "state_005",
+          "condition": "工具返回预约成功结果后"
+        }
+      ]
+    },
+    {
+      "state_id": "state_005",
+      "state_name": "预约完成",
+      "state_type": "chat",
+      "instruction": "告知用户预约结果，发送预约号、就诊信息，提醒就诊注意事项与取号流程",
+      "bind_canned_response_ids": ["schedule_appt_cr_success_001"],
+      "is_end_state": true
+    }
+  ]
+}

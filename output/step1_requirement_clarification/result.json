@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "请提供日本金融厅（FSA）或日本生命保险协会针对电话营销的具体合规条款，特别是关于'禁止用语'和'必须披露信息'的详细列表？",
+      "category": "合规要求",
+      "priority": "high",
+      "rationale": "行业检索结果显示多为中国保险法案例，为确保 Guideline 配置准确，需确认日本当地特定法规以避免误导销售风险。"
+    },
+    {
+      "id": "Q02",
+      "question": "系统应通过哪些具体信号（如静音时长、特定拒绝关键词、语调变化）来判定用户有'挂断或拒绝倾向'？",
+      "category": "核心流程",
+      "priority": "high",
+      "rationale": "此判定逻辑直接决定 Journey 中触发挽留 SOP 的 trigger_conditions 及 Observation 的监测条件。"
+    },
+    {
+      "id": "Q03",
+      "question": "挽留成功的判定标准是什么？是否需要用户明确口头同意继续沟通，还是仅表现为未挂断即可？",
+      "category": "核心流程",
+      "priority": "high",
+      "rationale": "该标准决定了 Journey 状态机从'挽留阶段'流转至'产品介绍阶段'的关键条件判定逻辑。"
+    },
+    {
+      "id": "Q04",
+      "question": "本次外呼的目标客户群体是现有保单持有人、潜在客户还是第三方推荐名单？不同群体的服务策略是否有差异？",
+      "category": "目标用户",
+      "priority": "medium",
+      "rationale": "不同客户来源对应不同的 Profile 分群定义，影响开场白设计及合规要求的严格程度。"
+    },
+    {
+      "id": "Q05",
+      "question": "是否需要对接外部 CRM 或通话录音系统进行合规留痕？如果需要，请提供相关系统的 API 接口规范。",
+      "category": "集成需求",
+      "priority": "medium",
+      "rationale": "明确 Tool 集成需求以确保所有合规交互可追溯，满足监管审计对数据留存的要求。"
+    },
+    {
+      "id": "Q06",
+      "question": "在挽留环节及后续介绍中，是否存在必须包含的标准化话术或免责声明（如冷静期提示、公司信息播报）？",
+      "category": "术语表",
+      "priority": "medium",
+      "rationale": "这些固定表述需录入 Glossary 并在 Guideline 中作为强制校验项，确保营销内容符合监管披露要求。"
+    }
+  ],
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step1_requirement_clarification\\step1_clarification_questions.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step1_requirement_clarification\\step1_structured_requirements.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step1_requirement_clarification\\user_feedback.md"
+  ],
+  "metadata": {
+    "question_count": 6,
+    "mock_mode": false,
+    "business_desc_length": 86
+  },
+  "clarification_questions": [
+    {
+      "id": "Q01",
+      "question": "请提供日本金融厅（FSA）或日本生命保险协会针对电话营销的具体合规条款，特别是关于'禁止用语'和'必须披露信息'的详细列表？",
+      "category": "合规要求",
+      "priority": "high",
+      "rationale": "行业检索结果显示多为中国保险法案例，为确保 Guideline 配置准确，需确认日本当地特定法规以避免误导销售风险。"
+    },
+    {
+      "id": "Q02",
+      "question": "系统应通过哪些具体信号（如静音时长、特定拒绝关键词、语调变化）来判定用户有'挂断或拒绝倾向'？",
+      "category": "核心流程",
+      "priority": "high",
+      "rationale": "此判定逻辑直接决定 Journey 中触发挽留 SOP 的 trigger_conditions 及 Observation 的监测条件。"
+    },
+    {
+      "id": "Q03",
+      "question": "挽留成功的判定标准是什么？是否需要用户明确口头同意继续沟通，还是仅表现为未挂断即可？",
+      "category": "核心流程",
+      "priority": "high",
+      "rationale": "该标准决定了 Journey 状态机从'挽留阶段'流转至'产品介绍阶段'的关键条件判定逻辑。"
+    },
+    {
+      "id": "Q04",
+      "question": "本次外呼的目标客户群体是现有保单持有人、潜在客户还是第三方推荐名单？不同群体的服务策略是否有差异？",
+      "category": "目标用户",
+      "priority": "medium",
+      "rationale": "不同客户来源对应不同的 Profile 分群定义，影响开场白设计及合规要求的严格程度。"
+    },
+    {
+      "id": "Q05",
+      "question": "是否需要对接外部 CRM 或通话录音系统进行合规留痕？如果需要，请提供相关系统的 API 接口规范。",
+      "category": "集成需求",
+      "priority": "medium",
+      "rationale": "明确 Tool 集成需求以确保所有合规交互可追溯，满足监管审计对数据留存的要求。"
+    },
+    {
+      "id": "Q06",
+      "question": "在挽留环节及后续介绍中，是否存在必须包含的标准化话术或免责声明（如冷静期提示、公司信息播报）？",
+      "category": "术语表",
+      "priority": "medium",
+      "rationale": "这些固定表述需录入 Glossary 并在 Guideline 中作为强制校验项，确保营销内容符合监管披露要求。"
+    }
+  ],
+  "clarification_questions_file": "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step1_requirement_clarification\\step1_clarification_questions.md",
+  "structured_requirements_file": "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step1_requirement_clarification\\step1_structured_requirements.md",
+  "user_confirmation": "skipped",
+  "use_clarification": false
+}

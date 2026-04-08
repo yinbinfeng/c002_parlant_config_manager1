@@ -1,0 +1,76 @@
+{
+  "sop_id": "main_sop_backbone_v2",
+  "sop_type": "main",
+  "sop_title": "日本共荣保险外呼营销主SOP主干结构",
+  "main_sop_nodes": [
+    {
+      "node_id": "node_001",
+      "node_name": "开场联络与合规身份确认",
+      "instruction": "进行标准开场白，清晰报出公司名称（日本共荣保险）、客服姓名及工号，明确告知通话目的为保险营销服务，并依据日本保险法规定告知通话录音事宜，获取用户初步知情同意。",
+      "exit_condition": "用户明确知晓来电方身份并同意继续沟通或录音",
+      "exit_condition_examples": [
+        "用户回答'知道了，请说'",
+        "用户回应'我是本人，可以听一下'"
+      ]
+    },
+    {
+      "node_id": "node_002",
+      "node_name": "客户意愿度与风险状态评估",
+      "instruction": "通过简短寒暄或意图询问判断用户当前沟通意愿，实时监测挂断倾向或拒绝信号。若检测到强烈拒绝，触发合规挽留机制；若检测为正常沟通，进入需求分析。",
+      "exit_condition": "完成用户当前沟通状态的判定（愿意倾听/需要挽留/直接挂断）",
+      "exit_condition_examples": [
+        "用户表示'我没时间，别说了'（触发挽留）",
+        "用户表示'你可以简单说说看'（继续流程）"
+      ]
+    },
+    {
+      "node_id": "node_003",
+      "node_name": "保障需求分析与产品引导",
+      "instruction": "基于用户家庭状况或现有保障缺口，询问关键风险点（医疗、养老等），将用户需求与保险产品功能建立初步关联，避免过度承诺。",
+      "exit_condition": "用户确认至少一个具体的保障关注点或痛点",
+      "exit_condition_examples": [
+        "用户提到'我确实担心医疗费用问题'",
+        "用户询问'这个能覆盖住院吗'"
+      ]
+    },
+    {
+      "node_id": "node_004",
+      "node_name": "保险方案呈现与利益说明",
+      "instruction": "根据确认的需求展示具体保险方案，清晰说明保额、保费、免责条款等核心要素，确保信息透明合规，不进行误导性对比或夸大收益。",
+      "exit_condition": "用户复述或确认理解方案的核心权益内容",
+      "exit_condition_examples": [
+        "用户说'那这个每年交多少钱？'",
+        "用户确认'如果生病的话是赔多少'"
+      ]
+    },
+    {
+      "node_id": "node_005",
+      "node_name": "购买意向确认与流程引导",
+      "instruction": "试探用户购买意向，引导至下一步行动（如预约面谈、发送资料、直接投保），对于犹豫用户再次强调核心价值而非施压。",
+      "exit_condition": "达成明确的下一步行动共识或用户明确表示终止",
+      "exit_condition_examples": [
+        "用户同意'那你把资料发我邮箱吧'",
+        "用户决定'我现在就想了解一下怎么买'"
+      ]
+    },
+    {
+      "node_id": "node_006",
+      "node_name": "合规收尾与信息登记",
+      "instruction": "感谢用户时间，再次确认用户无投诉意向，礼貌结束通话，并在系统中准确记录通话结果（成功/拒绝/需跟进）及合规标签。",
+      "exit_condition": "通话连接断开且CRM系统状态已更新",
+      "exit_condition_examples": [
+        "用户说'好的，再见'后挂机",
+        "系统显示通话时长结束且状态标记完成"
+      ]
+    }
+  ],
+  "frozen": true,
+  "frozen_at": "2026-04-07T14:08:49.811299",
+  "constraints": {
+    "node_count_range": "5-9",
+    "allow_branch_in_main": false,
+    "single_core_objective_per_node": true
+  },
+  "fallback_source": null,
+  "freeze_hash": "1337ae7b1ad36dceca36dba5c0515680a7f902dc03c3a87c6768d9a71146f1eb"
+}

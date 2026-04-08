@@ -1,0 +1,18 @@
+{
+  "source_config_root": "E:\\cursorworkspace\\c002_parlant_config_manager1\\egs\\v0.1.0_minging_agents\\config",
+  "snapshot_dir": "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\run_config_snapshot",
+  "total_yaml_files": 11,
+  "files": [
+    "agents/compliance_check_agent.yaml",
+    "agents/config_assembler_agent.yaml",
+    "agents/coordinator_agent.yaml",
+    "agents/debate_prompts.yaml",
+    "agents/global_rules_agent.yaml",
+    "agents/glossary_agent.yaml",
+    "agents/requirement_analyst_agent.yaml",
+    "agents/user_profile_agent.yaml",
+    "mock/insurance_mock_data.yaml",
+    "mock/ui_examples.yaml",
+    "system_config.yaml"
+  ]
+}

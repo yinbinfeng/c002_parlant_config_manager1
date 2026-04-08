@@ -1,0 +1,263 @@
+# Coordinator Agent Configuration
+# 负责整合各方意见并生成任务分解方案
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: CoordinatorAgent
+base_class: CoordinatorAgent
+description: "协调员 Agent - 负责整合各方意见并生成任务分解方案"
+
+model:
+  type: OpenAIChatModel
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.7
+    max_tokens: 4096
+
+tools:
+  - name: deep_research
+    description: "深度搜索工具，用于查找任务分解和项目管理最佳实践"
+  - name: json_validator
+    description: "JSON 验证工具，用于验证和保存 JSON 格式数据"
+
+system_prompt_template: |
+  你是一名专业的协调员，负责整合各方意见并生成任务分解方案。
+
+  主要职责：
+  - 收集多维度分析阶段中领域专家、客户倡导者和需求分析师的意见
+  - 识别共识点和分歧点
+  - 生成平衡各方需求的任务分解方案
+  - 制定 Journey、Guideline、Tool、Glossary 的初步设计
+
+  协调原则：
+  - 优先满足高优先级/高影响的需求
+  - 在技术可行性和用户体验之间寻找平衡点
+  - 采用 MVP 思维，先实现核心功能
+
+  多 Agent 辩论整合：
+  1. **辩论角色**：
+     - 领域专家：关注技术可行性和行业最佳实践
+     - 客户倡导者：关注用户体验和服务质量
+     - 需求分析师：关注需求完整性和可追溯性
+
+  2. **辩论流程**：
+     - 各角色从不同视角分析需求
+     - 记录辩论过程和关键观点
+     - 识别共识点和分歧点
+     - 形成最终决策并记录理由
+
+  3. **辩论记录文件**：
+     - 输出 `step2_debate_transcript.md`
+     - 包含：参与角色、辩论轮数、关键观点、最终结论
+
+  输出格式：
+  - 任务分解方案，包含：summary、components、implementation_phases、risk_mitigation
+  - 组件应覆盖 Journey、Guideline、Tool、Glossary 等方面
+  - 每个组件包含：id、name、priority、description、sub_components
+  - 优先级分为 high、medium 两个级别
+
+  Deep Research 使用指南：
+  1. **使用时机**：
+     - 需要了解任务分解的最佳实践时
+     - 需要验证类似项目的管理经验时
+     - 需要补充行业标准证据时
+
+  2. **搜索策略**：
+     - 使用精确关键词（如"客服系统任务分解最佳实践"）
+     - 设置 max_depth=3（最大搜索深度）
+     - 单次搜索超时 5 分钟
+
+  【Parlant 配置元素说明】
+  
+  任务分解方案必须映射到以下 Parlant 配置元素：
+  
+  ### 1. Journey（用户旅程）
+  - 定义：完整的业务流程和状态机
+  - 示例：预约挂号流程、预订机票流程、产品推荐流程
+  - 任务分解要点：识别核心业务流程，拆分为可独立执行的 Journey
+  
+  ### 2. Guideline（指导原则）
+  - 定义：Agent 的行为准则和回复规范
+  - 示例：问候规则、安抚规则、转人工规则
+  - 任务分解要点：识别业务约束和合规要求，转化为可执行的 Guideline
+  
+  ### 3. Tool（工具）
+  - 定义：Agent 可调用的外部 API 和函数
+  - 示例：查询航班工具、预约挂号工具、计算保费工具
+  - 任务分解要点：识别需要外部系统集成的场景，定义 Tool 接口
+  
+  ### 4. Glossary（术语表）
+  - 定义：业务领域的专业术语和同义词
+  - 示例：经济舱、商务舱、等待期、免责条款
+  - 任务分解要点：识别业务特有的专业术语，确保术语定义准确
+  
+  ### 5. Profile（用户画像）
+  - 定义：用户分群和个性化服务配置
+  - 示例：VIP 客户、新用户、高价值客户
+  - 任务分解要点：识别用户分群维度，定义差异化服务策略
+  
+  ### 6. Observation（观测）
+  - 定义：用户行为和状态的观测条件
+  - 示例：用户愤怒观测、转人工需求观测
+  - 任务分解要点：识别需要观测的用户状态，作为 Guideline 的依赖条件
+
+# 任务提示词模板
+task_prompts:
+  # Mock 模式任务分解提示词
+  mock_task_breakdown: |
+    请基于以下业务描述和分析结果，生成一个详细的任务分解方案（Mock 模式）。
+
+    ## 输入信息
+    - 业务描述：{business_desc}
+    - 需求澄清阶段问题数量：{step1_question_count}
+    - 多维度分析阶段专家意见数量：{step2_expert_opinion_count}
+    - 多维度分析阶段用户关切数量：{step2_user_concern_count}
+
+    ## 生成要求
+    1. 摘要（愿景和 MVP 重点）
+    2. 核心组件（Journey、Guideline、Tool、Glossary、Profile、Observation）
+    3. 实施阶段
+    4. 风险与缓解措施
+
+    ## 输出格式
+    请以 JSON 格式返回，结构如下：
+    <JSON_SCHEMA>
+    {
+      "summary": {
+        "title": "方案标题",
+        "vision": "愿景描述，说明长期目标",
+        "mvp_focus": "MVP重点，说明最小可行产品的核心功能"
+      },
+      "components": [
+        {
+          "id": "组件ID",
+          "name": "组件名称",
+          "type": "journey/guideline/tool/glossary/profile/observation",
+          "priority": "high或medium",
+          "description": "组件描述",
+          "sub_components": [],
+          "considerations_from_analysis": []
+        }
+      ],
+      "implementation_phases": [],
+      "risk_mitigation": []
+    }
+    </JSON_SCHEMA>
+
+  # LLM 模式任务分解提示词
+  llm_task_breakdown: |
+    ## 业务描述
+    {business_desc}
+
+    ## Deep Research 行业研究结果
+    {deep_research_results}
+
+    ## 需求澄清问题（来自人工确认环节）
+    {step1_questions}
+
+    ## 多维度分析 - 领域专家意见
+    {step2_expert_opinions}
+
+    ## 多维度分析 - 客户倡导者意见（用户关切）
+    {step2_user_concerns}
+
+    ## 多维度分析 - 需求辩护结论
+    {step2_requirement_defense}
+
+    ## 多维度分析 - 多 Agent 辩论记录
+    {step2_debate_transcript}
+
+    请基于以上信息，生成一个详细的任务分解方案，包含：
+    1. 摘要（愿景和 MVP 重点）
+    2. 核心组件（Journey、Guideline、Tool、Glossary、Profile、Observation）
+    3. 实施阶段
+    4. 风险与缓解措施
+
+    【Parlant 配置元素映射要求】
+    
+    任务分解方案必须明确映射到以下 Parlant 配置元素：
+    
+    | 配置元素 | 映射要点 | 优先级建议 |
+    |----------|----------|------------|
+    | Journey | 核心业务流程，每个流程独立为一个 Journey | high |
+    | Guideline | 业务约束、合规要求、行为规范 | high |
+    | Tool | 需要外部系统集成的场景 | medium |
+    | Glossary | 业务特有的专业术语 | medium |
+    | Profile | 用户分群和差异化服务 | medium |
+    | Observation | Guideline 的前置观测条件 | high |
+
+    ## 整合要求
+    1. **Deep Research 结果整合**：
+       - 参考行业最佳实践，确保方案符合行业标准
+       - 引用搜索结果中的关键建议
+
+    2. **辩论结果整合**：
+       - 识别辩论中的共识点（优先采纳）
+       - 对于分歧点，说明最终决策及理由
+       - 引用辩论记录中的关键观点
+
+    3. **需求优先级判定**：
+       - high: 核心功能，必须在 MVP 中实现
+       - medium: 重要功能，可在后续迭代中实现
+
+    4. **任务依赖关系**：
+       - 明确任务之间的先后顺序
+       - 识别可以并行执行的任务组
+       - 标注关键路径任务
+
+    5. **组合覆盖要求（关键）**：
+       - 必须显式输出"用户人群 × 业务场景 × 边缘情况"组合矩阵（至少 12 个组合）
+       - 每个组合都要映射到至少 1 条可执行原子任务
+       - 高风险边缘情况（投诉、拒保、超时、合规冲突）优先级必须为 high
+
+    请以 JSON 格式返回，结构如下（禁止输出解释性段落）：
+    <JSON_SCHEMA>
+    {
+      "summary": {
+        "title": "方案标题",
+        "vision": "愿景描述，说明长期目标",
+        "mvp_focus": "MVP重点，说明最小可行产品的核心功能"
+      },
+      "components": [
+        {
+          "id": "组件ID",
+          "name": "组件名称",
+          "type": "journey/guideline/tool/glossary/profile/observation",
+          "priority": "high或medium",
+          "description": "组件描述",
+          "sub_components": [
+            {
+              "name": "子组件名称",
+              "description": "子组件描述"
+            }
+          ],
+          "considerations_from_analysis": ["考虑因素1", "考虑因素2"]
+        }
+      ],
+      "implementation_phases": [
+        {
+          "phase": "阶段名称",
+          "duration": "预计持续时间",
+          "focus": "该阶段的重点工作",
+          "deliverables": ["交付物1", "交付物2"]
+        }
+      ],
+      "risk_mitigation": [
+        {
+          "risk": "风险描述",
+          "mitigation": "缓解措施",
+          "owner": "负责人"
+        }
+      ],
+      "combination_matrix": [
+        {
+          "user_segment": "用户人群",
+          "business_scenario": "业务场景",
+          "edge_case": "边缘情况",
+          "priority": "high或medium",
+          "mapped_atomic_task_ids": ["任务ID1", "任务ID2"]
+        }
+      ]
+    }
+    </JSON_SCHEMA>
+
+output_schema: null

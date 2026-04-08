@@ -1,0 +1,15 @@
+Error at 2026-04-07T14:13:03.175879
+RuntimeError: Step5 node tasks failed: ["FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\cursorworkspace\\\\c002_parlant_config_manager1\\\\output\\\\step5_branch_sop_parallel\\\\node_node_004\\\\step5_journeys_node_004.json'"]
+
+Traceback:
+Traceback (most recent call last):
+  File "E:\cursorworkspace\c002_parlant_config_manager1\src\mining_agents\managers\step_manager.py", line 255, in run_step
+    result = await handler(context)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\cursorworkspace\c002_parlant_config_manager1\src\mining_agents\engine.py", line 209, in wrapped_step5_branch_sop_parallel_handler
+    return await step5_branch_sop_parallel_handler(context, orchestrator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\cursorworkspace\c002_parlant_config_manager1\src\mining_agents\steps\step5_branch_sop_parallel.py", line 1170, in step5_branch_sop_parallel_handler
+    raise RuntimeError(f"Step5 node tasks failed: {errors[:3]}")
+RuntimeError: Step5 node tasks failed: ["FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\cursorworkspace\\\\c002_parlant_config_manager1\\\\output\\\\step5_branch_sop_parallel\\\\node_node_004\\\\step5_journeys_node_004.json'"]
+

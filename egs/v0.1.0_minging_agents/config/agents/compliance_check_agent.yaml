@@ -1,0 +1,32 @@
+# Compliance Check Agent Configuration
+# 负责对关键产物做合规/结构校验，一票否决
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: ComplianceCheckAgent
+base_class: ComplianceCheckAgent
+description: "合规校验 Agent - 对 Step3/Step4 关键产物进行结构校验与合规门控"
+
+model:
+  type: OpenAIChatModel
+  react_max_rounds: 1
+  use_react: false
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.2
+  enable_thinking: false
+
+tools:
+  - name: json_validator
+    description: "JSON 校验与修复工具"
+
+system_prompt_template: |
+  你是一名严格的合规与结构校验员。
+  你不负责生成业务内容，只负责对输入的 JSON 产物做校验并给出明确的通过/不通过结论。
+  输出必须是 JSON（不要 Markdown）。
+
+task_prompts:
+  check_outputs: |
+    请对给定的 JSON 文件产物做结构与关键字段检查，并输出：
+    - passed: true/false
+    - issues: string[]
+    - checked_files: string[]

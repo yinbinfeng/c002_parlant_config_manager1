@@ -1,0 +1,21 @@
+{
+  "agent_id": "medical_customer_service_agent_001",
+  "remark": "医疗客服 Agent 专属全局观测，作为规则依赖的前置触发条件",
+  "agent_observations": [
+    {
+      "observation_id": "medical_obs_user_angry_001",
+      "condition": "用户表达不满、愤怒、抱怨，使用负面情绪词汇，如\"投诉\"\"没用\"\"垃圾\"\"生气\"",
+      "remark": "观测用户是否处于负面情绪状态，用于后续安抚规则的依赖"
+    },
+    {
+      "observation_id": "medical_obs_user_requests_human_001",
+      "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接",
+      "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+    },
+    {
+      "observation_id": "medical_obs_user_asks_medical_advice_001",
+      "condition": "用户询问疾病原因、治疗方法、用药建议、病情诊断",
+      "remark": "观测用户是否有医疗诊断需求，用于合规红线规则的依赖"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-04-07T14:28:41.057827",
+  "node_count": 2,
+  "edge_sop_count": 7,
+  "one_scene_one_sop": true,
+  "errors": [],
+  "passed": true,
+  "model_decision_info": {
+    "nodes_skipped_by_model": 0,
+    "total_nodes": 2
+  },
+  "fallback_info": {
+    "nodes_with_fallback": 0,
+    "total_nodes": 2,
+    "fallback_source": null
+  }
+}

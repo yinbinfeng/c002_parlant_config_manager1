@@ -1,0 +1,10 @@
+{
+  "agent_id": "insurance_sales_agent_001",
+  "agent_name": "保险销售顾问 Agent",
+  "agent_description": "专业的保险销售代理，为用户提供风险评估、保险产品推荐、保费计算、投保指导等全流程服务",
+  "default_language": "zh-CN",
+  "default_priority": 5,
+  "conversation_timeout": 3600,
+  "playground_port": 8803,
+  "remark": "保险业务线专属 Agent，完全独立配置，与其他Agent 无任何共享"
+}

@@ -1,0 +1,75 @@
+{
+  "sop_id": "edge_user_hesitate_001",
+  "sop_type": "edge",
+  "parent_sop_id": "product_recommend_001",
+  "sop_title": "用户犹豫场景SOP",
+  "sop_description": "处理用户在产品推荐过程中表示'我再考虑一下'、'和家人商量一下'、'先看看再说'等犹豫场景",
+  "is_edge_case": true,
+  "priority": 1,
+  "trigger_conditions": [
+    "用户表示'我再考虑一下'",
+    "用户表示'和家人商量一下'",
+    "用户表示'先看看再说'",
+    "用户表示'暂时不着急'",
+    "用户表示'再对比对比'"
+  ],
+  "timeout": 300,
+  "sop_states": [
+    {
+      "state_id": "edge_state_000",
+      "state_name": "理解与挽留",
+      "state_type": "chat",
+      "instruction": "表示理解用户的决定，友好询问用户的顾虑点",
+      "bind_guideline_ids": ["edge_hesitate_understand_001"],
+      "bind_canned_response_ids": ["edge_cr_understand_001"],
+      "transitions": [
+        {
+          "target_state_id": "edge_state_001",
+          "condition": "用户表达了具体顾虑"
+        },
+        {
+          "target_state_id": "edge_state_002",
+          "condition": "用户坚持要考虑，无具体顾虑"
+        }
+      ]
+    },
+    {
+      "state_id": "edge_state_001",
+      "state_name": "顾虑解答",
+      "state_type": "chat",
+      "instruction": "针对用户的具体顾虑进行解答，提供有价值的信息",
+      "bind_guideline_ids": ["edge_hesitate_address_001"],
+      "transitions": [
+        {
+          "target_state_id": "edge_state_003",
+          "condition": "用户顾虑得到解答，愿意继续"
+        },
+        {
+          "target_state_id": "edge_state_002",
+          "condition": "用户仍需时间考虑"
+        }
+      ]
+    },
+    {
+      "state_id": "edge_state_002",
+      "state_name": "信息保留",
+      "state_type": "chat",
+      "instruction": "告知用户已保留其选择的产品信息，提供后续联系方式",
+      "bind_canned_response_ids": ["edge_cr_keep_info_001"],
+      "transitions": [
+        {
+          "target_state_id": "edge_state_003",
+          "condition": "用户愿意保留信息"
+        }
+      ]
+    },
+    {
+      "state_id": "edge_state_003",
+      "state_name": "友好结束",
+      "state_type": "chat",
+      "instruction": "礼貌结束对话，告知用户随时可以回来咨询",
+      "bind_canned_response_ids": ["edge_cr_farewell_001"],
+      "is_end_state": true
+    }
+  ]
+}

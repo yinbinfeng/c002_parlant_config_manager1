@@ -1,0 +1,78 @@
+{
+  "sop_id": "edge_user_hesitate_001",
+  "sop_title": "用户犹豫场景SOP",
+  "remark": "用户犹豫场景专属规则，处理用户'再考虑一下'等边缘场景",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "edge_cr_understand_001",
+      "content": "完全理解您的想法，买保险确实是一件需要慎重考虑的事情。请问您主要是在哪些方面还有顾虑呢？是产品本身、价格、还是其他方面？",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "edge_cr_keep_info_001",
+      "content": "没问题，我已经为您保留了今天推荐的产品信息。您可以慢慢考虑，有任何问题随时来问我。我的服务时间是每天9:00-21:00，期待您的回访！",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "edge_cr_farewell_001",
+      "content": "感谢您今天的咨询！保险配置是一件重要的事情，希望我的建议对您有帮助。有任何问题随时回来找我，祝您生活愉快！",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "edge_cr_price_concern_001",
+      "content": "关于价格方面，这款产品的性价比在同类型产品中是很有竞争力的。而且保险是长期保障，分摊到每天其实只需要{daily_cost}元，就能获得{coverage}万的保障。您觉得这个投入值得吗？",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "edge_cr_compare_concern_001",
+      "content": "货比三家是应该的！我可以帮您分析一下这款产品和其他同类产品的区别。主要差异在于：{comparison_points}。您想详细了解哪个方面？",
+      "language": "zh-CN"
+    }
+  ],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "edge_hesitate_understand_001",
+      "scope": "sop_only",
+      "condition": "用户表示需要考虑，进入犹豫场景",
+      "action": "使用理解与挽留模板话术，友好询问用户的具体顾虑点",
+      "priority": 3,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["edge_cr_understand_001"],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "edge_hesitate_price_address_001",
+      "scope": "sop_only",
+      "condition": "用户对价格有顾虑，认为保费偏高",
+      "action": "使用价格解答模板话术，强调性价比和长期保障价值",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["edge_cr_price_concern_001"],
+      "exclusions": ["edge_hesitate_understand_001"],
+      "dependencies": ["edge_obs_user_has_concern_001", "edge_obs_user_price_concern_001"]
+    },
+    {
+      "guideline_id": "edge_hesitate_compare_address_001",
+      "scope": "sop_only",
+      "condition": "用户想要对比其他产品，需要更多信息",
+      "action": "使用产品对比模板话术，提供竞品对比分析",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["edge_cr_compare_concern_001"],
+      "exclusions": ["edge_hesitate_understand_001"],
+      "dependencies": ["edge_obs_user_has_concern_001", "edge_obs_user_compare_concern_001"]
+    },
+    {
+      "guideline_id": "edge_hesitate_keep_info_001",
+      "scope": "sop_only",
+      "condition": "用户坚持要考虑，愿意保留产品信息",
+      "action": "使用信息保留模板话术，告知用户已保存信息并提供后续联系方式",
+      "priority": 2,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["edge_cr_keep_info_001"],
+      "exclusions": ["edge_hesitate_understand_001", "edge_hesitate_price_address_001", "edge_hesitate_compare_address_001"],
+      "dependencies": ["edge_obs_user_want_keep_info_001"]
+    }
+  ]
+}

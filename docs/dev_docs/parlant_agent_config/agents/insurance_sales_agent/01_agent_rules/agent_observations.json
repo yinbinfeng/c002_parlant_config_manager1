@@ -1,0 +1,26 @@
+{
+  "agent_id": "insurance_sales_agent_001",
+  "remark": "保险销售 Agent专属全局观测，作为规则依赖的前置触发条件",
+  "agent_observations": [
+    {
+      "observation_id": "insurance_obs_user_price_sensitive_001",
+      "condition": "用户表达价格敏感、觉得保费贵、要求更便宜的方案、对比多家保险公司价格",
+      "remark": "观测用户是否对价格敏感，用于后续推荐性价比方案的依赖"
+    },
+    {
+      "observation_id": "insurance_obs_user_has_family_burden_001",
+      "condition": "用户表示有家庭负担、需要养家糊口、有房贷车贷、有小孩或老人需要照顾",
+      "remark": "观测用户是否有家庭责任负担，用于后续高保额推荐的依赖"
+    },
+    {
+      "observation_id": "insurance_obs_user_health_concern_001",
+      "condition": "用户询问健康告知、既往病史、体检异常、带病投保、理赔条件",
+      "remark": "观测用户是否关注健康问题，用于后续核保指导的依赖"
+    },
+    {
+      "observation_id": "insurance_obs_user_requests_human_001",
+      "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接",
+      "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+    }
+  ]
+}

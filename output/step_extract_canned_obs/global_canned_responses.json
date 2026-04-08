@@ -1,0 +1,62 @@
+{
+  "agent_id": "{agent_name}_001",
+  "remark": "从Step3全局guidelines提取的canned responses",
+  "extraction_source": "step3_global_guidelines",
+  "extraction_time": "2026-04-07T14:28:43.940847",
+  "agent_canned_responses": [
+    {
+      "canned_response_id": "{业务前缀}_cr_privacy_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_privacy_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    },
+    {
+      "canned_response_id": "{业务前缀}_cr_greet_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_greet_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    },
+    {
+      "canned_response_id": "{业务前缀}_cr_soothe_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_soothe_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    },
+    {
+      "canned_response_id": "{业务前缀}_cr_transfer_human_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_transfer_human_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    },
+    {
+      "canned_response_id": "{业务前缀}_cr_intent_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_intent_clarify_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    },
+    {
+      "canned_response_id": "{业务前缀}_cr_refuse_001",
+      "content": "",
+      "language": "zh-CN",
+      "bind_guideline_ids": [
+        "{业务前缀}_refuse_handling_001"
+      ],
+      "extraction_note": "从guideline的bind_canned_response_ids提取，需要补充content"
+    }
+  ]
+}

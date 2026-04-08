@@ -1,0 +1,22 @@
+{
+  "step_num": 3,
+  "status": "completed",
+  "started_at": "2026-04-07T14:08:49.821781",
+  "completed_at": "2026-04-07T14:10:17.941987",
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\agent_guidelines.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\step3_glossary_master.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\agent_observations.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step3_global_rules_and_glossary\\step3_global_guidelines_compliance_report.json"
+  ],
+  "metadata": {
+    "guidelines_count": 6,
+    "observations_count": 4,
+    "glossary_terms_count": 6,
+    "fallback_info": {
+      "guidelines_fallback_used": false,
+      "glossary_fallback_used": false,
+      "observations_fallback_used": true
+    }
+  }
+}

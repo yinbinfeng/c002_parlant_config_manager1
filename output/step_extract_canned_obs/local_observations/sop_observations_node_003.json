@@ -1,0 +1,29 @@
+{
+  "sop_id": "main_journey__branch_node_003",
+  "sop_title": "保障需求分析与产品引导 二级分支 Journey",
+  "remark": "从Step5提取的observations (节点: node_003)",
+  "extraction_source": "step5_sop_observations",
+  "extraction_time": "2026-04-07T14:28:44.022038",
+  "sop_observations": [
+    {
+      "observation_id": "main_journey_node_003_obs_user_needs_detail_001",
+      "condition": "用户在[保障需求分析与产品引导]节点询问具体细节、要求解释、需要更多信息，在保险场景中表现出深入了解的意愿",
+      "remark": "观测用户是否需要[保障需求分析与产品引导]相关的详细信息，用于后续信息提供规则的依赖"
+    },
+    {
+      "observation_id": "main_journey_node_003_obs_user_hesitant_001",
+      "condition": "用户在[保障需求分析与产品引导]节点犹豫不决、反复询问、表达顾虑，在保险场景中表现出决策困难",
+      "remark": "观测用户是否在[保障需求分析与产品引导]节点有犹豫，用于后续引导或澄清规则的依赖"
+    },
+    {
+      "observation_id": "main_journey_node_003_obs_user_ready_proceed_001",
+      "condition": "用户在[保障需求分析与产品引导]节点表示理解、确认信息、准备继续，在保险场景中表现出推进意愿",
+      "remark": "观测用户是否准备好继续[保障需求分析与产品引导]流程，用于后续推进规则的依赖"
+    },
+    {
+      "observation_id": "main_journey_node_003_obs_branch_completed_001",
+      "condition": "用户在[保障需求分析与产品引导]节点问题已解决、表示满意、准备回归主流程，在保险场景中分支处理完成",
+      "remark": "观测[保障需求分析与产品引导]分支是否已完成，用于后续回归主流程规则的依赖"
+    }
+  ]
+}

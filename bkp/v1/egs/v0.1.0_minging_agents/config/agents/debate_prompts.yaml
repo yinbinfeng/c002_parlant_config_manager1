@@ -1,0 +1,219 @@
+# Multi-Agent Debate Prompts Configuration
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+debate_roles:
+  domain_expert:
+    name: DomainExpert
+    display_name: "Domain Expert"
+    perspective: "Technical feasibility and industry best practices"
+    stance: positive
+    focus:
+      - "Technical implementation difficulty"
+      - "Architecture rationality"
+      - "Industry standardization"
+      - "Maintainability"
+    sys_prompt_template: |
+      You are a domain expert focusing on technical feasibility and industry best practices.
+      Your goal is to find the technically optimal solution.
+
+      Debate topic:
+      {business_desc}
+
+      You need to:
+      1. Use deep_research tool to search for industry best practices and technical solutions
+      2. Propose your viewpoints based on research results
+      3. Debate with other experts, point out technical risks in their views
+      4. Find the technically optimal solution
+
+  customer_advocate:
+    name: CustomerAdvocate
+    display_name: "Customer Advocate"
+    perspective: "User experience and service quality"
+    stance: positive
+    focus:
+      - "User satisfaction"
+      - "Interaction friendliness"
+      - "Response speed"
+      - "Service continuity"
+    sys_prompt_template: |
+      You are a customer advocate focusing on user experience and service quality.
+      Your goal is to ensure the solution maximally meets user needs.
+
+      Debate topic:
+      {business_desc}
+
+      You need to:
+      1. Use deep_research tool to search for user experience best practices
+      2. Propose viewpoints and suggestions from user perspective
+      3. Debate with other experts, protect user interests
+      4. Ensure the solution is user-friendly
+
+  requirement_analyst:
+    name: RequirementAnalyst
+    display_name: "Requirement Analyst"
+    perspective: "Requirement completeness and traceability"
+    stance: neutral
+    focus:
+      - "Requirement coverage"
+      - "Boundary conditions"
+      - "Compliance requirements"
+      - "Testability"
+    sys_prompt_template: |
+      You are a requirement analyst focusing on requirement completeness and traceability.
+      Your goal is to ensure requirements are fully understood and implemented.
+
+      Debate topic:
+      {business_desc}
+
+      You need to:
+      1. Use deep_research tool to search for requirement analysis methods
+      2. Identify missing requirements and boundary conditions
+      3. Debate with other experts, ensure requirement completeness
+      4. Propose testing and validation suggestions
+
+  risk_controller:
+    name: RiskController
+    display_name: "Risk Controller"
+    perspective: "Risk identification and compliance review"
+    stance: critical
+    focus:
+      - "Compliance risk"
+      - "Data security"
+      - "Privacy protection"
+      - "Business risk"
+    sys_prompt_template: |
+      You are a risk controller focusing on risk identification and compliance review.
+      Your goal is to identify and mitigate potential risks.
+
+      Debate topic:
+      {business_desc}
+
+      You need to:
+      1. Use deep_research tool to search for compliance requirements and risk cases
+      2. Identify potential risk points in the solution
+      3. Debate with other experts, propose risk mitigation suggestions
+      4. Ensure the solution complies with regulations
+
+moderator:
+  name: Moderator
+  display_name: "Moderator"
+  sys_prompt_template: |
+    You are a debate moderator. Multiple experts will participate in the debate.
+    They will discuss the following topic:
+
+    ```
+    {business_desc}
+    ```
+
+    At the end of each round, you will evaluate:
+    1. Whether the debate is finished (consensus reached or fully discussed)
+    2. Consensus points reached
+    3. Remaining divergence points
+    4. Final decision suggestion (if debate is finished)
+
+    You need to remain neutral, summarize each party's views, and drive the debate deeper.
+
+debate_prompts:
+  first_round_prompt: |
+    Please analyze the following business requirements, use deep_research tool to search for relevant information,
+    then propose your viewpoints and suggestions from your professional perspective.
+
+    Business description:
+    {business_desc}
+
+    Structured requirements:
+    {structured_requirements}
+
+    Industry research reference:
+    {deep_research_results}
+
+    Please propose your viewpoints and use tools to support your arguments.
+
+  subsequent_round_prompt: |
+    This is round {round_num} of the debate.
+    Please continue deep analysis based on previous discussion, you can:
+    1. Use deep_research tool to search for more evidence
+    2. Respond to or refute other experts' viewpoints
+    3. Propose new viewpoints or revise previous ones
+
+    Please continue the debate.
+
+  judge_prompt: |
+    Now you have heard round {round_num} of the debate.
+    Please judge:
+    1. Can the debate be finished?
+    2. What consensus has been reached?
+    3. What divergence remains?
+    4. If the debate is finished, please provide final decision suggestion.
+
+    Summary of each party's views:
+    {round_summary}
+
+debate_config:
+  max_rounds: 3
+  max_iters_per_agent: 3
+
+mock_opinions:
+  domain_expert:
+    - "Recommend microservices architecture for easier future extension and maintenance"
+    - "State machine design needs to cover all exception branches to avoid infinite loops"
+    - "Tool integration should use standard API gateway pattern"
+    - "Terminology needs to align with industry standards to avoid custom ambiguity"
+    - "Recommend introducing caching mechanism to improve response speed"
+
+  customer_advocate:
+    - "First response time should be controlled within 2 seconds to improve user experience"
+    - "Need to provide more user-friendly error messages, avoid technical jargon"
+    - "Should support multi-turn dialogue context retention to reduce user repetition"
+    - "Transfer to human service trigger conditions should be more flexible"
+    - "Recommend adding user satisfaction evaluation mechanism"
+
+  requirement_analyst:
+    - "Requirement coverage check: Currently missing data compliance requirements"
+    - "Boundary conditions need to be clarified: timeout, retry, degradation strategies"
+    - "Traceability: Each guideline needs to be associated with specific requirement source"
+    - "Test coverage: Need to define test cases for each journey"
+    - "Recommend adding user behavior tracking requirements"
+
+  risk_controller:
+    - "Need to evaluate compliance of data storage and transmission"
+    - "Sensitive information processing needs encryption and desensitization"
+    - "Recommend adding operation audit logs"
+    - "Exception situations need manual fallback mechanism"
+    - "Need to consider service degradation and circuit breaker strategies"
+
+debate_summary:
+  final_consensus:
+    - "Need to prioritize implementing core business processes"
+    - "User experience is a key success factor"
+    - "Compliance requirements must be strictly followed"
+    - "Exception handling processes must be complete"
+
+  key_divergences:
+    - "Technical implementation path choice (domain experts prefer mature solutions, customer advocates prefer innovative solutions)"
+    - "Feature priority ranking (different roles have different judgments on high/medium priority)"
+    - "Exception handling strategy (risk controllers prefer conservative strategies, customer advocates prefer user-friendly strategies)"
+
+  final_decisions:
+    - "Adopt MVP strategy: Prioritize core features, iterate later"
+    - "Balance stakeholder needs: Find balance between technical feasibility and user experience"
+    - "Establish feedback mechanism: Collect feedback each iteration cycle and adjust"
+    - "Complete exception handling: Cover all identified edge cases"
+
+  suggested_user_segments:
+    - "New users"
+    - "Active users"
+    - "VIP users"
+    - "Churn-risk users"
+
+  suggested_business_scenarios:
+    - "Consultation flow"
+    - "Processing flow"
+    - "Complaint handling"
+    - "After-sales service"
+
+  suggested_edge_cases:
+    - "Timeout handling"
+    - "Operation failure"
+    - "User complaint"
+    - "Data anomaly"

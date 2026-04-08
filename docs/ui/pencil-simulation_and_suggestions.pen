@@ -1,0 +1,1826 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": -97,
+      "y": -301,
+      "name": "Frame",
+      "clip": true,
+      "width": 3617,
+      "height": 1276,
+      "fill": "#FFFFFF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "jSyTP",
+          "x": 963,
+          "y": 356,
+          "name": "Rule View",
+          "width": 800,
+          "height": 660,
+          "fill": "#1e1e1e",
+          "cornerRadius": 8,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ahAmq",
+              "name": "Tab Container",
+              "width": "fill_container",
+              "height": 60,
+              "fill": "#2a2a2a",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qBSDP",
+                  "name": "Tab 1 - 流程",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "eARuy",
+                      "name": "Tab 1 Text",
+                      "fill": "#ffffff",
+                      "content": "流程",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RzAdo",
+                  "name": "Tab 2 - 规则",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#ff6b35",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3SW65",
+                      "name": "Tab 2 Text",
+                      "fill": "#cccccc",
+                      "content": "规则",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YmowN",
+                  "name": "Tab 3 - 术语",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Esn2J",
+                      "name": "Tab 3 Text",
+                      "fill": "#cccccc",
+                      "content": "术语",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y5EjY",
+                  "name": "Tab 4 - 工具",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "J4vN4",
+                      "name": "Tab 4 Text",
+                      "fill": "#cccccc",
+                      "content": "工具",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wlzA6",
+              "name": "Rule Content",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#1e1e1e",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GRWyB",
+                  "name": "Rule Section",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jFutL",
+                      "name": "Rule Title",
+                      "fill": "#ffffff",
+                      "content": "全局规则",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HHNW7",
+                      "name": "Rule Cards",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nXCQb",
+                          "name": "Rule Card 1",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MC5X7",
+                              "name": "Rule Card 1 Title",
+                              "fill": "#ffffff",
+                              "content": "医疗问候规则",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "pRSs6",
+                              "name": "Rule Card 1 Desc",
+                              "fill": "#cccccc",
+                              "content": "用户首次对话、向代理打招呼时，用友好的语气回应用户，主动询问用户的医疗相关需求",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "id4CT",
+                          "name": "Rule Card 2",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "HLIkL",
+                              "name": "Rule Card 2 Title",
+                              "fill": "#ffffff",
+                              "content": "医疗安抚规则",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jk8o3",
+                              "name": "Rule Card 2 Desc",
+                              "fill": "#cccccc",
+                              "content": "用户处于负面情绪状态时，先使用医疗专属安抚模板话术安抚用户情绪，再询问用户的具体问题",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "YdnTg",
+                          "name": "Rule Card 3",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GAG9Q",
+                              "name": "Rule Card 3 Title",
+                              "fill": "#ffffff",
+                              "content": "医疗无诊断规则",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "4rrdr",
+                              "name": "Rule Card 3 Desc",
+                              "fill": "#cccccc",
+                              "content": "用户要求诊断疾病、开具处方、提供治疗方案时，礼貌拒绝用户的请求，引导用户咨询专业医生",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CVOMd",
+                          "name": "Rule Card 4",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "IwPlq",
+                              "name": "Rule Card 4 Title",
+                              "fill": "#ffffff",
+                              "content": "医疗转人工规则",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "l6F38",
+                              "name": "Rule Card 4 Desc",
+                              "fill": "#cccccc",
+                              "content": "用户有转人工需求时，使用医疗专属转人工模板话术告知用户人工客服的联系方式",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xqx58",
+          "x": 1863,
+          "y": 356,
+          "name": "Term View",
+          "width": 800,
+          "height": 660,
+          "fill": "#1e1e1e",
+          "cornerRadius": 8,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Aro7v",
+              "name": "Tab Container",
+              "width": "fill_container",
+              "height": 60,
+              "fill": "#2a2a2a",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xCks2",
+                  "name": "Tab 1 - 流程",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FpJ4A",
+                      "name": "Tab 1 Text",
+                      "fill": "#ffffff",
+                      "content": "流程",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rrVdd",
+                  "name": "Tab 2 - 规则",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QrtA6",
+                      "name": "Tab 2 Text",
+                      "fill": "#cccccc",
+                      "content": "规则",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dDrTt",
+                  "name": "Tab 3 - 术语",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#ff6b35",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aMd1F",
+                      "name": "Tab 3 Text",
+                      "fill": "#cccccc",
+                      "content": "术语",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aKsX9",
+                  "name": "Tab 4 - 工具",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NbEya",
+                      "name": "Tab 4 Text",
+                      "fill": "#cccccc",
+                      "content": "工具",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EZaal",
+              "name": "Term Content",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#1e1e1e",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "p0F29",
+                  "name": "Term Section",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tFMKr",
+                      "name": "Term Title",
+                      "fill": "#ffffff",
+                      "content": "领域术语表",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gPh5I",
+                      "name": "Term Cards",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "3ADKY",
+                          "name": "Term Card 1",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "z3Cnz",
+                              "name": "Term Card 1 Title",
+                              "fill": "#ffffff",
+                              "content": "专家号",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "DlvPn",
+                              "name": "Term Card 1 Desc",
+                              "fill": "#cccccc",
+                              "content": "副主任医师及以上职称的医生出诊的号源，挂号费用高于普通号，诊疗经验更丰富",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "arFYi",
+                          "name": "Term Card 2",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Kabrl",
+                              "name": "Term Card 2 Title",
+                              "fill": "#ffffff",
+                              "content": "普通号",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Cs2uX",
+                              "name": "Term Card 2 Desc",
+                              "fill": "#cccccc",
+                              "content": "主治医师及以下职称的医生出诊的号源，挂号费用较低，适合常规就诊、复诊",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CWAa7",
+                          "name": "Term Card 3",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jbwmF",
+                              "name": "Term Card 3 Title",
+                              "fill": "#ffffff",
+                              "content": "化验结果",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "HkC4V",
+                              "name": "Term Card 3 Desc",
+                              "fill": "#cccccc",
+                              "content": "用户在医院完成抽血、检验、影像检查后出具的检查报告，包含各项指标数据与医生诊断意见",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "53tIG",
+          "x": 2763,
+          "y": 356,
+          "name": "Tool View",
+          "width": 800,
+          "height": 660,
+          "fill": "#1e1e1e",
+          "cornerRadius": 8,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "UJmvS",
+              "name": "Tab Container",
+              "width": "fill_container",
+              "height": 60,
+              "fill": "#2a2a2a",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "AFRfy",
+                  "name": "Tab 1 - 流程",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "idwPo",
+                      "name": "Tab 1 Text",
+                      "fill": "#ffffff",
+                      "content": "流程",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "AJA25",
+                  "name": "Tab 2 - 规则",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XW9X7",
+                      "name": "Tab 2 Text",
+                      "fill": "#cccccc",
+                      "content": "规则",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7loWs",
+                  "name": "Tab 3 - 术语",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#333333",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QDPSq",
+                      "name": "Tab 3 Text",
+                      "fill": "#cccccc",
+                      "content": "术语",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MLKGm",
+                  "name": "Tab 4 - 工具",
+                  "width": 120,
+                  "height": "fill_container",
+                  "fill": "#ff6b35",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LH4yG",
+                      "name": "Tab 4 Text",
+                      "fill": "#cccccc",
+                      "content": "工具",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0Wg2p",
+              "name": "Tool Content",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#1e1e1e",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uoQGh",
+                  "name": "Tool Section",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "UTNXU",
+                      "name": "Tool Title",
+                      "fill": "#ffffff",
+                      "content": "可用工具",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "F5h1F",
+                      "name": "Tool Cards",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PQi1X",
+                          "name": "Tool Card 1",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "FW5F6",
+                              "name": "Tool Card 1 Title",
+                              "fill": "#ffffff",
+                              "content": "医院科室查询",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "6ifse",
+                              "name": "Tool Card 1 Desc",
+                              "fill": "#cccccc",
+                              "content": "根据用户提供的症状或疾病名称，查询对应的医院科室信息",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1RTgi",
+                          "name": "Tool Card 2",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "bJLTV",
+                              "name": "Tool Card 2 Title",
+                              "fill": "#ffffff",
+                              "content": "医生排班查询",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "enCqw",
+                              "name": "Tool Card 2 Desc",
+                              "fill": "#cccccc",
+                              "content": "查询指定医院、科室的医生排班和可预约时段信息",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "MnJwe",
+                          "name": "Tool Card 3",
+                          "width": "fill_container",
+                          "height": 100,
+                          "fill": "#2a2a2a",
+                          "cornerRadius": 6,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fJ3d9",
+                              "name": "Tool Card 3 Title",
+                              "fill": "#ffffff",
+                              "content": "预约挂号",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "CjtpF",
+                              "name": "Tool Card 3 Desc",
+                              "fill": "#cccccc",
+                              "content": "根据用户选择的医院、科室、医生和时段，提交预约挂号请求",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "4VacV",
+      "x": 0,
+      "y": 0,
+      "name": "Main Container",
+      "width": 800,
+      "height": 600,
+      "fill": "#1e1e1e",
+      "cornerRadius": 8,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NQDan",
+          "name": "Tab Container",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "#2a2a2a",
+          "children": [
+            {
+              "type": "frame",
+              "id": "QN16K",
+              "name": "Tab 1 - 流程",
+              "width": 120,
+              "height": "fill_container",
+              "fill": "#ff6b35",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "EhQD5",
+                  "name": "Tab 1 Text",
+                  "fill": "#ffffff",
+                  "content": "流程",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AoUeC",
+              "name": "Tab 2 - 规则",
+              "width": 120,
+              "height": "fill_container",
+              "fill": "#333333",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BfjCs",
+                  "name": "Tab 2 Text",
+                  "fill": "#cccccc",
+                  "content": "规则",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HSu9T",
+              "name": "Tab 3 - 术语",
+              "width": 120,
+              "height": "fill_container",
+              "fill": "#333333",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1hLhJ",
+                  "name": "Tab 3 Text",
+                  "fill": "#cccccc",
+                  "content": "术语",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9AY2K",
+              "name": "Tab 4 - 工具",
+              "width": 120,
+              "height": "fill_container",
+              "fill": "#333333",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2cjeL",
+                  "name": "Tab 4 Text",
+                  "fill": "#cccccc",
+                  "content": "工具",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Jbk2i",
+          "name": "Flow Content",
+          "width": "fill_container",
+          "height": 730,
+          "fill": "#1e1e1e",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "exLQj",
+              "name": "Flow Section",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fQfho",
+                  "name": "Flow Title",
+                  "fill": "#ffffff",
+                  "content": "预约挂号全流程",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "E91uG",
+                  "name": "Flow Diagram",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#2a2a2a",
+                  "cornerRadius": 6,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jBWju",
+                      "name": "Flow Node 1",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#333333",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UNuUW",
+                          "name": "Flow Node 1 Title",
+                          "fill": "#ffffff",
+                          "content": "1. 科室选择",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ybyt2",
+                          "name": "Flow Node 1 Desc",
+                          "fill": "#cccccc",
+                          "content": "用户进入预约系统后，首先选择就诊科室",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zcn4F",
+                      "name": "Flow Line 1",
+                      "width": "fill_container",
+                      "height": 16,
+                      "fill": "#2a2a2a",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ASmHJ",
+                          "name": "Flow Line 1 Text",
+                          "fill": "#cccccc",
+                          "content": "↓",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "GCgq4",
+                      "name": "Flow Node 2",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#333333",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oOTIx",
+                          "name": "Flow Node 2 Title",
+                          "fill": "#ffffff",
+                          "content": "2. 加载医生",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cm6pP",
+                          "name": "Flow Node 2 Desc",
+                          "fill": "#cccccc",
+                          "content": "系统根据选择的科室加载可预约的医生列表",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YgstI",
+                      "name": "Flow Line 2",
+                      "width": "fill_container",
+                      "height": 16,
+                      "fill": "#2a2a2a",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "CQ4pM",
+                          "name": "Flow Line 2 Text",
+                          "fill": "#cccccc",
+                          "content": "↓",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zPtMW",
+                      "name": "Flow Node 3",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#333333",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Adh0m",
+                          "name": "Flow Node 3 Title",
+                          "fill": "#ffffff",
+                          "content": "3. 选择时段",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "DhNdv",
+                          "name": "Flow Node 3 Desc",
+                          "fill": "#cccccc",
+                          "content": "用户从医生列表中选择具体的医生和可预约时段",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OfKPy",
+                      "name": "Flow Line 3",
+                      "width": "fill_container",
+                      "height": 16,
+                      "fill": "#2a2a2a",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "3jOIQ",
+                          "name": "Flow Line 3 Text",
+                          "fill": "#cccccc",
+                          "content": "↓",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gzOps",
+                      "name": "Flow Node 4",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#333333",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oVniJ",
+                          "name": "Flow Node 4 Title",
+                          "fill": "#ffffff",
+                          "content": "4. 信息确认",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YKElk",
+                          "name": "Flow Node 4 Desc",
+                          "fill": "#cccccc",
+                          "content": "用户确认预约信息，包括科室、医生、时段等",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WfKak",
+                      "name": "Flow Line 4",
+                      "width": "fill_container",
+                      "height": 16,
+                      "fill": "#2a2a2a",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "H01Qy",
+                          "name": "Flow Line 4 Text",
+                          "fill": "#cccccc",
+                          "content": "↓",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "8kPhS",
+                      "name": "Flow Node 5",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#333333",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6fure",
+                          "name": "Flow Node 5 Title",
+                          "fill": "#ffffff",
+                          "content": "5. 提交预约",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "dj5Ae",
+                          "name": "Flow Node 5 Desc",
+                          "fill": "#cccccc",
+                          "content": "用户提交预约请求，系统处理预约信息",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rRvC9",
+                      "name": "Flow Line 5",
+                      "width": "fill_container",
+                      "height": 16,
+                      "fill": "#2a2a2a",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jDUBp",
+                          "name": "Flow Line 5 Text",
+                          "fill": "#cccccc",
+                          "content": "↓",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6MI5v",
+                      "name": "Flow Node 6",
+                      "width": "fill_container",
+                      "height": 60,
+                      "fill": "#4caf50",
+                      "cornerRadius": 4,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "yDHLy",
+                          "name": "Flow Node 6 Title",
+                          "fill": "#ffffff",
+                          "content": "6. 预约完成",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "aHkx5",
+                          "name": "Flow Node 6 Desc",
+                          "fill": "#cccccc",
+                          "content": "预约成功，系统生成预约凭证和相关信息",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hT0YG",
+      "x": 0,
+      "y": 0,
+      "name": "Main Container",
+      "width": 800,
+      "height": 935,
+      "fill": "#1e1e1e",
+      "cornerRadius": 8,
+      "layout": "vertical",
+      "padding": 20,
+      "children": [
+        {
+          "type": "frame",
+          "id": "bv0Bc",
+          "name": "Title Bar",
+          "width": "fill_container",
+          "height": 50,
+          "fill": "#2a2a2a",
+          "cornerRadius": 4,
+          "padding": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "fGpKe",
+              "name": "Back Icon",
+              "fill": "#ffffff",
+              "content": "<",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Ymuks",
+              "name": "Title Text",
+              "fill": "#ffffff",
+              "content": "模拟对话",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "39hMS",
+          "name": "Conversation Area",
+          "width": "fill_container",
+          "height": 600,
+          "fill": "#2a2a2a",
+          "cornerRadius": 4,
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "8SSby",
+              "name": "Verification Card",
+              "width": "fill_container",
+              "height": 120,
+              "fill": "#333333",
+              "cornerRadius": 4,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5QsOO",
+                  "name": "Verification Header",
+                  "width": "fill_container",
+                  "height": 30,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Oqh19",
+                      "name": "Verification Title",
+                      "fill": "#ffffff",
+                      "content": "需要身份验证",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iFAS6",
+                      "name": "Verification Status",
+                      "width": 80,
+                      "height": 20,
+                      "fill": "#721c24",
+                      "cornerRadius": 4,
+                      "padding": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ldb0O",
+                          "name": "Verification Status Text",
+                          "fill": "#ffffff",
+                          "content": "失败",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "c2NWT",
+                      "name": "Verification Time",
+                      "fill": "#cccccc",
+                      "content": "1分钟前",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "o4Y2a",
+                  "name": "Verification Description",
+                  "fill": "#cccccc",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "用户的法定全名为Jane Doe，但最初提供的联系信息不正确。当要求进行身份验证时，用户提供了...",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZK0F3",
+              "name": "System Message",
+              "width": "fill_container",
+              "height": 160,
+              "fill": "#333333",
+              "cornerRadius": 4,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Kb1N5",
+                  "name": "System Content",
+                  "fill": "#cccccc",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "• 您用于注册SalesSavvy的电子邮件地址\n• 您的用户名或用户ID\n• 与您账户关联的电话号码\n• 您的账户号码（如果您在之前的通信中有）\n\n其中任何一项都可以帮助我查找您的账户信息。",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gH8Zs",
+              "name": "User Message",
+              "width": "fill_container",
+              "height": 60,
+              "fill": "#3a3a3a",
+              "cornerRadius": 4,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "PzIdI",
+                  "name": "User Avatar",
+                  "fill": "#6c757d",
+                  "width": 32,
+                  "height": 32
+                },
+                {
+                  "type": "frame",
+                  "id": "iukCn",
+                  "name": "User Content Container",
+                  "width": "fill_container",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9iU76",
+                      "name": "User Content",
+                      "fill": "#ffffff",
+                      "content": "我没有这些信息。",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5sGDi",
+              "name": "Thinking Step",
+              "width": "fill_container",
+              "height": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BMbNA",
+                  "name": "Thinking Text",
+                  "fill": "#6c757d",
+                  "content": "— Step 2 thinking →",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HNIxJ",
+              "name": "Agent Message",
+              "width": "fill_container",
+              "height": 80,
+              "fill": "#2d4263",
+              "cornerRadius": 4,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "KOSvM",
+                  "name": "Agent Avatar",
+                  "fill": "#007bff",
+                  "width": 32,
+                  "height": 32
+                },
+                {
+                  "type": "frame",
+                  "id": "N8y7E",
+                  "name": "Agent Content Container",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QNX9H",
+                      "name": "Agent Content",
+                      "fill": "#ffffff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "我理解这很令人沮丧，Jane。不幸的是，如果没有账户标识符（如电子邮件、用户名、电话号码或账户号码），我无法找到并验证您的账户。",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "DfjPW",
+          "name": "Evaluation Area",
+          "width": "fill_container",
+          "height": 200,
+          "fill": "#2a2a2a",
+          "cornerRadius": 4,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "IhvBD",
+              "name": "Evaluation Header",
+              "fill": "#ffffff",
+              "content": "评测结果",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "RySW8",
+              "name": "Evaluation Item 1",
+              "width": "fill_container",
+              "height": 40,
+              "fill": "#721c24",
+              "cornerRadius": 4,
+              "padding": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "EG7HZ",
+                  "name": "Evaluation Item 1 Text",
+                  "fill": "#ffffff",
+                  "content": "流程已完成",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "z4dQE",
+                  "name": "Evaluation Item 1 Arrow",
+                  "fill": "#ffffff",
+                  "content": ">",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "j0t1g",
+                  "name": "Evaluation Item 1 Icon Container",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#dc3545",
+                  "cornerRadius": 12,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "den37",
+                      "name": "Evaluation Item 1 Icon Text",
+                      "fill": "#ffffff",
+                      "content": "失败",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AqcTC",
+              "name": "Evaluation Item 2",
+              "width": "fill_container",
+              "height": 40,
+              "fill": "#155724",
+              "cornerRadius": 4,
+              "padding": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "94yAM",
+                  "name": "Evaluation Item 2 Text",
+                  "fill": "#ffffff",
+                  "content": "已回复：Fin告诉用户需要身份验证...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "M3OfB",
+                  "name": "Evaluation Item 2 Arrow",
+                  "fill": "#ffffff",
+                  "content": ">",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "UGZ6x",
+                  "name": "Evaluation Item 2 Icon Container",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#28a745",
+                  "cornerRadius": 12,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MrfOZ",
+                      "name": "Evaluation Item 2 Icon Text",
+                      "fill": "#ffffff",
+                      "content": "成功",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DFW2S",
+              "name": "Evaluation Item 3",
+              "width": "fill_container",
+              "height": 40,
+              "fill": "#155724",
+              "cornerRadius": 4,
+              "padding": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "OiNGY",
+                  "name": "Evaluation Item 3 Text",
+                  "fill": "#ffffff",
+                  "content": "已回复：Fin要求用户提供法定全名、账户...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "AxlyU",
+                  "name": "Evaluation Item 3 Arrow",
+                  "fill": "#ffffff",
+                  "content": ">",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "6SRJ4",
+                  "name": "Evaluation Item 3 Icon Container",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#28a745",
+                  "cornerRadius": 12,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S9Xsu",
+                      "name": "Evaluation Item 3 Icon Text",
+                      "fill": "#ffffff",
+                      "content": "成功",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3Efqf",
+              "name": "Evaluation Item 4",
+              "width": "fill_container",
+              "height": 40,
+              "fill": "#721c24",
+              "cornerRadius": 4,
+              "padding": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RdnWx",
+                  "name": "Evaluation Item 4 Text",
+                  "fill": "#ffffff",
+                  "content": "已回复：Fin要求用户提供卡的最后4位数字...",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "vV8Fd",
+                  "name": "Evaluation Item 4 Arrow",
+                  "fill": "#ffffff",
+                  "content": ">",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "KglOp",
+                  "name": "Evaluation Item 4 Icon Container",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "#dc3545",
+                  "cornerRadius": 12,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "t7dZE",
+                      "name": "Evaluation Item 4 Icon Text",
+                      "fill": "#ffffff",
+                      "content": "失败",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "tool_id": "airline_tool_book_flight",
+  "tool_name": "book_flight",
+  "tool_description": "提交机票预订订单，返回订单结果与订单号",
+  "timeout": 5,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户确认乘机信息无误，提交订票申请",
+    "预订机票 SOP的最终提交环节"
+  ],
+  "input_params": [
+    {
+      "param_name": "flight_no",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "航班号"
+    },
+    {
+      "param_name": "seat_class",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "座位等级，如\"经济舱\"\"商务舱\""
+    },
+    {
+      "param_name": "passenger_name",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "乘机人姓名"
+    },
+    {
+      "param_name": "passenger_id_card",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "乘机人身份证号/护照号"
+    },
+    {
+      "param_name": "contact_phone",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "联系人手机号"
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "order_id",
+      "field_type": "string",
+      "description": "预订成功后的唯一订单号"
+    },
+    {
+      "field_name": "status",
+      "field_type": "string",
+      "description": "订单结果状态，success/fail"
+    },
+    {
+      "field_name": "message",
+      "field_type": "string",
+      "description": "订单结果描述"
+    }
+  ]
+}

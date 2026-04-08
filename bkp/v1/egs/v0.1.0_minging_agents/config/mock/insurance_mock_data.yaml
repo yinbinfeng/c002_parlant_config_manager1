@@ -1,0 +1,236 @@
+# prj/v0.1.0_minging_agents/config/mock/insurance_mock_data.yaml
+# 共荣保险营销场景 Mock 数据配置
+# 数据来源: docs/dev_docs/parlant_agent_config/agents/insurance_sales_agent
+
+example_id: "insurance"
+title: "共荣保险营销"
+
+clarification:
+  generated_questions:
+    - id: "q1"
+      question: "目标客户群体是什么年龄段？（如：25-35岁职场白领、40-50岁家庭支柱等）"
+      answer: ""
+    - id: "q2"
+      question: "主要销售的保险产品类型有哪些？（如：共荣重疾险、共荣医疗险、共荣寿险、共荣年金险等）"
+      answer: ""
+    - id: "q3"
+      question: "是否需要支持保费计算和风险评估工具？"
+      answer: ""
+    - id: "q4"
+      question: "是否有特定的合规要求需要注意？（如：健康告知、犹豫期提醒等）"
+      answer: ""
+  user_added_questions: []
+  can_skip: true
+
+output:
+  config_package_path: "output/gongrong_insurance_sales_agent"
+  journeys:
+    - id: "journey_001"
+      name: "共荣保险产品推荐"
+      description: "引导用户完成需求分析、健康状况评估、预算确认、产品对比、方案确定的全流程"
+      nodes:
+        - id: "start"
+          type: "start"
+          label: "开始"
+        - id: "need_analysis"
+          type: "action"
+          label: "需求分析"
+        - id: "risk_assessment"
+          type: "action"
+          label: "风险评估"
+        - id: "product_compare"
+          type: "action"
+          label: "产品对比"
+        - id: "premium_calc"
+          type: "action"
+          label: "保费试算"
+        - id: "confirm"
+          type: "action"
+          label: "方案确认"
+        - id: "end"
+          type: "end"
+          label: "完成"
+      edges:
+        - from: "start"
+          to: "need_analysis"
+        - from: "need_analysis"
+          to: "risk_assessment"
+        - from: "risk_assessment"
+          to: "product_compare"
+        - from: "product_compare"
+          to: "premium_calc"
+        - from: "premium_calc"
+          to: "confirm"
+        - from: "confirm"
+          to: "end"
+    - id: "journey_002"
+      name: "健康告知引导"
+      description: "协助用户完成投保前的健康告知流程"
+      nodes:
+        - id: "start"
+          type: "start"
+          label: "开始"
+        - id: "health_check"
+          type: "action"
+          label: "健康信息收集"
+        - id: "risk_eval"
+          type: "action"
+          label: "风险评估"
+        - id: "guide_submit"
+          type: "action"
+          label: "引导提交"
+        - id: "end"
+          type: "end"
+          label: "完成"
+      edges:
+        - from: "start"
+          to: "health_check"
+        - from: "health_check"
+          to: "risk_eval"
+        - from: "risk_eval"
+          to: "guide_submit"
+        - from: "guide_submit"
+          to: "end"
+  guidelines:
+    - id: "insurance_greet_001"
+      name: "共荣保险问候规则"
+      trigger: "用户首次对话、向代理打招呼（如你好、哈喽、早上好）"
+      action: "用专业友好的语气回应用户，主动询问用户的保险需求，保持简洁不超过 2 句话"
+      priority: 3
+      composition: "FLUID"
+    - id: "insurance_budget_guide_001"
+      name: "保费预算引导规则"
+      trigger: "用户询问保费预算、觉得保费贵、要求便宜方案、对比价格"
+      action: "使用保费预算模板话术引导用户，强调保障优先于价格，根据用户收入推荐合理保额与缴费年限"
+      priority: 7
+      composition: "FLUID"
+    - id: "insurance_health_notice_001"
+      name: "健康告知提醒规则"
+      trigger: "用户有健康告知相关问题"
+      action: "使用健康告知模板话术提醒用户如实告知的重要性，引导用户提供详细健康信息"
+      priority: 9
+      composition: "STRICT"
+    - id: "insurance_transfer_human_001"
+      name: "转人工服务规则"
+      trigger: "用户有转人工需求"
+      action: "使用保险专属转人工模板话术告知用户人工客服的联系方式"
+      priority: 10
+      composition: "STRICT"
+  glossary:
+    - term: "共荣重疾险"
+      definition: "共荣保险推出的重大疾病保险，当被保险人罹患合同约定的重大疾病（如癌症、心脏病、脑卒中等）时，保险公司一次性给付保险金的保险"
+      usage: "保险产品推荐、健康保障咨询"
+      synonyms: ["共荣重大疾病险", "共荣大病保险", "共荣重疾"]
+    - term: "共荣医疗险"
+      definition: "共荣保险推出的报销型保险，当被保险人因疾病或意外发生医疗费用时，保险公司按合同约定比例报销医疗费用的保险"
+      usage: "医疗保障咨询、产品对比"
+      synonyms: ["共荣医疗保险", "共荣百万医疗", "共荣住院医疗"]
+    - term: "共荣寿险"
+      definition: "共荣保险推出的以被保险人生命为保险标的的保险，当被保险人身故或全残时，保险公司向受益人给付保险金的保险"
+      usage: "家庭保障规划、财富传承"
+      synonyms: ["共荣人寿保险", "共荣定期寿险", "共荣终身寿险"]
+    - term: "共荣年金险"
+      definition: "共荣保险推出的年金保险，投保人一次性或按期缴纳保费后，保险公司按合同约定在特定时间（如退休后）定期向被保险人给付保险金的保险"
+      usage: "养老规划、教育金规划"
+      synonyms: ["共荣养老金", "共荣教育金", "共荣理财险"]
+    - term: "保额"
+      definition: "保险金额的简称，指保险公司承担赔偿或给付保险金责任的最高限额"
+      usage: "保费计算、方案设计"
+      synonyms: ["保险金额", "保障额度"]
+  tools:
+    - name: "calculate_premium"
+      description: "根据用户选择的保险产品、保额、缴费年限、保障期限等信息，计算详细的年缴保费与月缴保费"
+      input_params:
+        - name: "product_name"
+          type: "string"
+          required: true
+          description: "保险产品名称，如\"共荣重疾险\"\"共荣医疗险\""
+        - name: "coverage_amount"
+          type: "number"
+          required: true
+          description: "保额，单位元，如 500000 表示 50 万保额"
+        - name: "payment_term"
+          type: "integer"
+          required: true
+          description: "缴费年限，单位年，如 20 表示 20 年缴费"
+        - name: "coverage_period"
+          type: "integer"
+          required: true
+          description: "保障期限，单位年，如 70 表示保障至 70 岁"
+        - name: "age"
+          type: "integer"
+          required: true
+          description: "被保险人年龄"
+        - name: "gender"
+          type: "string"
+          required: true
+          description: "被保险人性别，\"男\"或\"女\""
+      output_params:
+        - name: "annual_premium"
+          type: "number"
+          description: "年缴保费，单位元"
+        - name: "monthly_premium"
+          type: "number"
+          description: "月缴保费，单位元"
+        - name: "total_premium"
+          type: "number"
+          description: "总保费，单位元（年缴保费×缴费年限）"
+        - name: "premium_breakdown"
+          type: "object"
+          description: "保费明细"
+      usage: "保费试算、方案对比"
+    - name: "risk_assessment"
+      description: "根据用户的年龄、职业、健康状况、家庭责任等信息，评估风险缺口并推荐合理的保额"
+      input_params:
+        - name: "age"
+          type: "integer"
+          required: true
+          description: "用户年龄"
+        - name: "occupation"
+          type: "string"
+          required: true
+          description: "用户职业，如\"程序员\"\"教师\"\"医生\""
+        - name: "annual_income"
+          type: "number"
+          required: false
+          description: "用户年收入，单位元"
+        - name: "has_social_insurance"
+          type: "boolean"
+          required: true
+          description: "是否有社保，true 为是，false 为否"
+        - name: "family_burden"
+          type: "string"
+          required: false
+          description: "家庭负担描述，如\"有房贷 100 万\"\"有一个小孩\"\"需要赡养老人\""
+      output_params:
+        - name: "risk_gap"
+          type: "number"
+          description: "风险缺口金额，单位元"
+        - name: "recommended_coverage"
+          type: "object"
+          description: "推荐保额配置"
+        - name: "recommendation_reason"
+          type: "string"
+          description: "推荐理由说明"
+      usage: "需求分析、方案设计"
+  canned_responses:
+    - id: "insurance_cr_greet_001"
+      content: "您好～我是共荣保险的专属顾问，很高兴为您服务。请问您想了解哪方面的保险呢？我会根据您的实际情况为您推荐最合适的保障方案。"
+      related_rule: "insurance_greet_001"
+      usage: "用户首次对话、打招呼"
+      variables: []
+    - id: "insurance_cr_budget_recommend_001"
+      content: "根据保险配置的科学原则，建议您的年度保费预算控制在年收入的8%-15%之间。这样既能获得充足保障，又不会造成经济压力。请问您的大致年收入是多少呢？我可以帮您测算合理的保费预算。"
+      related_rule: "insurance_budget_guide_001"
+      usage: "保费预算咨询"
+      variables: []
+    - id: "insurance_cr_health_notice_001"
+      content: "温馨提醒：投保前需要如实告知您的健康状况，包括既往病史、体检异常、住院记录等。如实告知是顺利理赔的重要前提，如有不确定的地方，我可以协助您进行健康告知评估。"
+      related_rule: "insurance_health_notice_001"
+      usage: "健康告知引导"
+      variables: []
+    - id: "insurance_cr_transfer_human_001"
+      content: "理解您的需求，您可以联系共荣保险的专业保险顾问获取一对一服务。客服热线：400-888-6666，服务时间：周一至周日 9:00-21:00。"
+      related_rule: "insurance_transfer_human_001"
+      usage: "转人工服务"
+      variables: []

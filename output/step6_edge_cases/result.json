@@ -1,0 +1,290 @@
+{
+  "step6_edge_case_sops": [
+    {
+      "sop_id": "edge_node_001_user_identity_doubt_001",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_001",
+      "sop_title": "开场联络与合规身份确认-用户对来电者身份产生怀疑，质疑是否为正规保险公司",
+      "sop_description": "单节点边缘场景 Journey：用户对来电者身份产生怀疑，质疑是否为正规保险公司（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[开场联络与合规身份确认]节点检测到用户对来电者身份产生怀疑，质疑是否为正规保险公司",
+          "trigger_examples": [
+            "这是诈骗电话吗？",
+            "你们真的是共荣保险吗？",
+            "我不记得给过电话号码"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_001_user_identity_doubt_001_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户对来电者身份产生怀疑，质疑是否为正规保险公司）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_001_user_privacy_concern_002",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_001",
+      "sop_title": "开场联络与合规身份确认-用户担心个人信息安全或隐私泄露",
+      "sop_description": "单节点边缘场景 Journey：用户担心个人信息安全或隐私泄露（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[开场联络与合规身份确认]节点检测到用户担心个人信息安全或隐私泄露",
+          "trigger_examples": [
+            "我的信息怎么被你们拿到",
+            "为什么会有我的联系方式",
+            "谁把我的号码给你们了"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_001_user_privacy_concern_002_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户担心个人信息安全或隐私泄露）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_001_user_rejection_intent_003",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_001",
+      "sop_title": "开场联络与合规身份确认-用户在开场阶段就表现出强烈的拒绝或挂断意向",
+      "sop_description": "单节点边缘场景 Journey：用户在开场阶段就表现出强烈的拒绝或挂断意向（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[开场联络与合规身份确认]节点检测到用户在开场阶段就表现出强烈的拒绝或挂断意向",
+          "trigger_examples": [
+            "不需要，不要打给我",
+            "别再打了",
+            "我已经说过了不需要"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_001_user_rejection_intent_003_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户在开场阶段就表现出强烈的拒绝或挂断意向）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_001_compliance_sensitivity_004",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_001",
+      "sop_title": "开场联络与合规身份确认-用户对保险推销非常敏感，要求停止联系或投诉",
+      "sop_description": "单节点边缘场景 Journey：用户对保险推销非常敏感，要求停止联系或投诉（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[开场联络与合规身份确认]节点检测到用户对保险推销非常敏感，要求停止联系或投诉",
+          "trigger_examples": [
+            "我要向消保机构投诉",
+            "请把我加入拒接名单",
+            "我要向金融厅举报"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_001_compliance_sensitivity_004_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户对保险推销非常敏感，要求停止联系或投诉）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_002_high_risk_refusal_001",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_002",
+      "sop_title": "客户意愿度与风险状态评估-用户表现出强烈拒绝或投诉威胁，存在合规风险需立即终止或升级",
+      "sop_description": "单节点边缘场景 Journey：用户表现出强烈拒绝或投诉威胁，存在合规风险需立即终止或升级（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[客户意愿度与风险状态评估]节点检测到用户表现出强烈拒绝或投诉威胁，存在合规风险需立即终止或升级",
+          "trigger_examples": [
+            "用户说：我要向金融厅投诉",
+            "用户说：别再打给我了",
+            "用户语气愤怒要求停止骚扰"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_002_high_risk_refusal_001_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户表现出强烈拒绝或投诉威胁，存在合规风险需立即终止或升级）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_002_ambiguous_intent_002",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_002",
+      "sop_title": "客户意愿度与风险状态评估-用户沉默或表达模糊，难以判定意愿度，需避免违规跟进",
+      "sop_description": "单节点边缘场景 Journey：用户沉默或表达模糊，难以判定意愿度，需避免违规跟进（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[客户意愿度与风险状态评估]节点检测到用户沉默或表达模糊，难以判定意愿度，需避免违规跟进",
+          "trigger_examples": [
+            "用户沉默超过15秒",
+            "用户说：嗯...再说吧",
+            "用户说：我现在有点忙"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_002_ambiguous_intent_002_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户沉默或表达模糊，难以判定意愿度，需避免违规跟进）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    },
+    {
+      "sop_id": "edge_node_002_compliance_inquiry_003",
+      "sop_type": "edge",
+      "parent_sop_id": "main_sop_backbone_v2",
+      "parent_node_id": "node_002",
+      "sop_title": "客户意愿度与风险状态评估-用户主动询问合规相关事项，如录音或数据来源",
+      "sop_description": "单节点边缘场景 Journey：用户主动询问合规相关事项，如录音或数据来源（用于生成局部 guideline 补丁）",
+      "is_edge_case": true,
+      "priority": 1,
+      "trigger_conditions": [
+        {
+          "trigger": "在[客户意愿度与风险状态评估]节点检测到用户主动询问合规相关事项，如录音或数据来源",
+          "trigger_examples": [
+            "用户问：这个电话在录音吗",
+            "用户问：你们怎么拿到我号码的",
+            "用户要求核实客服工号"
+          ]
+        }
+      ],
+      "sop_states": [
+        {
+          "state_id": "edge_node_002_compliance_inquiry_003_state_000",
+          "state_name": "边缘场景处理",
+          "state_type": "chat",
+          "instruction": "1.识别边缘场景类型（用户主动询问合规相关事项，如录音或数据来源）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+          "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+          "exit_condition_examples": [
+            "用户说：好的，我选第一个",
+            "用户说：没问题了，继续吧",
+            "用户确认理解并同意继续"
+          ],
+          "is_end_state": true,
+          "return_to_parent": true
+        }
+      ],
+      "fallback_source": null,
+      "fallback_warning": null
+    }
+  ],
+  "step6_supplementary_rules": {
+    "generated_at": "2026-04-07T14:28:41.057304",
+    "note": "Step6 edge cases are injected into Step5 local guidelines (sop_only). This file is trace metadata.",
+    "injected_guidelines": 7,
+    "deduped_existing": 0,
+    "skipped_by_global_dedupe": 0,
+    "skipped_by_model_count": 0
+  },
+  "output_files": [
+    "step6_edge_case_sops.json",
+    "step6_supplementary_rules.json",
+    "step6_validation_report.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step6_edge_cases\\step6_edge_cases_compliance_report.json"
+  ],
+  "metadata": {
+    "edge_sop_count": 7,
+    "parallel_limit": 1,
+    "errors": 0,
+    "skipped_by_model_count": 0
+  }
+}

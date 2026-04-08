@@ -1,0 +1,73 @@
+{
+  "sop_id": "main_journey__branch_node_006",
+  "sop_title": "合规收尾与信息登记 二级分支 Journey",
+  "remark": "Step5 生成：二级分支局部 guidelines（sop_only）",
+  "sop_canned_responses": [],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "main_journey_node_006_branch_takeover_001",
+      "scope": "sop_only",
+      "condition": "进入[合规收尾与信息登记]二级分支且用户意图不清晰",
+      "action": "使用分支接管模板话术，确认分支处理目标并提出关键澄清问题，引导用户明确需求。",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": [
+        "main_journey_node_006_cr_takeover_001"
+      ],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "main_journey_node_006_branch_no_overpromise_002",
+      "scope": "sop_only",
+      "condition": "用户要求明确承诺、赔付或结果保证",
+      "action": "使用合规免责模板话术，避免绝对化承诺，说明需要以正式条款/系统记录/人工核验为准，并引导获取权威信息。",
+      "priority": 3,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": [
+        "main_journey_node_006_cr_no_overpromise_002"
+      ],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "main_journey_node_006_branch_return_main_003",
+      "scope": "sop_only",
+      "condition": "分支场景已处理完成或用户拒绝继续分支",
+      "action": "使用回归主流程模板话术，总结分支结论并引导用户返回主干节点继续流程。",
+      "priority": 6,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": [
+        "main_journey_node_006_cr_return_main_003"
+      ],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "main_journey_node_006_branch_clarify_evidence_004",
+      "scope": "sop_only",
+      "condition": "用户对信息来源/合规性/可信度提出质疑",
+      "action": "使用证据澄清模板话术，提供可核验来源（官方材料/条款/联系方式），避免编造法规或机构背书。",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": [
+        "main_journey_node_006_cr_clarify_evidence_004"
+      ],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "main_journey_node_006_branch_privacy_min_005",
+      "scope": "sop_only",
+      "condition": "需要收集用户信息以继续分支处理",
+      "action": "使用隐私保护模板话术，最小化收集必要字段，告知用途与保留方式，避免索取无关敏感信息。",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": [
+        "main_journey_node_006_cr_privacy_min_005"
+      ],
+      "exclusions": [],
+      "dependencies": []
+    }
+  ]
+}

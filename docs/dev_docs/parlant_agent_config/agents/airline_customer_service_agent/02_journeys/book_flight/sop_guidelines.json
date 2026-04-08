@@ -1,0 +1,65 @@
+{
+  "sop_id": "book_flight_001",
+  "sop_title": "预订机票全流程 SOP",
+  "remark": "仅预订机票 SOP 生效的专属规则，完整实现 Parlant 原生排除/依赖关系",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "book_flight_cr_route_confirm_001",
+      "content": "请问您想要从哪个城市出发，前往哪个目的地呢？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["book_flight_route_guide_001"]
+    },
+    {
+      "canned_response_id": "book_flight_cr_flight_recommend_001",
+      "content": "为您找到以下从{departure}到{arrival}的航班：\n{flight_list}\n请问您想要选择哪个航班呢？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["book_flight_flight_recommend_001"]
+    },
+    {
+      "canned_response_id": "book_flight_cr_seat_unavailable_001",
+      "content": "非常抱歉，您选择的{seat_class}舱位已售罄，为您推荐以下相近的可选舱位：\n{available_seats}\n请问您是否需要调整舱位选择？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["book_flight_seat_verify_001"]
+    },
+    {
+      "canned_response_id": "book_flight_cr_success_001",
+      "content": "🎉 您的机票已成功预订！\n订单号：{order_id}\n航班号：{flight_no}\n出发时间：{depart_time}\n座位等级：{seat_class}\n请您在起飞前 2 小时到达机场办理值机手续，祝您旅途愉快！",
+      "language": "zh-CN"
+    }
+  ],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "book_flight_route_guide_001",
+      "scope": "sop_only",
+      "condition": "用户进入本 SOP 后，未明确选择出发地和目的地、城市不存在、城市名称表述模糊",
+      "action": "使用航线确认模板话术引导用户选择，若城市不存在，建议用户输入正确的城市名称",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["book_flight_cr_route_confirm_001"],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "book_flight_flight_recommend_001",
+      "scope": "sop_only",
+      "condition": "用户已选择出发地、目的地和出行日期，需要推荐可预订的航班",
+      "action": "使用航班推荐模板话术，优先推荐直飞航班、价格优惠的航班",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["book_flight_cr_flight_recommend_001"],
+      "exclusions": ["book_flight_route_guide_001"],
+      "dependencies": ["book_flight_obs_user_has_route_001", "book_flight_obs_user_has_date_001"]
+    },
+    {
+      "guideline_id": "book_flight_seat_verify_001",
+      "scope": "sop_only",
+      "condition": "用户选择的舱位不可用",
+      "action": "友好告知用户该舱位无法预订，使用舱位不可用模板话术推荐其他可选舱位",
+      "priority": 6,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["book_flight_cr_seat_unavailable_001"],
+      "exclusions": ["book_flight_flight_recommend_001"],
+      "dependencies": ["book_flight_obs_seat_unavailable_001"]
+    }
+  ]
+}

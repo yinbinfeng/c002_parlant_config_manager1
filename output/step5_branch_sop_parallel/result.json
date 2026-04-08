@@ -1,0 +1,85 @@
+{
+  "step5_nodes": [
+    {
+      "node_id": "node_001",
+      "node_name": "开场联络与合规身份确认",
+      "skipped_by_model": true
+    },
+    {
+      "node_id": "node_002",
+      "node_name": "客户意愿度与风险状态评估",
+      "skipped_by_model": false
+    },
+    {
+      "node_id": "node_003",
+      "node_name": "保障需求分析与产品引导",
+      "skipped_by_model": false
+    },
+    {
+      "node_id": "node_004",
+      "node_name": "保险方案呈现与利益说明",
+      "skipped_by_model": false
+    },
+    {
+      "node_id": "node_005",
+      "node_name": "购买意向确认与流程引导",
+      "skipped_by_model": false
+    },
+    {
+      "node_id": "node_006",
+      "node_name": "合规收尾与信息登记",
+      "skipped_by_model": false
+    }
+  ],
+  "output_files": [
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\step5_journeys_node_001.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\step5_guidelines_node_001.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\step5_glossary_node_001.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\step5_tools_node_001.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\sop_observations_node_001.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_001\\step5_summary_node_001.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_journeys_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_guidelines_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_glossary_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_tools_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\sop_observations_node_002.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_002\\step5_summary_node_002.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_journeys_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_guidelines_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_glossary_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_tools_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\sop_observations_node_003.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_003\\step5_summary_node_003.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_journeys_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_guidelines_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_glossary_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_tools_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\sop_observations_node_004.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_004\\step5_summary_node_004.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_journeys_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_guidelines_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_glossary_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_tools_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\sop_observations_node_005.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_005\\step5_summary_node_005.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_journeys_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_guidelines_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_glossary_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_tools_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\sop_observations_node_006.json",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\node_node_006\\step5_summary_node_006.md",
+    "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\step5_branch_sop_parallel\\step5_branch_sop_parallel_compliance_report.json"
+  ],
+  "metadata": {
+    "node_count": 6,
+    "parallel_limit": 1,
+    "skipped_by_model_count": 1,
+    "skipped_by_model": [
+      {
+        "node_id": "node_001",
+        "node_name": "开场联络与合规身份确认",
+        "skip_reason": "该主节点（开场联络与合规身份确认）主要为标准化的信息告知流程，通常以线性脚本执行。虽然涉及日本保险严格的合规披露要求，但这属于单向播报任务，用户交互较少。复杂的用户反应处理（如拒绝、挂断倾向、异议）更适合作为独立的下游节点（如风险监测或挽留处理）进行展开，在此处生成二级分支会导致开场流程碎片化，降低沟通效率且无必要。"
+      }
+    ]
+  }
+}

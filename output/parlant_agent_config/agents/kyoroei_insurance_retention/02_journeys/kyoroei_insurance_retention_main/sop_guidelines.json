@@ -1,0 +1,8 @@
+{
+  "sop_id": "kyoroei_insurance_retention_main_sop",
+  "sop_title": "kyoroei_insurance_retention_main 主流程规则",
+  "remark": "主Journey引用全局规则，不生成专属规则",
+  "sop_canned_responses": [],
+  "sop_scoped_guidelines": [],
+  "global_guideline_reference": "01_agent_rules/agent_guidelines.json"
+}

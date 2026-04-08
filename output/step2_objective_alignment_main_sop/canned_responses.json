@@ -1,0 +1,21 @@
+{
+  "agent_id": "agent_001",
+  "remark": "Step2 候选：全局 canned responses（如无需可为空；供 Step3 绑定到全局 guidelines）",
+  "agent_canned_responses": [
+    {
+      "canned_response_id": "global_cr_privacy_001",
+      "content": "为保护您的个人信息与沟通质量，我仅会在必要范围内向您确认信息，并严格用于本次沟通目的。您也可以随时选择不继续。",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "global_cr_opt_out_002",
+      "content": "如果您不希望继续接收此类联系，我可以为您登记不再联系/退订偏好。请问需要我现在为您处理吗？",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "global_cr_no_overpromise_003",
+      "content": "我会尽力为您说明，但涉及具体结果/赔付/最终解释的内容仍需以正式条款、系统记录或人工核验为准，避免给您造成误解。",
+      "language": "zh-CN"
+    }
+  ]
+}

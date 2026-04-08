@@ -1,0 +1,24 @@
+{
+  "agent_id": "airline_customer_service_agent_001",
+  "remark": "航空客服 Agent 专属全局模板话术，跨所有 SOP 生效",
+  "agent_canned_responses": [
+    {
+      "canned_response_id": "airline_cr_greet_001",
+      "content": "您好～欢迎联系航空公司客服中心，请问有什么可以帮您？",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["airline_greet_001"]
+    },
+    {
+      "canned_response_id": "airline_cr_soothe_001",
+      "content": "非常抱歉给您带来不便，您先别着急，我会尽力为您解决问题。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["airline_soothe_001"]
+    },
+    {
+      "canned_response_id": "airline_cr_transfer_human_001",
+      "content": "理解您的需求，您可以拨打我们的航空客服热线：95588，服务时间：24 小时全天候服务。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["airline_transfer_human_001"]
+    }
+  ]
+}

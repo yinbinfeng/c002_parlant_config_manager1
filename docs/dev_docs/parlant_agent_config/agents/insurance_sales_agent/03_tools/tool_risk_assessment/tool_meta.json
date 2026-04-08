@@ -1,0 +1,81 @@
+{
+  "tool_id": "insurance_tool_risk_assessment",
+  "tool_name": "risk_assessment",
+  "tool_description": "根据用户的年龄、职业、健康状况、家庭责任等信息，评估风险缺口并推荐合理的保额",
+  "timeout": 3,
+  "implementation_file": "./tool_impl.py",
+  "use_scenarios": [
+    "用户进入产品推荐 SOP，完成需求分析后",
+    "用户询问需要多少保额",
+    "用户需要风险评估与保障规划"
+  ],
+  "input_params": [
+    {
+      "param_name": "age",
+      "param_type": "integer",
+      "required": true,
+      "default": "",
+      "description": "用户年龄"
+    },
+    {
+      "param_name": "occupation",
+      "param_type": "string",
+      "required": true,
+      "default": "",
+      "description": "用户职业，如\"程序员\"\"教师\"\"医生\""
+    },
+    {
+      "param_name": "annual_income",
+      "param_type": "number",
+      "required": false,
+      "default": "0",
+      "description": "用户年收入，单位元"
+    },
+    {
+      "param_name": "has_social_insurance",
+      "param_type": "boolean",
+      "required": true,
+      "default": "true",
+      "description": "是否有社保，true 为是，false 为否"
+    },
+    {
+      "param_name": "family_burden",
+      "param_type": "string",
+      "required": false,
+      "default": "",
+      "description": "家庭负担描述，如\"有房贷 100 万\"\"有一个小孩\"\"需要赡养老人\""
+    }
+  ],
+  "output_params": [
+    {
+      "field_name": "risk_gap",
+      "field_type": "number",
+      "description": "风险缺口金额，单位元"
+    },
+    {
+      "field_name": "recommended_coverage",
+      "field_type": "object",
+      "description": "推荐保额配置"
+    },
+    {
+      "field_name": "recommended_coverage.critical_illness",
+      "field_type": "number",
+      "description": "重疾险推荐保额，单位元"
+    },
+    {
+      "field_name": "recommended_coverage.medical",
+      "field_type": "number",
+      "description": "医疗险推荐保额，单位元"
+    },
+    {
+      "field_name": "recommended_coverage.life",
+      "field_type": "number",
+      "description": "寿险推荐保额，单位元"
+    },
+    {
+      "field_name": "recommendation_reason",
+      "field_type": "string",
+      "description": "推荐理由说明"
+    }
+  ]
+}

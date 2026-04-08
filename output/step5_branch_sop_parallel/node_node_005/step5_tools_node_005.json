@@ -1,0 +1,31 @@
+{
+  "tools": [
+    {
+      "tool_id": "main_journey_node_005_tool_send_material_001",
+      "tool_name": "send_official_material",
+      "description": "向用户发送与[购买意向确认与流程引导]相关的官方材料/条款链接（若系统支持）。",
+      "inputs_schema": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      },
+      "outputs_schema": {
+        "type": "object",
+        "properties": {
+          "sent": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "sent"
+        ]
+      }
+    }
+  ]
+}

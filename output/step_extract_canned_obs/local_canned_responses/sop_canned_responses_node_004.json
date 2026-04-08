@@ -1,0 +1,39 @@
+{
+  "sop_id": "main_journey__branch_node_004",
+  "sop_title": "保险方案呈现与利益说明 二级分支 Journey",
+  "remark": "从Step5局部guidelines提取的canned responses (节点: node_004)",
+  "extraction_source": "step5_local_guidelines",
+  "extraction_time": "2026-04-07T14:28:43.986162",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "main_journey_node_004_cr_takeover_001",
+      "content": "我先确认一下：您现在在「保险方案呈现与利益说明」这个环节，主要希望我优先帮您处理哪一点？我可以用 1-2 个问题快速确认。",
+      "language": "zh-CN",
+      "bind_guideline_ids": []
+    },
+    {
+      "canned_response_id": "main_journey_node_004_cr_no_overpromise_002",
+      "content": "我会尽力为您说明，但涉及具体结果/最终解释仍需以正式条款、系统记录或人工核验为准，避免造成误解。",
+      "language": "zh-CN",
+      "bind_guideline_ids": []
+    },
+    {
+      "canned_response_id": "main_journey_node_004_cr_return_main_003",
+      "content": "好的，关于「保险方案呈现与利益说明」的问题已经处理完毕。我们继续主流程吧。",
+      "language": "zh-CN",
+      "bind_guideline_ids": []
+    },
+    {
+      "canned_response_id": "main_journey_node_004_cr_clarify_evidence_004",
+      "content": "您提到的信息可以在我们的官方网站或正式条款中查到，我可以为您提供具体的查询方式或发送相关材料给您。",
+      "language": "zh-CN",
+      "bind_guideline_ids": []
+    },
+    {
+      "canned_response_id": "main_journey_node_004_cr_privacy_min_005",
+      "content": "为了继续处理您的请求，我需要确认几个必要信息。这些信息仅用于本次服务，我们会严格保密。请问您方便提供吗？",
+      "language": "zh-CN",
+      "bind_guideline_ids": []
+    }
+  ]
+}

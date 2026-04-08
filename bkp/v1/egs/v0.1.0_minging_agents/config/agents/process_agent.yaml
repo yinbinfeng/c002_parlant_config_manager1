@@ -1,0 +1,315 @@
+# Process Agent Configuration
+# 负责流程设计
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
+agent_name: ProcessAgent
+base_class: ReActAgent
+description: 流程设计Agent，负责设计具体业务流程、制定相关规约、选择适用工具、构建用户画像
+
+model:
+  type: OpenAIChatModel
+  config:
+    model_name: Qwen/Qwen3.5-27B
+    temperature: 0.7
+
+tools:
+  - name: deep_research
+    description: 深度搜索工具
+  - name: json_validator
+    description: JSON 校验与修复工具
+
+system_prompt_template: |
+  你是一名专业的业务流程设计师，负责根据业务需求设计 Parlant Agent 配置。
+  
+  【核心职责】
+  - 基于原子化任务列表设计业务流程（Journey）
+  - 制定业务规约和指导原则（Guideline）
+  - 选择适用的工具（Tool）
+  - 构建用户画像（Profile）
+  
+  【输出格式】
+  输出必须直接是 JSON 数据，不允许输出模板化讲解文本、Markdown 标题或"示例说明"段落。
+
+output_schema: ParlantJourneySchema
+
+task_prompts:
+  design_process: |
+    【核心目标 - 必须遵守】
+    {core_goal}
+    
+    【任务】
+    请根据以下业务描述和需求，设计 Parlant Agent 配置。
+    
+    【强制要求 - 执行前必读】
+    1. **第一步必须使用 Deep Research**：
+       调用 deep_research 工具搜索与业务相关的行业最佳实践：
+       - "{industry} 行业客户留存最佳实践"
+       - "{industry} 营销自动化流程设计"
+       - "{industry} 客户生命周期管理 SOP"
+    
+    2. **主题约束检查清单**：
+       - 所有 Journey 名称必须与业务场景相关
+       - 所有 Guideline 必须与业务规范相关
+       - 所有 Tool 必须是业务场景专用工具
+       - 禁止输出与业务无关的通用内容
+    
+    ## 业务描述
+    {business_desc}
+    
+    ## 原子化任务列表
+    {step2_atomic_tasks}
+    
+    ## 结构化需求规格说明
+    {step1_structured_requirements}
+    
+    【Parlant Journey 配置说明】
+    
+    ### 1. Journey 核心原则
+    
+    - **单一目标**：每个 Journey 聚焦一个核心业务目标
+    - **状态清晰**：每个状态必须有明确的进入条件和退出条件
+    - **无死循环**：状态转换必须形成有向无环图（DAG）
+    - **异常处理**：必须包含异常处理分支
+    
+    ### 2. Journey 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | sop_id | string | 是 | SOP 唯一标识，格式：`{业务前缀}_{流程名}_001` |
+    | sop_title | string | 是 | SOP 标题，简洁描述流程目标 |
+    | sop_description | string | 是 | SOP 描述，详细说明流程内容和规范 |
+    | trigger_conditions | array | 是 | 触发条件列表，描述何时启动此 Journey |
+    | timeout | integer | 是 | 超时时间（秒），默认 1800 |
+    | sop_guideline_mapping | object | 否 | 规则映射配置 |
+    | sop_states | array | 是 | 状态列表，定义流程的各个阶段 |
+    
+    ### 3. sop_states 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | state_id | string | 是 | 状态唯一标识，格式：`state_{序号}`，如 `state_000` |
+    | state_name | string | 是 | 状态名称，简洁描述当前阶段 |
+    | state_type | string | 是 | 状态类型：`chat`（对话）或 `tool`（工具调用） |
+    | instruction | string | 是 | 状态指令，描述 Agent 在此状态应做什么 |
+    | bind_guideline_ids | array | 否 | 绑定的规则 ID 列表 |
+    | bind_tool_id | string | 否 | 绑定的工具 ID（state_type 为 tool 时必填） |
+    | bind_canned_response_ids | array | 否 | 绑定的模板话术 ID 列表 |
+    | transitions | array | 是 | 状态转换列表 |
+    | is_end_state | boolean | 否 | 是否为结束状态，默认 false |
+    
+    ### 4. transitions 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | target_state_id | string | 是 | 目标状态 ID |
+    | condition | string | 是 | 转换条件，描述何时跳转到目标状态 |
+    | bind_tool_id | string | 否 | 转换时调用的工具 ID |
+    
+    ### 5. Journey 设计最佳实践
+    
+    1. **状态数量控制**：
+       - 每个 Journey 建议 5-8 个状态
+       - 过多状态应拆分为多个 Journey
+    
+    2. **状态命名规范**：
+       - 格式：`{阶段} - {动作}`，如 `初始 - 航线选择`
+       - 保持命名风格一致
+    
+    3. **转换条件设计**：
+       - 条件必须可判定、无歧义
+       - 覆盖所有可能的用户行为
+       - 包含异常处理分支
+    
+    【Parlant Tool 配置说明】
+    
+    ### 1. Tool 核心原则
+    
+    - **单一职责**：每个 Tool 只完成一个具体功能
+    - **参数完整**：必须包含完整的输入参数定义
+    - **输出明确**：必须包含完整的输出参数定义
+    - **超时控制**：必须设置合理的超时时间
+    
+    ### 2. Tool 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | tool_id | string | 是 | 工具唯一标识，格式：`{业务前缀}_tool_{功能名}` |
+    | tool_name | string | 是 | 工具名称，简洁明确 |
+    | tool_description | string | 是 | 工具描述，说明功能和用途 |
+    | timeout | integer | 是 | 超时时间（秒） |
+    | implementation_file | string | 是 | 实现文件路径，默认 `./tool_impl.py` |
+    | use_scenarios | array | 是 | 使用场景列表 |
+    | input_params | array | 是 | 输入参数列表 |
+    | output_params | array | 是 | 输出参数列表 |
+    
+    ### 3. input_params 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | param_name | string | 是 | 参数名称 |
+    | param_type | string | 是 | 参数类型：string、integer、boolean、array、object |
+    | required | boolean | 是 | 是否必填 |
+    | default | string | 否 | 默认值 |
+    | description | string | 是 | 参数描述 |
+    
+    ### 4. output_params 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | field_name | string | 是 | 字段名称 |
+    | field_type | string | 是 | 字段类型 |
+    | description | string | 是 | 字段描述 |
+    
+    【Parlant Profile 配置说明】
+    
+    ### 1. Profile 核心原则
+    
+    - **可观察性**：用户画像特征必须可观察、可判定
+    - **可操作性**：画像特征必须能映射到具体行为规则
+    - **业务相关性**：画像必须与业务场景紧密相关
+    
+    ### 2. Profile 字段规范
+    
+    | 字段名 | 类型 | 必填 | 说明 |
+    |--------|------|------|------|
+    | segment_id | string | 是 | 分群唯一标识 |
+    | segment_name | string | 是 | 分群名称 |
+    | description | string | 是 | 分群描述 |
+    | definition | object | 是 | 分群定义（包含 tags 和 metadata_rules） |
+    | behavior_patterns | array | 是 | 行为模式列表 |
+    | preferred_journeys | array | 否 | 偏好的业务旅程列表 |
+    | special_guidelines | array | 否 | 专属指南列表 |
+    | custom_variables | object | 否 | 自定义变量 |
+    
+    【输出格式 - 必须严格遵守】
+    
+    ### Journey 输出格式
+    ```json
+    {
+      "sop_id": "{业务前缀}_{流程名}_001",
+      "sop_title": "{流程标题}全流程 SOP",
+      "sop_description": "引导用户完成{流程步骤}的全流程，严格遵循{业务}规范",
+      "trigger_conditions": [
+        "用户想要{执行流程}",
+        "用户询问{相关信息}"
+      ],
+      "timeout": 1800,
+      "sop_guideline_mapping": {
+        "sop_guideline_file": "./sop_guidelines.json",
+        "sop_global_bind_guideline_ids": [
+          "{业务前缀}_{流程名}_guide_001"
+        ]
+      },
+      "sop_states": [
+        {
+          "state_id": "state_000",
+          "state_name": "初始 - {第一步}",
+          "state_type": "chat",
+          "instruction": "友好问候用户，询问用户{需求}",
+          "bind_guideline_ids": ["{业务前缀}_{流程名}_guide_001"],
+          "transitions": [
+            {
+              "target_state_id": "state_001",
+              "condition": "用户已明确{条件}"
+            }
+          ]
+        },
+        {
+          "state_id": "state_001",
+          "state_name": "{第二步}",
+          "state_type": "chat",
+          "instruction": "{指令描述}",
+          "transitions": [
+            {
+              "target_state_id": "state_002",
+              "condition": "{转换条件}"
+            }
+          ]
+        },
+        {
+          "state_id": "state_002",
+          "state_name": "加载{数据}",
+          "state_type": "tool",
+          "bind_tool_id": "{业务前缀}_tool_{功能名}",
+          "instruction": "调用{工具名}工具，获取{数据}",
+          "transitions": [
+            {
+              "target_state_id": "state_003",
+              "condition": "工具返回{数据}后"
+            }
+          ]
+        },
+        {
+          "state_id": "state_003",
+          "state_name": "完成",
+          "state_type": "chat",
+          "instruction": "告知用户{结果}，发送{信息}",
+          "bind_canned_response_ids": ["{业务前缀}_cr_success_001"],
+          "is_end_state": true
+        }
+      ]
+    }
+    ```
+    
+    ### Tool 输出格式
+    ```json
+    {
+      "tool_id": "{业务前缀}_tool_{功能名}",
+      "tool_name": "{功能名}",
+      "tool_description": "{功能描述}",
+      "timeout": 5,
+      "implementation_file": "./tool_impl.py",
+      "use_scenarios": [
+        "用户{场景描述}"
+      ],
+      "input_params": [
+        {
+          "param_name": "{参数名}",
+          "param_type": "string",
+          "required": true,
+          "default": "",
+          "description": "{参数描述}"
+        }
+      ],
+      "output_params": [
+        {
+          "field_name": "{字段名}",
+          "field_type": "string",
+          "description": "{字段描述}"
+        }
+      ]
+    }
+    ```
+    
+    【设计约束】
+    1. **Journey 规范**：
+       - 每个 state 必须包含 instruction
+       - transitions 必须形成有向无环图（DAG）
+       - 每个 journey 必须有明确的 trigger_conditions
+       - 必须包含至少一个 is_end_state 为 true 的结束状态
+    
+    2. **Guideline 规范**：
+       - 必须包含 scope 字段（journey 级别为 `journey`）
+       - condition 必须清晰明确
+       - 必须与 Journey 状态绑定
+    
+    3. **Tool 规范**：
+       - 必须包含完整的 input_params 和 output_params
+       - tool_id 必须与 Journey 中 bind_tool_id 一致
+    
+    4. **Profile 规范**：
+       - characteristics 必须具体可观察
+       - preferences 必须可操作
+    
+    【深度要求】
+    1. 按"客户人群 × 业务场景 × 边缘情况"组合展开，至少覆盖 8 个有效组合
+    2. 每个 Journey 至少 5 个状态，且显式包含异常处理分支
+    3. 每个关键状态至少绑定 1 条 guideline 或 1 个工具调用
+    
+    【自检清单】
+    - [ ] 所有内容是否与核心目标一致？
+    - [ ] 是否使用了 Deep Research？
+    - [ ] Journey 状态是否形成 DAG？
+    - [ ] 是否包含异常处理分支？
+    - [ ] Tool 输入输出是否完整？
+    - [ ] sop_id、tool_id 命名是否符合规范？

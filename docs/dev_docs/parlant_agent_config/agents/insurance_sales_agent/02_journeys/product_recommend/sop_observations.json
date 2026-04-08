@@ -1,0 +1,22 @@
+{
+  "sop_id": "product_recommend_001",
+  "sop_title": "保险产品推荐全流程 SOP",
+  "remark": "仅保险产品推荐 SOP 生效的专属观测，作为 SOP 内规则的依赖前置条件",
+  "sop_observations": [
+    {
+      "observation_id": "recommend_obs_user_has_budget_001",
+      "condition": "用户已明确表达保费预算范围或年收入水平",
+      "remark": "观测用户是否已确定预算，用于后续产品推荐的依赖"
+    },
+    {
+      "observation_id": "recommend_obs_user_has_target_001",
+      "condition": "用户已明确想要了解的保险类型，如重疾险、医疗险、寿险等",
+      "remark": "观测用户是否已有目标险种，用于精准产品推荐的依赖"
+    },
+    {
+      "observation_id": "recommend_obs_user_family_status_001",
+      "condition": "用户已透露家庭状况，包括婚姻状态、是否有子女、是否有房贷车贷等",
+      "remark": "观测用户的家庭责任情况，用于保额计算的依赖"
+    }
+  ]
+}

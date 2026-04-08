@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-04-07T14:28:41.057304",
+  "note": "Step6 edge cases are injected into Step5 local guidelines (sop_only). This file is trace metadata.",
+  "injected_guidelines": 7,
+  "deduped_existing": 0,
+  "skipped_by_global_dedupe": 0,
+  "skipped_by_model_count": 0
+}

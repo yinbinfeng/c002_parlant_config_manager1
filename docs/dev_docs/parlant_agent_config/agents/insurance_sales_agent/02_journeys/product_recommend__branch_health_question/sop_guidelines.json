@@ -1,0 +1,89 @@
+{
+  "sop_id": "branch_health_question_001",
+  "sop_title": "健康问卷分支SOP",
+  "remark": "健康问卷分支专属规则，引导用户如实填写健康状况",
+  "sop_canned_responses": [
+    {
+      "canned_response_id": "branch_cr_health_guide_001",
+      "content": "为了给您推荐最适合的保险产品，我需要了解您的健康状况。请您放心，这些信息仅用于产品匹配，我们会严格保密。请问您是否有既往病史或体检异常？",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "branch_cr_history_ask_001",
+      "content": "请问您是否有以下情况：\n1. 曾经住院或做过手术\n2. 有慢性病（如高血压、糖尿病等）\n3. 正在服用长期药物\n请如实告知，这有助于我为您推荐合适的产品。",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "branch_cr_exam_ask_001",
+      "content": "请问您近两年的体检报告中是否有以下异常：\n1. 血压、血糖、血脂异常\n2. 肝功能、肾功能异常\n3. 甲状腺结节、乳腺结节等\n如有，请告诉我具体情况。",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "branch_cr_skip_001",
+      "content": "没问题，如果您目前没有健康方面的顾虑，我们可以直接进入产品推荐环节。后续如有需要，随时可以补充健康信息。",
+      "language": "zh-CN"
+    },
+    {
+      "canned_response_id": "branch_cr_summary_001",
+      "content": "感谢您的配合！根据您提供的健康信息，我会为您筛选适合的产品。接下来我们继续产品推荐流程。",
+      "language": "zh-CN"
+    }
+  ],
+  "sop_scoped_guidelines": [
+    {
+      "guideline_id": "branch_health_guide_001",
+      "scope": "sop_only",
+      "condition": "用户进入健康问卷分支，需要引导填写",
+      "action": "使用健康问卷引导模板话术，说明健康告知的重要性，强调信息保密",
+      "priority": 4,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["branch_cr_health_guide_001"],
+      "exclusions": [],
+      "dependencies": []
+    },
+    {
+      "guideline_id": "branch_health_history_001",
+      "scope": "sop_only",
+      "condition": "用户同意填写健康问卷，需要收集既往病史",
+      "action": "使用既往病史询问模板话术，引导用户如实告知住院史、手术史、慢性病史",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["branch_cr_history_ask_001"],
+      "exclusions": ["branch_health_guide_001"],
+      "dependencies": ["branch_obs_user_agree_questionnaire_001"]
+    },
+    {
+      "guideline_id": "branch_health_exam_001",
+      "scope": "sop_only",
+      "condition": "用户已提供既往病史信息，需要收集体检异常",
+      "action": "使用体检异常询问模板话术，引导用户告知近两年体检异常指标",
+      "priority": 5,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["branch_cr_exam_ask_001"],
+      "exclusions": ["branch_health_guide_001", "branch_health_history_001"],
+      "dependencies": ["branch_obs_user_has_history_info_001"]
+    },
+    {
+      "guideline_id": "branch_health_skip_001",
+      "scope": "sop_only",
+      "condition": "用户拒绝填写健康问卷或表示没有健康问题",
+      "action": "使用跳过问卷模板话术，告知用户可以稍后补充，引导返回主流程",
+      "priority": 3,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["branch_cr_skip_001"],
+      "exclusions": ["branch_health_guide_001", "branch_health_history_001", "branch_health_exam_001"],
+      "dependencies": ["branch_obs_user_refuse_questionnaire_001"]
+    },
+    {
+      "guideline_id": "branch_health_summary_001",
+      "scope": "sop_only",
+      "condition": "用户已完成健康信息收集，准备返回主SOP",
+      "action": "使用总结模板话术，告知用户健康信息已记录，引导返回主流程",
+      "priority": 2,
+      "composition_mode": "FLUID",
+      "bind_canned_response_ids": ["branch_cr_summary_001"],
+      "exclusions": ["branch_health_guide_001", "branch_health_history_001", "branch_health_exam_001"],
+      "dependencies": ["branch_obs_user_has_exam_info_001"]
+    }
+  ]
+}

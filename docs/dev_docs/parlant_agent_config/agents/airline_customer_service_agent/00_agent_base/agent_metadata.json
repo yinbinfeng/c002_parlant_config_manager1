@@ -1,0 +1,10 @@
+{
+  "agent_id": "airline_customer_service_agent_001",
+  "agent_name": "航空客服 Agent",
+  "agent_description": "专业的航空客服代理，为用户提供机票预订、航班变更、退改签、航班查询等全流程服务",
+  "default_language": "zh-CN",
+  "default_priority": 5,
+  "conversation_timeout": 3600,
+  "playground_port": 8802,
+  "remark": "航空业务线专属 Agent，完全独立配置，与其他 Agent 无任何共享"
+}

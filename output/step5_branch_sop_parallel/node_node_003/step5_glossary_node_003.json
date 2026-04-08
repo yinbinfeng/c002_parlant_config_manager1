@@ -1,0 +1,226 @@
+{
+  "agent_id": "main_journey_agent_001",
+  "remark": "Step5 节点[保障需求分析与产品引导]分支术语（Agent动态生成）",
+  "terms": [
+    {
+      "term_id": "main_journey_node_003_term_001",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积功能",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_002",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_003",
+      "name": "重大疾病险",
+      "description": "确诊约定重大疾病后一次性给付保险金的保障产品",
+      "synonyms": [
+        "重疾险",
+        "Critical Illness",
+        "疾病保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_004",
+      "name": "医疗保险",
+      "description": "报销因疾病或意外产生的医疗费用的补偿型保险产品",
+      "synonyms": [
+        "医疗险",
+        "健康险",
+        "Medical Insurance"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_005",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_006",
+      "name": "等待期",
+      "description": "保险合同生效后，特定疾病或事故需经过的免赔期间，通常不赔付",
+      "synonyms": [
+        "免责期",
+        "观察期",
+        "Waiting Period"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_007",
+      "name": "免责条款",
+      "description": "保险合同中约定保险公司不承担赔付责任的情形条款",
+      "synonyms": [
+        "除外责任",
+        "免赔条款",
+        "Exclusions"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_008",
+      "name": "现金价值",
+      "description": "具有储蓄性质的保险产品在退保时可获得的金额，即保单积累价值",
+      "synonyms": [
+        "退保金",
+        "保单价值",
+        "Cash Value"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_009",
+      "name": "保额",
+      "description": "保险合同约定的最高赔付金额，即保险保障额度上限",
+      "synonyms": [
+        "保险金额",
+        "Coverage Amount",
+        "Sum Assured"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_010",
+      "name": "保费",
+      "description": "投保人为获得保险保障需定期支付的保险费用成本",
+      "synonyms": [
+        "保险费",
+        "Premium",
+        "保险成本"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_011",
+      "name": "犹豫期",
+      "description": "保险法规定的契约解除权行使期间，客户可无条件全额退保",
+      "synonyms": [
+        "冷静期",
+        "冷却期",
+        "无理由退保期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_012",
+      "name": "受益人",
+      "description": "由投保人或被保险人指定，享有保险金请求权的个人或机构",
+      "synonyms": [
+        "受保人",
+        "Claimant",
+        "Beneficiary"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_013",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "风险告知义务"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_014",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求匹配度验证流程",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_015",
+      "name": "冷静期",
+      "description": "部分金融产品规定的一段时间内，客户可撤销购买决定的保护期",
+      "synonyms": [
+        "后悔期",
+        "撤销权期间",
+        "Cooling-off Period"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_016",
+      "name": "明示同意",
+      "description": "电子渠道营销所需的客户明确授权机制，含录音保存与内容确认",
+      "synonyms": [
+        "书面同意",
+        "录音授权",
+        "Explicit Consent"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_017",
+      "name": "适当性管理",
+      "description": "金融机构识别客户风险承受能力并推荐匹配产品的合规管理机制",
+      "synonyms": [
+        "投资者适当性",
+        "风险匹配",
+        "Appropriateness Management"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_018",
+      "name": "需求分析",
+      "description": "通过提问了解客户保障缺口和风险偏好的专业评估过程",
+      "synonyms": [
+        "需求评估",
+        "保障规划",
+        "Needs Analysis"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_019",
+      "name": "挽留话术",
+      "description": "针对用户挂断拒绝倾向时采用的标准化合规沟通策略",
+      "synonyms": [
+        "继续提案话术",
+        "异议处理话术",
+        "Retention Script"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_003_term_020",
+      "name": "方案定制",
+      "description": "根据客户需求和预算量身设计保险组合方案的服务",
+      "synonyms": [
+        "个性化方案",
+        "定制保障",
+        "Tailored Solution"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}

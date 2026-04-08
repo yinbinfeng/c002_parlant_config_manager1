@@ -1,0 +1,27 @@
+{
+  "agent_id": "agent_001",
+  "remark": "Step3 fallback全局观测（保险场景），作为规则依赖的前置条件",
+  "fallback_source": "template_fill_mode",
+  "agent_observations": [
+    {
+      "observation_id": "global_obs_user_angry_001",
+      "condition": "用户表达不满、愤怒、抱怨，使用负面情绪词汇（如投诉、没用、生气），在保险场景中表现出不耐烦",
+      "remark": "观测用户是否处于负面情绪状态，用于后续安抚规则的依赖"
+    },
+    {
+      "observation_id": "global_obs_user_requests_human_001",
+      "condition": "用户要求转人工、找客服、对自动回复不满意、要求真人对接，在保险场景中明确要求人工服务",
+      "remark": "观测用户是否有转人工需求，用于后续转人工规则的依赖"
+    },
+    {
+      "observation_id": "global_obs_user_intent_unclear_001",
+      "condition": "用户意图不清晰、需求模糊、无法确定具体目标，在保险场景中表达不明确",
+      "remark": "观测用户意图是否清晰。用于后续澄清规则的依赖"
+    },
+    {
+      "observation_id": "global_obs_user_refuse_001",
+      "condition": "用户明确拒绝、表示不需要、要求停止，在保险场景中表达拒绝意向",
+      "remark": "观测用户是否有拒绝意向。用于后续挽留或结束规则的依赖"
+    }
+  ]
+}

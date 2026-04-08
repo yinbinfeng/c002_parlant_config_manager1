@@ -1,0 +1,30 @@
+{
+  "agent_id": "insurance_sales_agent_001",
+  "remark": "保险销售 Agent专属全局模板话术，跨所有SOP生效",
+  "agent_canned_responses": [
+    {
+      "canned_response_id": "insurance_cr_greet_001",
+      "content": "您好～我是您的保险顾问，很高兴为您服务。请问您想了解哪方面的保险呢？我会根据您的实际情况为您推荐最合适的保障方案。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["insurance_greet_001"]
+    },
+    {
+      "canned_response_id": "insurance_cr_budget_recommend_001",
+      "content": "根据保险配置的科学原则，建议您的年度保费预算控制在年收入的8%-15%之间。这样既能获得充足保障，又不会造成经济压力。请问您的大致年收入是多少呢？我可以帮您测算合理的保费预算。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["insurance_budget_guide_001"]
+    },
+    {
+      "canned_response_id": "insurance_cr_health_notice_001",
+      "content": "温馨提醒：投保前需要如实告知您的健康状况，包括既往病史、体检异常、住院记录等。如实告知是顺利理赔的重要前提，如有不确定的地方，我可以协助您进行健康告知评估。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["insurance_health_notice_001"]
+    },
+    {
+      "canned_response_id": "insurance_cr_transfer_human_001",
+      "content": "理解您的需求，您可以联系我们的专业保险顾问获取一对一服务。客服热线：400-888-6666，服务时间：周一至周日 9:00-21:00。",
+      "language": "zh-CN",
+      "bind_guideline_ids": ["insurance_transfer_human_001"]
+    }
+  ]
+}

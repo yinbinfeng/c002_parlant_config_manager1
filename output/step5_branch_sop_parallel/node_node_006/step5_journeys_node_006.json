@@ -1,0 +1,114 @@
+{
+  "sop_id": "main_journey__branch_node_006_id_sop_001",
+  "sop_type": "branch",
+  "parent_sop_id": "main_journey_sop_001",
+  "parent_state_id": "node_006",
+  "sop_title": "合规收尾与信息登记分支流程",
+  "sop_description": "挂载于主干节点[合规收尾与信息登记]的二级分支流程（Step5 Agent动态生成）",
+  "trigger_conditions": [
+    {
+      "trigger": "用户在[合规收尾与信息登记]节点提出特定需求或问题，需要分支处理",
+      "trigger_examples": [
+        "用户表达特殊需求",
+        "用户提出问题",
+        "用户需要额外帮助"
+      ]
+    }
+  ],
+  "timeout": 900,
+  "sop_states": [
+    {
+      "state_name": "最终合作意向确认",
+      "instruction": "在介绍产品后，明确询问用户是否愿意进行下一步的信息登记以获取详细方案，判断用户意向。",
+      "condition": "用户明确表示同意登记或明确拒绝",
+      "condition_examples": [
+        "用户说：可以登记一下",
+        "用户说：暂时不需要了",
+        "用户说：先加个微信吧"
+      ],
+      "state_id": "branch_state_000",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "合规告知与录音授权",
+      "instruction": "执行日本保险监管要求的合规话术，告知通话录音及隐私政策，获取口头授权同意。",
+      "condition": "用户确认理解并授权",
+      "condition_examples": [
+        "用户说：好的知道了",
+        "用户说：没问题",
+        "用户沉默超过3秒且未表示反对"
+      ],
+      "state_id": "branch_state_001",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "关键联系信息采集",
+      "instruction": "收集用户姓名、联系电话、偏好联系方式等核心字段，确保信息完整。",
+      "condition": "用户提供有效信息或要求跳过",
+      "condition_examples": [
+        "用户报出电话号码",
+        "用户说：这个不方便填",
+        "用户说：发短信给我就行"
+      ],
+      "state_id": "branch_state_002",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "信息准确性复述确认",
+      "instruction": "将收集到的关键信息向用户复述，请求确认无误，防止后续投诉。",
+      "condition": "用户确认信息准确或指出错误",
+      "condition_examples": [
+        "用户说：对的没错",
+        "用户说：手机号最后一位错了",
+        "用户说：不用重复了"
+      ],
+      "state_id": "branch_state_003",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "后续沟通频率约定",
+      "instruction": "根据用户意愿约定后续跟进的时间段和频率，避免过度打扰引发投诉。",
+      "condition": "用户接受约定或提出新要求",
+      "condition_examples": [
+        "用户说：工作日晚上打给我",
+        "用户说：别太频繁",
+        "用户说：随时都可以"
+      ],
+      "state_id": "branch_state_004",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "临时拒绝或退出处理",
+      "instruction": "若用户在登记环节最后时刻反悔，需执行无压力的合规退出流程，保留用户尊严。",
+      "condition": "用户改变主意或情绪不佳",
+      "condition_examples": [
+        "用户说：算了还是不填了",
+        "用户语气变得不耐烦",
+        "用户说：我有点急事要挂了"
+      ],
+      "state_id": "branch_state_005",
+      "state_type": "chat",
+      "bind_guideline_ids": []
+    },
+    {
+      "state_name": "礼貌结束语与挂机",
+      "instruction": "无论结果如何，表达感谢，重申品牌承诺，等待用户先挂断或礼貌结束通话。",
+      "condition_examples": [
+        "用户说：再见",
+        "用户直接挂断",
+        "客服说完结束语"
+      ],
+      "state_id": "branch_state_006",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "is_end_state": true,
+      "return_to_parent": true
+    }
+  ],
+  "fallback_source": null
+}

@@ -1,0 +1,226 @@
+{
+  "agent_id": "main_journey_agent_001",
+  "remark": "Step5 节点[购买意向确认与流程引导]分支术语（Agent动态生成）",
+  "terms": [
+    {
+      "term_id": "main_journey_node_005_term_001",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，提供身故保障并累积现金价值",
+      "synonyms": [
+        "终身保险",
+        "Whole Life",
+        "终身保障计划"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_002",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_003",
+      "name": "重大疾病险",
+      "description": "确诊约定重大疾病后一次性给付保险金的保障产品",
+      "synonyms": [
+        "重疾险",
+        "Critical Illness",
+        "疾病保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_004",
+      "name": "医疗费用险",
+      "description": "报销因疾病或意外产生的医疗费用的补偿型保险产品",
+      "synonyms": [
+        "医疗险",
+        "Medical Insurance",
+        "健康险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_005",
+      "name": "养老年金险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_006",
+      "name": "投保申请书",
+      "description": "客户向保险公司提出订立保险合同意愿的正式书面文件",
+      "synonyms": [
+        "投保单",
+        "投保申请表",
+        "Application Form"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_007",
+      "name": "核保评估",
+      "description": "保险公司对投保人的风险状况进行审核以决定是否承保的过程",
+      "synonyms": [
+        "核保审查",
+        "风险评估",
+        "Underwriting"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_008",
+      "name": "契约成立",
+      "description": "保险公司同意承保且客户完成必要手续，保险合同正式生效的状态",
+      "synonyms": [
+        "合同生效",
+        "保单成立",
+        "Contract Formation"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_009",
+      "name": "保费缴纳",
+      "description": "投保人按照合同约定向保险公司支付保险费用的行为",
+      "synonyms": [
+        "交保费",
+        "Premium Payment",
+        "缴费"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_010",
+      "name": "保单生效",
+      "description": "保险合同开始履行保障责任的时间点",
+      "synonyms": [
+        "保障开始日",
+        "Effective Date",
+        "生效日"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_011",
+      "name": "续保流程",
+      "description": "保险期限届满后继续投保或自动延续保障的操作步骤",
+      "synonyms": [
+        "续期手续",
+        "Renewal Process",
+        "续保"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_012",
+      "name": "适当性确认",
+      "description": "根据金融商品交易法要求验证产品是否匹配客户需求的流程",
+      "synonyms": [
+        "适合性评估",
+        "Suitability Check",
+        "需求匹配"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_013",
+      "name": "风险告知书",
+      "description": "向客户明确揭示保险产品风险及费用结构的法定文件",
+      "synonyms": [
+        "风险提示书",
+        "Risk Disclosure",
+        "风险说明"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_014",
+      "name": "犹豫期解除",
+      "description": "客户在冷静期内无条件解除合同并退还保费的权利",
+      "synonyms": [
+        "退保权",
+        "Cooling-off Period",
+        "冷静期"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_015",
+      "name": "销售录音",
+      "description": "外呼营销过程中必须保存的通话录音，用于合规核查",
+      "synonyms": [
+        "通话留痕",
+        "Call Recording",
+        "录音存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_016",
+      "name": "禁止误导",
+      "description": "销售过程中不得对客户进行虚假宣传或隐瞒重要信息的合规红线",
+      "synonyms": [
+        "反误导规定",
+        "No Misleading",
+        "合规底线"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_017",
+      "name": "意向度分级",
+      "description": "根据客户反馈将其购买意愿划分为不同等级的评估方法",
+      "synonyms": [
+        "意向等级",
+        "Interest Level",
+        "购买倾向"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_018",
+      "name": "挽留话术",
+      "description": "针对用户挂断或拒绝倾向时采用的标准化合规沟通策略",
+      "synonyms": [
+        "继续提案话术",
+        "Retention Script",
+        "异议处理"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_019",
+      "name": "流程引导",
+      "description": "指导客户完成从意向确认到投保签约的一系列操作步骤",
+      "synonyms": [
+        "操作指引",
+        "Process Guidance",
+        "流程推进"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_005_term_020",
+      "name": "转化跟进",
+      "description": "针对未立即成交客户制定后续联系计划以促进最终签约的服务",
+      "synonyms": [
+        "后续追踪",
+        "Follow-up",
+        "二次开发"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}
