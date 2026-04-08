@@ -15,7 +15,7 @@ concurrency:
   enable_step3_globalrules_glossary_parallel: false
 
 # v2 并发参数
-max_parallel_step5_nodes: 1      # 节点任务组最大并发数（调试提速：串行避免429）
+max_parallel_step5_nodes: 2      # 节点任务组最大并发数（调试提速：串行避免429）
 max_parallel_edge_cases: 1       # Step6 边缘场景并发上限（调试提速：串行）
 
 # Step Control
@@ -66,7 +66,7 @@ deep_research:
   enable_thinking: false           # Deep Research 模型思考模式（关闭）
   pool_size: 1                     # Deep Research 实例池大小（>1 开启并发分发）
   step1_query_count: 1             # Step1 查询条数（默认 1；可按需增大到 2/3）
-  max_depth: 1                     # 最大搜索深度（调试提速：低深度）
+  max_depth: 2                     # 最大搜索深度（调试提速：低深度）
   max_iters: 1                     # 最大迭代次数（调试提速：单轮）
   timeout_sec: 120                 # 单次 Deep Research 超时（秒）
   client_timeout_sec: 120          # 底层 LLM 客户端请求超时（秒）
