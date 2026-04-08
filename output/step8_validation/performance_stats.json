@@ -1,7 +1,7 @@
 {
   "step": 9,
   "step_statistics": {
-    "duration": 0.44,
+    "duration": 0.12,
     "status": "completed",
     "agent_calls": [],
     "agent_call_count": 0
@@ -9,13 +9,13 @@
   "agents_invoked_in_step": [],
   "agent_metrics_for_step_agents": {},
   "global_totals": {
-    "total_duration": 40.38701105117798,
+    "total_duration": 0.18925261497497559,
     "total_agent_calls": 0,
     "total_llm_calls": 0,
     "total_tavily_calls": 0,
     "total_agents": 0,
-    "total_steps": 2,
-    "generated_at": "2026-04-06T20:22:38.763145"
+    "total_steps": 1,
+    "generated_at": "2026-04-08T16:14:43.266087"
   },
   "full_agent_statistics": {}
 }

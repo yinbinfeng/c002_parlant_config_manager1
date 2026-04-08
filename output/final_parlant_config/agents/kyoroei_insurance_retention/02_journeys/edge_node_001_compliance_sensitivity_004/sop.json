@@ -1,0 +1,39 @@
+{
+  "sop_id": "edge_node_001_compliance_sensitivity_004",
+  "sop_type": "edge",
+  "parent_sop_id": "main_sop_backbone_v2",
+  "parent_node_id": "node_001",
+  "sop_title": "开场联络与合规身份确认-用户对保险推销非常敏感，要求停止联系或投诉",
+  "sop_description": "单节点边缘场景 Journey：用户对保险推销非常敏感，要求停止联系或投诉（用于生成局部 guideline 补丁）",
+  "is_edge_case": true,
+  "priority": 1,
+  "trigger_conditions": [
+    {
+      "trigger": "在[开场联络与合规身份确认]节点检测到用户对保险推销非常敏感，要求停止联系或投诉",
+      "trigger_examples": [
+        "我要向消保机构投诉",
+        "请把我加入拒接名单",
+        "我要向金融厅举报"
+      ]
+    }
+  ],
+  "sop_states": [
+    {
+      "state_id": "edge_node_001_compliance_sensitivity_004_state_000",
+      "state_name": "边缘场景处理",
+      "state_type": "chat",
+      "instruction": "1.识别边缘场景类型（用户对保险推销非常敏感，要求停止联系或投诉）；2.使用同理心话术安抚用户情绪；3.给出1-2个合规的下一步选项；4.确认用户选择后回归主流程",
+      "exit_condition": "用户已确认下一步选择，或用户情绪已平复并表示可以继续",
+      "exit_condition_examples": [
+        "用户说：好的，我选第一个",
+        "用户说：没问题了，继续吧",
+        "用户确认理解并同意继续"
+      ],
+      "is_end_state": true,
+      "return_to_parent": true,
+      "transitions": []
+    }
+  ],
+  "fallback_source": null,
+  "fallback_warning": null
+}

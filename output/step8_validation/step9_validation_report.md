@@ -1,9 +1,9 @@
 # Step 9 Validation Report
 
-- generated_at: 2026-04-06T20:22:38.508256
+- generated_at: 2026-04-08T16:14:43.187880
 - package_dir: `E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config`
-- json_files_checked: 23
-- passed: True
+- json_files_checked: 46
+- passed: False
 
 ## JSON Parse Errors
 - 无
@@ -18,7 +18,8 @@
 - 无
 
 ## Guideline Conflict Issues
-- 无
+- E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_guidelines.json: duplicate guideline_id `{业务前缀}_privacy_001` (index 0 and 6)
+- E:\cursorworkspace\c002_parlant_config_manager1\output\parlant_agent_config\agents\kyoroei_insurance_retention\01_agent_rules\agent_guidelines.json: duplicate condition+action `{业务前缀}_privacy_001` ~= `{业务前缀}_privacy_001`
 
 ## Missing Required Paths
 - 无

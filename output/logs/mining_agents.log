@@ -8349,3 +8349,249 @@ v 概要 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 2026-04-07 14:28:44 | INFO     | src.mining_agents.tools.deep_research:close:654 - DeepResearchTool closed
 2026-04-07 14:28:44 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:273 - Tool 'deep_research' closed
 2026-04-07 14:28:44 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:277 - Cleanup completed
+2026-04-08 16:04:11 | INFO     | src.mining_agents.tools.deep_research:__init__:96 - DeepResearchTool initialized in MOCK mode
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'deep_research' registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'json_validator' registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 1 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 2 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 3 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 4 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 5 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 6 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 7 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 8 handler registered
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 9 handler registered
+2026-04-08 16:04:11 | WARNING  | src.mining_agents.cli:run_system:214 - --force-rerun 已启用，正在删除 Step 9 输出目录: output\step8_validation
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:217 - Step 9 输出目录已删除: output\step8_validation
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:245 - 执行业务描述：我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保...
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:248 - 执行步骤：9 -> 9
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:249 - 
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:run_steps:328 - Running steps 9 to 9
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:run_steps:337 - Processing step 9...
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:mark_step_started:138 - Step 9 started
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:run_step:254 - Executing step 9...
+2026-04-08 16:04:11 | INFO     | src.mining_agents.steps.step8_validation:step8_validation_handler:186 - Step 9(v2): final validation started
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:run_step:262 - Step 9 result saved to E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\result.json
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:mark_step_completed:166 - Step 9 completed with 3 output files
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:save_step_performance_snapshot:350 - Step 9 performance snapshot: E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\performance_stats.json
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.step_manager:run_steps:400 - All steps completed
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:261 - 
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:262 - ============================================================
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:263 - 执行完成！摘要信息：
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:264 -   总步骤数：1
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:265 -   已完成：1
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:266 -   失败：0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:267 -   进行中：0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.cli:run_system:268 - ============================================================
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:end_global_tracking:108 - Performance tracking ended
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:377 - 
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:378 - ================================================================================
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:379 - 性能统计报告
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:380 - ================================================================================
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:383 - 总执行时长: 0.18 秒
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:384 - 总Agent调用次数: 0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:385 - 总LLM调用次数: 0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:386 - 总Tavily调用次数: 0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:387 - 涉及Agent数量: 0
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:388 - 涉及步骤数量: 1
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:390 - 
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:391 - --------------------------------------------------------------------------------
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:392 - Agent执行统计（按总时间排序）:
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:393 - --------------------------------------------------------------------------------
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:407 - 
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:408 - --------------------------------------------------------------------------------
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:409 - 步骤执行统计:
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:410 - --------------------------------------------------------------------------------
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:414 -   Step 9:    0.14s | 状态: completed  | Agent调用: 0次
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:420 - ================================================================================
+2026-04-08 16:04:11 | INFO     | src.mining_agents.utils.performance_tracker:save_report:370 - Performance report saved to: output\performance_report.json
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:257 - Cleaning up resources...
+2026-04-08 16:04:11 | INFO     | src.mining_agents.tools.deep_research:close:651 - DeepResearchTool closed
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:273 - Tool 'deep_research' closed
+2026-04-08 16:04:11 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:277 - Cleanup completed
+2026-04-08 16:06:32 | INFO     | src.mining_agents.tools.deep_research:__init__:96 - DeepResearchTool initialized in MOCK mode
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'deep_research' registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'json_validator' registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 1 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 2 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 3 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 4 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 5 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 6 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 7 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 8 handler registered
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 9 handler registered
+2026-04-08 16:06:32 | WARNING  | src.mining_agents.cli:run_system:214 - --force-rerun 已启用，正在删除 Step 9 输出目录: output\step8_validation
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:217 - Step 9 输出目录已删除: output\step8_validation
+2026-04-08 16:06:32 | WARNING  | src.mining_agents.cli:run_system:226 - --force-rerun 已启用，正在删除 Step 9 额外输出目录: output\final_parlant_config
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:229 - Step 9 额外输出目录已删除: output\final_parlant_config
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:245 - 执行业务描述：我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保...
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:248 - 执行步骤：9 -> 9
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:249 - 
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:run_steps:328 - Running steps 9 to 9
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:run_steps:337 - Processing step 9...
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:mark_step_started:138 - Step 9 started
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:run_step:254 - Executing step 9...
+2026-04-08 16:06:32 | INFO     | src.mining_agents.steps.step8_validation:step8_validation_handler:186 - Step 9(v2): final validation started
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:run_step:262 - Step 9 result saved to E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\result.json
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:mark_step_completed:166 - Step 9 completed with 3 output files
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:save_step_performance_snapshot:350 - Step 9 performance snapshot: E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\performance_stats.json
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.step_manager:run_steps:400 - All steps completed
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:261 - 
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:262 - ============================================================
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:263 - 执行完成！摘要信息：
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:264 -   总步骤数：1
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:265 -   已完成：1
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:266 -   失败：0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:267 -   进行中：0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.cli:run_system:268 - ============================================================
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:end_global_tracking:108 - Performance tracking ended
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:377 - 
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:378 - ================================================================================
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:379 - 性能统计报告
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:380 - ================================================================================
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:383 - 总执行时长: 0.25 秒
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:384 - 总Agent调用次数: 0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:385 - 总LLM调用次数: 0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:386 - 总Tavily调用次数: 0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:387 - 涉及Agent数量: 0
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:388 - 涉及步骤数量: 1
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:390 - 
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:391 - --------------------------------------------------------------------------------
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:392 - Agent执行统计（按总时间排序）:
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:393 - --------------------------------------------------------------------------------
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:407 - 
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:408 - --------------------------------------------------------------------------------
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:409 - 步骤执行统计:
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:410 - --------------------------------------------------------------------------------
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:414 -   Step 9:    0.14s | 状态: completed  | Agent调用: 0次
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:420 - ================================================================================
+2026-04-08 16:06:32 | INFO     | src.mining_agents.utils.performance_tracker:save_report:370 - Performance report saved to: output\performance_report.json
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:257 - Cleaning up resources...
+2026-04-08 16:06:32 | INFO     | src.mining_agents.tools.deep_research:close:651 - DeepResearchTool closed
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:273 - Tool 'deep_research' closed
+2026-04-08 16:06:32 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:277 - Cleanup completed
+2026-04-08 16:12:18 | INFO     | src.mining_agents.tools.deep_research:__init__:96 - DeepResearchTool initialized in MOCK mode
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'deep_research' registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'json_validator' registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 1 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 2 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 3 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 4 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 5 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 6 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 7 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 8 handler registered
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 9 handler registered
+2026-04-08 16:12:18 | WARNING  | src.mining_agents.cli:run_system:214 - --force-rerun 已启用，正在删除 Step 9 输出目录: output\step8_validation
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:217 - Step 9 输出目录已删除: output\step8_validation
+2026-04-08 16:12:18 | WARNING  | src.mining_agents.cli:run_system:226 - --force-rerun 已启用，正在删除 Step 9 额外输出目录: output\final_parlant_config
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:229 - Step 9 额外输出目录已删除: output\final_parlant_config
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:245 - 执行业务描述：我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保...
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:248 - 执行步骤：9 -> 9
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:249 - 
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:run_steps:328 - Running steps 9 to 9
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:run_steps:337 - Processing step 9...
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:mark_step_started:138 - Step 9 started
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:run_step:254 - Executing step 9...
+2026-04-08 16:12:18 | INFO     | src.mining_agents.steps.step8_validation:step8_validation_handler:186 - Step 9(v2): final validation started
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:run_step:262 - Step 9 result saved to E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\result.json
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:mark_step_completed:166 - Step 9 completed with 3 output files
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:save_step_performance_snapshot:350 - Step 9 performance snapshot: E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\performance_stats.json
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.step_manager:run_steps:400 - All steps completed
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:261 - 
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:262 - ============================================================
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:263 - 执行完成！摘要信息：
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:264 -   总步骤数：1
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:265 -   已完成：1
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:266 -   失败：0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:267 -   进行中：0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.cli:run_system:268 - ============================================================
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:end_global_tracking:108 - Performance tracking ended
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:377 - 
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:378 - ================================================================================
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:379 - 性能统计报告
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:380 - ================================================================================
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:383 - 总执行时长: 0.19 秒
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:384 - 总Agent调用次数: 0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:385 - 总LLM调用次数: 0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:386 - 总Tavily调用次数: 0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:387 - 涉及Agent数量: 0
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:388 - 涉及步骤数量: 1
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:390 - 
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:391 - --------------------------------------------------------------------------------
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:392 - Agent执行统计（按总时间排序）:
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:393 - --------------------------------------------------------------------------------
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:407 - 
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:408 - --------------------------------------------------------------------------------
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:409 - 步骤执行统计:
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:410 - --------------------------------------------------------------------------------
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:414 -   Step 9:    0.12s | 状态: completed  | Agent调用: 0次
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:420 - ================================================================================
+2026-04-08 16:12:18 | INFO     | src.mining_agents.utils.performance_tracker:save_report:370 - Performance report saved to: output\performance_report.json
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:257 - Cleaning up resources...
+2026-04-08 16:12:18 | INFO     | src.mining_agents.tools.deep_research:close:651 - DeepResearchTool closed
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:273 - Tool 'deep_research' closed
+2026-04-08 16:12:18 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:277 - Cleanup completed
+2026-04-08 16:14:43 | INFO     | src.mining_agents.tools.deep_research:__init__:96 - DeepResearchTool initialized in MOCK mode
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'deep_research' registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.agent_orchestrator:register_tool:59 - Tool 'json_validator' registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 1 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 2 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 3 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 4 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 5 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 6 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 7 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 8 handler registered
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:register_step_handler:211 - Step 9 handler registered
+2026-04-08 16:14:43 | WARNING  | src.mining_agents.cli:run_system:214 - --force-rerun 已启用，正在删除 Step 9 输出目录: output\step8_validation
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:217 - Step 9 输出目录已删除: output\step8_validation
+2026-04-08 16:14:43 | WARNING  | src.mining_agents.cli:run_system:226 - --force-rerun 已启用，正在删除 Step 9 额外输出目录: output\final_parlant_config
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:229 - Step 9 额外输出目录已删除: output\final_parlant_config
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:245 - 执行业务描述：我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保...
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:248 - 执行步骤：9 -> 9
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:249 - 
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:run_steps:328 - Running steps 9 to 9
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:run_steps:337 - Processing step 9...
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:mark_step_started:138 - Step 9 started
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:run_step:254 - Executing step 9...
+2026-04-08 16:14:43 | INFO     | src.mining_agents.steps.step8_validation:step8_validation_handler:186 - Step 9(v2): final validation started
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:run_step:262 - Step 9 result saved to E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\result.json
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:mark_step_completed:166 - Step 9 completed with 3 output files
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:save_step_performance_snapshot:350 - Step 9 performance snapshot: E:\cursorworkspace\c002_parlant_config_manager1\output\step8_validation\performance_stats.json
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.step_manager:run_steps:400 - All steps completed
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:261 - 
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:262 - ============================================================
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:263 - 执行完成！摘要信息：
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:264 -   总步骤数：1
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:265 -   已完成：1
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:266 -   失败：0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:267 -   进行中：0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.cli:run_system:268 - ============================================================
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:end_global_tracking:108 - Performance tracking ended
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:377 - 
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:378 - ================================================================================
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:379 - 性能统计报告
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:380 - ================================================================================
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:383 - 总执行时长: 0.19 秒
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:384 - 总Agent调用次数: 0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:385 - 总LLM调用次数: 0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:386 - 总Tavily调用次数: 0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:387 - 涉及Agent数量: 0
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:388 - 涉及步骤数量: 1
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:390 - 
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:391 - --------------------------------------------------------------------------------
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:392 - Agent执行统计（按总时间排序）:
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:393 - --------------------------------------------------------------------------------
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:407 - 
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:408 - --------------------------------------------------------------------------------
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:409 - 步骤执行统计:
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:410 - --------------------------------------------------------------------------------
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:414 -   Step 9:    0.12s | 状态: completed  | Agent调用: 0次
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:print_summary:420 - ================================================================================
+2026-04-08 16:14:43 | INFO     | src.mining_agents.utils.performance_tracker:save_report:370 - Performance report saved to: output\performance_report.json
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:257 - Cleaning up resources...
+2026-04-08 16:14:43 | INFO     | src.mining_agents.tools.deep_research:close:651 - DeepResearchTool closed
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:273 - Tool 'deep_research' closed
+2026-04-08 16:14:43 | INFO     | src.mining_agents.managers.agent_orchestrator:cleanup:277 - Cleanup completed

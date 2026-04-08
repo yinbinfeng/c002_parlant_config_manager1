@@ -1,0 +1,215 @@
+{
+  "agent_id": "main_journey_agent_001",
+  "remark": "Step5 节点[合规收尾与信息登记]分支术语（Agent动态生成）",
+  "terms": [
+    {
+      "term_id": "main_journey_node_006_term_001",
+      "name": "终身寿险",
+      "description": "保障期限为被保险人终身的寿险产品，包含身故保障和现金价值累积",
+      "synonyms": [
+        "终身保险",
+        "终身保障计划",
+        "Whole Life"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_002",
+      "name": "定期寿险",
+      "description": "在约定保障期限内提供身故保障，期满无返还的纯保障型产品",
+      "synonyms": [
+        "定期保险",
+        "Term Insurance",
+        "纯保障险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_003",
+      "name": "年金保险",
+      "description": "按约定定期给付保险金，用于养老或长期现金流规划的产品",
+      "synonyms": [
+        "年金险",
+        "养老金保险",
+        "Annuity"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_004",
+      "name": "简易生命保险",
+      "description": "日本特有的小额保险产品，通常无需体检，审批流程相对简化",
+      "synonyms": [
+        "简易险",
+        "Small Amount Life",
+        "简易平准保费保险"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_005",
+      "name": "医疗给付险",
+      "description": "确诊疾病或住院时按约定定额给付保险金的补偿型产品",
+      "synonyms": [
+        "医疗险",
+        "健康险",
+        "Medical Benefit"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_006",
+      "name": "契约缔结",
+      "description": "客户确认投保意向并完成签署流程，正式建立保险合同关系的环节",
+      "synonyms": [
+        "签约",
+        "投保完成",
+        "Contract Conclusion"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_007",
+      "name": "预约登记",
+      "description": "在系统内记录客户有意向投保的时间点和后续跟进安排的业务动作",
+      "synonyms": [
+        "意向登记",
+        "预约建档",
+        "Appointment Registration"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_008",
+      "name": "客户资料录入",
+      "description": "将客户的身份信息、联系方式及投保意向准确输入到核心业务系统的过程",
+      "synonyms": [
+        "信息登记",
+        "数据录入",
+        "Data Entry"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_009",
+      "name": "通话录音保存",
+      "description": "依据法规要求对外呼营销过程进行全程录音并存档备查的合规动作",
+      "synonyms": [
+        "录音留存",
+        "Call Recording",
+        "录音归档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_010",
+      "name": "销售档案归档",
+      "description": "将销售过程中的所有文件、录音及签字材料整理并存入档案库的流程",
+      "synonyms": [
+        "文件归档",
+        "Sales Archiving",
+        "资料存档"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_011",
+      "name": "冷静期通知",
+      "description": "向客户告知其拥有无条件解除合同权利的期限及行使方式的信息传达",
+      "synonyms": [
+        "犹豫期告知",
+        "冷却期通知",
+        "Cooling-off Notice"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_012",
+      "name": "适合性确认",
+      "description": "根据金融商品交易法要求的投保人需求与产品匹配度验证流程",
+      "synonyms": [
+        "需求匹配",
+        "适配性验证",
+        "Suitability Assessment"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_013",
+      "name": "明示同意",
+      "description": "电子渠道营销所需的客户明确授权机制，含录音保存与内容确认",
+      "synonyms": [
+        "书面同意",
+        "录音授权",
+        "Explicit Consent"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_014",
+      "name": "说明义务",
+      "description": "保险销售中必须向客户说明的重要事项，包括条款、风险、费用等",
+      "synonyms": [
+        "信息披露义务",
+        "重要事项说明",
+        "Duty of Disclosure"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_015",
+      "name": "适当性原则",
+      "description": "金融机构向客户推荐产品时需确保产品与客户风险承受能力相匹配的原则",
+      "synonyms": [
+        "适合性原则",
+        "Appropriateness",
+        "KYC/KYP"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_016",
+      "name": "反洗钱筛查",
+      "description": "在业务办理过程中识别和防范洗钱活动的合规要求与身份核验流程",
+      "synonyms": [
+        "AML 检查",
+        "洗钱防范",
+        "Anti-Money Laundering"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_017",
+      "name": "合规话术",
+      "description": "针对用户挂断拒绝倾向时采用的标准化合规沟通策略，避免违规承诺",
+      "synonyms": [
+        "继续提案话术",
+        "异议处理话术",
+        "Retention Script"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_018",
+      "name": "风险充分揭示",
+      "description": "向客户清晰说明保险产品可能存在的损失风险及不保证收益的内容",
+      "synonyms": [
+        "风险提示",
+        "Risk Disclosure",
+        "风险告知"
+      ],
+      "language": "zh-CN"
+    },
+    {
+      "term_id": "main_journey_node_006_term_019",
+      "name": "异议终结确认",
+      "description": "在解决客户疑虑后，再次确认客户是否接受方案并结束当前沟通环节的确认",
+      "synonyms": [
+        "最终确认",
+        "异议闭环",
+        "Objection Closure"
+      ],
+      "language": "zh-CN"
+    }
+  ]
+}

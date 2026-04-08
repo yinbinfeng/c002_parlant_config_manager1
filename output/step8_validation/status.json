@@ -1,24 +1,24 @@
 {
   "step_num": 9,
   "status": "completed",
-  "started_at": "2026-04-06T20:22:38.323474",
-  "completed_at": "2026-04-06T20:22:38.759094",
+  "started_at": "2026-04-08T16:14:43.142487",
+  "completed_at": "2026-04-08T16:14:43.264943",
   "output_files": [
     "step9_validation_report.md",
     "step9_compliance_certificate.json",
     "E:\\cursorworkspace\\c002_parlant_config_manager1\\output\\final_parlant_config"
   ],
   "metadata": {
-    "json_files_checked": 23,
+    "json_files_checked": 46,
     "json_parse_errors": 0,
     "json_auto_fixed": 0,
     "schema_errors": 0,
     "journey_schema_errors": 0,
     "state_machine_issues": 0,
-    "conflict_issues": 0,
+    "conflict_issues": 2,
     "missing_required_paths": 0,
     "main_backbone_issues": 0,
-    "quality_score": 100,
+    "quality_score": 94,
     "rework_required": false,
     "rework_restart_step": 5,
     "max_rework_rounds": 1

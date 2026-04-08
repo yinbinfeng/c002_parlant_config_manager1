@@ -1,0 +1,133 @@
+{
+  "sop_id": "main_journey__branch_node_002_id_sop_001",
+  "sop_type": "branch",
+  "parent_sop_id": "main_sop_backbone_v2",
+  "parent_state_id": "node_002",
+  "sop_title": "客户意愿与合规风险评估分支流程",
+  "sop_description": "挂载于主干节点[客户意愿度与风险状态评估]的二级分支流程（Step5 Agent动态生成）",
+  "trigger_conditions": [
+    {
+      "trigger": "用户在[客户意愿度与风险状态评估]节点提出特定需求或问题，需要分支处理",
+      "trigger_examples": [
+        "用户表达特殊需求",
+        "用户提出问题",
+        "用户需要额外帮助"
+      ]
+    }
+  ],
+  "timeout": 900,
+  "sop_states": [
+    {
+      "state_name": "语音情绪与信号捕捉",
+      "instruction": "监听用户语速、语调变化及拒绝性关键词，记录初步风险信号。",
+      "condition": "完成信号捕捉并识别出明确倾向",
+      "condition_examples": [
+        "用户语速突然变快",
+        "用户说：忙しいので切ります",
+        "用户沉默超过 10 秒"
+      ],
+      "state_id": "branch_state_000",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_001",
+          "condition": "完成信号捕捉并识别出明确倾向"
+        }
+      ]
+    },
+    {
+      "state_name": "合规风险红线筛查",
+      "instruction": "检查是否存在投诉风险、隐私泄露风险或误导性陈述隐患。",
+      "condition": "确认无严重合规违规或已标记高风险",
+      "condition_examples": [
+        "用户提及投诉监管部门",
+        "用户要求停止拨打",
+        "用户表示信息被滥用"
+      ],
+      "state_id": "branch_state_001",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_002",
+          "condition": "确认无严重合规违规或已标记高风险"
+        }
+      ]
+    },
+    {
+      "state_name": "购买意愿深度核实",
+      "instruction": "通过简短询问确认用户是否仍愿意了解产品细节，排除无效通话。",
+      "condition": "用户给出明确的肯定或否定反馈",
+      "condition_examples": [
+        "用户说：再听听看",
+        "用户说：完全不需要",
+        "用户说：以后再说"
+      ],
+      "state_id": "branch_state_002",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_003",
+          "condition": "用户给出明确的肯定或否定反馈"
+        }
+      ]
+    },
+    {
+      "state_name": "风险等级综合评定",
+      "instruction": "结合情绪、合规和意愿，将当前通话状态评级为高/中/低风险。",
+      "condition": "评级完成并确定对应策略",
+      "condition_examples": [
+        "判定为高风险（需终止）",
+        "判定为中风险（需挽留）",
+        "判定为低风险（可推进）"
+      ],
+      "state_id": "branch_state_003",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_004",
+          "condition": "评级完成并确定对应策略"
+        }
+      ]
+    },
+    {
+      "state_name": "应对策略决策生成",
+      "instruction": "根据评级选择具体执行动作：转入挽留话术、继续产品介绍或礼貌挂机。",
+      "condition": "策略已选定并准备执行",
+      "condition_examples": [
+        "选择执行标准挽留流程",
+        "选择继续介绍保险条款",
+        "选择结束通话并致谢"
+      ],
+      "state_id": "branch_state_004",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "transitions": [
+        {
+          "target_state_id": "branch_state_005",
+          "condition": "策略已选定并准备执行"
+        }
+      ]
+    },
+    {
+      "state_name": "状态同步与主流程回归",
+      "instruction": "将评估结果写入上下文，引导对话进入下一主干节点或结束会话。",
+      "condition_examples": [
+        "成功跳转至产品介绍节点",
+        "成功跳转至挽留节点",
+        "会话正常结束"
+      ],
+      "state_id": "branch_state_005",
+      "state_type": "chat",
+      "bind_guideline_ids": [],
+      "is_end_state": true,
+      "return_to_parent": true,
+      "transitions": []
+    }
+  ],
+  "fallback_source": null,
+  "parent_node_id": "node_002"
+}

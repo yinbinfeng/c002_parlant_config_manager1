@@ -90,6 +90,10 @@ E:\cursorworkspace\c002_parlant_config_manager1
 - 可以查看changlog.md的历史修改记录，避免把一些历史错误又引入了
 
 # 当前任务
+
+
+
+### task 79
 - 请按E:\cursorworkspace\c002_parlant_config_manager1\docs\plans\2026-04-08-step8-guideline-dedup-plan.md 要求优化代码,
 - 测试启动代码（注意根据你需要调试的stage进行设置）：python "egs/v0.1.0_minging_agents/main.py" --mode real --max-parallel 1 --skip-clarification --force-rerun --debug True --start-step 1 --end-step 8 --business-desc "我是日本共荣保险的外呼营销客服，目标是在用户有挂断或拒绝倾向时进行一次合规挽留，挽留成功后继续介绍保险产品并推进后续转化，同时严格遵守日本保险营销合规要求，避免投诉与误导。"
 - 请使用python3.11环境，请使用conda的python3.11环境下运行

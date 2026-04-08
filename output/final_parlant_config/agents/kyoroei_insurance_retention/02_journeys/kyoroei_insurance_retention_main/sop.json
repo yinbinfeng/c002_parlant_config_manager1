@@ -1,0 +1,156 @@
+{
+  "sop_id": "main_sop_backbone_v2",
+  "sop_type": "main",
+  "sop_title": "kyoroei_insurance_retention_main 主流程",
+  "sop_description": "主SOP主干流程，包含分支和边缘场景链接",
+  "sop_states": [
+    {
+      "state_id": "node_001",
+      "state_name": "开场联络与合规身份确认",
+      "state_type": "chat",
+      "instruction": "进行标准开场白，清晰报出公司名称（日本共荣保险）、客服姓名及工号，明确告知通话目的为保险营销服务，并依据日本保险法规定告知通话录音事宜，获取用户初步知情同意。",
+      "exit_condition": "用户明确知晓来电方身份并同意继续沟通或录音",
+      "transitions": [
+        {
+          "target_state_id": "node_002",
+          "condition": "正常流程推进"
+        }
+      ],
+      "child_journeys": [
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_001_user_identity_doubt_001",
+          "trigger": "在[开场联络与合规身份确认]节点触发边缘场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_001_user_privacy_concern_002",
+          "trigger": "在[开场联络与合规身份确认]节点触发边缘场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_001_user_rejection_intent_003",
+          "trigger": "在[开场联络与合规身份确认]节点触发边缘场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_001_compliance_sensitivity_004",
+          "trigger": "在[开场联络与合规身份确认]节点触发边缘场景"
+        }
+      ]
+    },
+    {
+      "state_id": "node_002",
+      "state_name": "客户意愿度与风险状态评估",
+      "state_type": "chat",
+      "instruction": "通过简短寒暄或意图询问判断用户当前沟通意愿，实时监测挂断倾向或拒绝信号。若检测到强烈拒绝，触发合规挽留机制；若检测为正常沟通，进入需求分析。",
+      "exit_condition": "完成用户当前沟通状态的判定（愿意倾听/需要挽留/直接挂断）",
+      "transitions": [
+        {
+          "target_state_id": "node_003",
+          "condition": "正常流程推进"
+        }
+      ],
+      "child_journeys": [
+        {
+          "journey_type": "branch",
+          "journey_name": "branch_客户意愿度与风险状态评估_node_002",
+          "trigger": "在[客户意愿度与风险状态评估]节点触发分支场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_002_high_risk_refusal_001",
+          "trigger": "在[客户意愿度与风险状态评估]节点触发边缘场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_002_ambiguous_intent_002",
+          "trigger": "在[客户意愿度与风险状态评估]节点触发边缘场景"
+        },
+        {
+          "journey_type": "edge",
+          "journey_name": "edge_node_002_compliance_inquiry_003",
+          "trigger": "在[客户意愿度与风险状态评估]节点触发边缘场景"
+        }
+      ]
+    },
+    {
+      "state_id": "node_003",
+      "state_name": "保障需求分析与产品引导",
+      "state_type": "chat",
+      "instruction": "基于用户家庭状况或现有保障缺口，询问关键风险点（医疗、养老等），将用户需求与保险产品功能建立初步关联，避免过度承诺。",
+      "exit_condition": "用户确认至少一个具体的保障关注点或痛点",
+      "transitions": [
+        {
+          "target_state_id": "node_004",
+          "condition": "正常流程推进"
+        }
+      ],
+      "child_journeys": [
+        {
+          "journey_type": "branch",
+          "journey_name": "branch_保障需求分析与产品引导_node_003",
+          "trigger": "在[保障需求分析与产品引导]节点触发分支场景"
+        }
+      ]
+    },
+    {
+      "state_id": "node_004",
+      "state_name": "保险方案呈现与利益说明",
+      "state_type": "chat",
+      "instruction": "根据确认的需求展示具体保险方案，清晰说明保额、保费、免责条款等核心要素，确保信息透明合规，不进行误导性对比或夸大收益。",
+      "exit_condition": "用户复述或确认理解方案的核心权益内容",
+      "transitions": [
+        {
+          "target_state_id": "node_005",
+          "condition": "正常流程推进"
+        }
+      ],
+      "child_journeys": [
+        {
+          "journey_type": "branch",
+          "journey_name": "branch_保险方案呈现与利益说明_node_004",
+          "trigger": "在[保险方案呈现与利益说明]节点触发分支场景"
+        }
+      ]
+    },
+    {
+      "state_id": "node_005",
+      "state_name": "购买意向确认与流程引导",
+      "state_type": "chat",
+      "instruction": "试探用户购买意向，引导至下一步行动（如预约面谈、发送资料、直接投保），对于犹豫用户再次强调核心价值而非施压。",
+      "exit_condition": "达成明确的下一步行动共识或用户明确表示终止",
+      "transitions": [
+        {
+          "target_state_id": "node_006",
+          "condition": "正常流程推进"
+        }
+      ],
+      "child_journeys": [
+        {
+          "journey_type": "branch",
+          "journey_name": "branch_购买意向确认与流程引导_node_005",
+          "trigger": "在[购买意向确认与流程引导]节点触发分支场景"
+        }
+      ]
+    },
+    {
+      "state_id": "node_006",
+      "state_name": "合规收尾与信息登记",
+      "state_type": "chat",
+      "instruction": "感谢用户时间，再次确认用户无投诉意向，礼貌结束通话，并在系统中准确记录通话结果（成功/拒绝/需跟进）及合规标签。",
+      "exit_condition": "通话连接断开且CRM系统状态已更新",
+      "transitions": [],
+      "child_journeys": [
+        {
+          "journey_type": "branch",
+          "journey_name": "branch_合规收尾与信息登记_node_006",
+          "trigger": "在[合规收尾与信息登记]节点触发分支场景"
+        }
+      ],
+      "is_end_state": true
+    }
+  ],
+  "frozen": true,
+  "frozen_at": "2026-04-07T14:08:49.811299"
+}
